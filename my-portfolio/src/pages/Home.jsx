@@ -164,7 +164,8 @@ const Home = () => {
   <span className="tech restapi"><img src="/icons/restapi.svg" alt="RestAPI" /> RestfulAPI</span>
   <span className="tech flask"><img src="/icons/flask.svg" alt="Flask" />Flask</span>
   <span className="tech git"><img src="/icons/git.svg" alt="Git" />Git</span>
-  <span className="tech git"><img src="/icons/github.svg" alt="Git" />GitHub</span>
+  <span className="tech git"> <img src="/icons/github.svg" alt="GitHub" className="contact-icon" />
+GitHub</span>
   <span className="tech jinja"><img src="/icons/jinja.svg" alt="Jinja" />Jinja</span>
 
 
