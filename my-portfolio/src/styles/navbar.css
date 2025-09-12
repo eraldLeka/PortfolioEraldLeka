@@ -1,0 +1,141 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: 'Times New Roman', serif;
+}
+
+/* Navbar kryesore */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;          
+  padding: 15px 40px;
+  color: whitesmoke;
+  background-color: #11274d;
+  position: fixed;
+  z-index: 1000;
+}
+
+/* Logo */
+.logo {
+  font-weight: bold;
+  font-size: 20px;
+  font-style: italic;
+}
+
+/* Menu links desktop */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;      
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  position: relative;
+  text-decoration: none;
+  color: rgb(220, 216, 216);
+  font-weight: 600;
+  font-size: 17px;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background-color: #0a5534;
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+.nav-links li a:hover {
+  color: #95dfdf;
+  font-size: 18px;
+}
+
+/* Theme Toggle */
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: rgb(163, 163, 15);
+  margin-left: 15px;
+  z-index: 1100;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+/* ====== Responsive ====== */
+@media (max-width: 768px) {
+  /* fsheh menun default */
+  .nav-links {
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: 200px;
+    background-color: #11274d;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .nav-links.nav-active {
+    transform: translateX(0%);
+  }
+
+  /* hamburger + toggleTheme shfaqen bashkë */
+  .navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+/* Efekt për animacion hamburger */
+.hamburger.toggle div:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.toggle div:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.toggle div:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
