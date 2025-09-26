@@ -1,0 +1,136 @@
+.contact-page {
+    width: 100%;
+    min-height: auto;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+/* Seksioni kryesor – ndahet në dy kolona */
+.contact-section {
+    display: flex;
+    width: 100%;
+    height: 60vh; 
+    min-height: 340px;
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 10px;
+    background-color: white;
+    box-sizing: border-box;
+    
+}
+
+/* Kolona e videos (50%) */
+.contact-video-wrapper {
+    flex: 1.2; /* 50% */
+    overflow: hidden;
+}
+
+.contact-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    border:1px solid white ;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+/* Kolona e përmbajtjes (50%) */
+.contact-content {
+    flex: 0.5; /* 50% */
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contact-content h1 {
+    font-size: 4.5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(
+    90deg,
+    rgb(29, 3, 60) 30%,
+    #79737b 50%,
+    rgb(52, 4, 107) 70%
+  );
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text; 
+  color: transparent; 
+  animation: shine 3s linear infinite;
+}
+
+
+.contact-info {
+  margin-top: 14px;
+  padding: 20px 30px;
+  background-color: white;
+  border-radius: 10px;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.contact-title {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  text-align: left;
+  color: #080010;
+  background: linear-gradient(
+    90deg,
+    rgb(29, 3, 60) 30%,
+    #79737b 50%,
+    rgb(52, 4, 107) 70%
+  );
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text; 
+  color: transparent; 
+  animation: shine 3s linear infinite;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 25px;
+  justify-items: center;
+}
+
+.contact-card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: inherit;
+  width: 140px;
+}
+
+.contact-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+
+.contact-icon {
+  font-size: 2rem;
+}
+
+.contact-card p {
+  margin: 0;
+  font-weight: 600;
+}
+
+.contact-card span {
+  font-size: 0.9rem;
+  color: #555;
+}

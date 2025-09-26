@@ -1,0 +1,148 @@
+.achieve-page {
+    width: 100%;
+    min-height: auto;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+/* Seksioni kryesor – ndahet në dy kolona */
+.achieve-section {
+    display: flex;
+    width: 100%;
+    height: 60vh; 
+    min-height: 340px;
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 10px;
+    background-color: white;
+    box-sizing: border-box;
+    
+}
+
+/* Kolona e videos (50%) */
+.achieve-video-wrapper {
+    flex: 1.2; /* 50% */
+    overflow: hidden;
+}
+
+.achieve-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    border:1px solid white ;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+/* Kolona e përmbajtjes (50%) */
+.achieve-content {
+    flex: 0.5; /* 50% */
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.achieve-content h1 {
+    font-size: 4.5rem;
+    margin-bottom: 1rem;
+      background: linear-gradient(
+    90deg,
+    rgb(29, 3, 60) 30%,
+    #79737b 50%,
+    rgb(52, 4, 107) 70%
+  );
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text; 
+  color: transparent; 
+  animation: shine 3s linear infinite;
+}
+.certification {
+    display: flex;
+    width: 100%;
+    height: 73vh;
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 10px;
+    background-color: white;
+    flex-direction: column;
+    margin-top: 12px;
+    box-sizing: border-box;
+}
+
+
+.cert-title {
+  text-align: left; /* qendërzon titullin */
+  font-size: 2rem;
+  background: linear-gradient(
+    90deg,
+    rgb(29, 3, 60) 30%,
+    #79737b 50%,
+    rgb(52, 4, 107) 70%
+  );
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text; 
+  color: transparent; 
+  animation: shine 3s linear infinite;
+}
+
+.certification-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  width: 100%;
+  max-width: 1100px;
+}
+
+
+.cert-card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  /* Bëjmë që kartat të kenë të njëjtën lartësi */
+  height: 100%;
+}
+
+.cert-img {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.cert-info {
+  margin-top: auto; /* gjithmonë në fund */
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cert-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #080010;
+  margin: 0;
+}
+
+.cert-date {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0;
+}

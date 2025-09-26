@@ -1,0 +1,43 @@
+.app-container {
+    display: grid;
+    grid-template-columns: 270px 1fr;
+    min-height: 100vh;
+    gap: 20px;
+    padding: 20px;
+}
+
+.sidebar {
+    position: sticky;
+    top: 5px;
+    align-self: start;
+}
+
+/* Stile të reja për Intro Video */
+.intro-video-container {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100vw; 
+  height: 100vh; 
+  z-index: 9999; 
+  overflow: hidden;
+  background-color: #000; /* Mbush me të zezë nëse videoja nuk mbulon plotësisht */
+}
+
+.intro-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Mbulon të gjithë ekranin duke prerë pjesët e tepërta, pa shtrirje */
+  object-position: center; /* Qendër – ndrysho nëse dëshiron crop (p.sh., center top) */
+}
+
+/* Opsionale: Fade Out i Butë (animacion kur zhduket) */
+.intro-video-container {
+  transition: opacity 0.5s ease-out; /* Fade out i butë në 0.5 sekonda */
+}
+
+.intro-video-container.hidden {
+  opacity: 0;
+  pointer-events: none; /* Nuk interagon më me mouse/touch */
+}
+

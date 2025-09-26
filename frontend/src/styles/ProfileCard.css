@@ -1,0 +1,110 @@
+
+.profile-card{
+    background-color: white;
+    border-right: 5px solid #290e84;
+    border-radius:10px ;
+    padding: 30px;
+    text-align: center;
+    font-size: 18px;
+    top: 22px;
+    position: fixed;
+    width: 200px;
+}
+.profile-card:hover{
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.profile-img {
+  width: 100px;         
+  height: 100px;        
+  object-fit: cover;    
+  border-radius: 50%;   
+  border: 3px solid #444;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+.profile-card h3{
+  margin: 5px 0 2px 0; 
+  font-size: 22px;    
+}
+.profile-card h5{
+    margin: 0;
+    font-size: 16px;
+    font-weight: normal;
+    color: #666;
+}
+
+.cv-button{
+    display: inline-block;
+    margin-top: 15px;
+    width:100% ;
+    padding: 10px ;
+    background-color: #f0eded;
+    color: black;
+    font-weight: normal;
+    border: 1px solid black;
+    border-radius:9px;
+    text-decoration: none;
+    transform: all 0.3s ease;
+}
+.cv-button:hover{
+    background-color: #666;
+    color: white;
+    transform: translateY(-2px);
+
+}
+
+.icons-container{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    border-top: 1px solid rgb(235, 233, 233);
+    gap: 14px;
+    margin-top:15px ;
+    padding: 10px;
+}
+
+.icon-item{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    cursor: pointer;
+}
+.icon-item .icon{
+    color: #111;
+}
+.icon-item span{
+    margin-top: 4px;
+    font-weight: bold;
+}
+.my-link{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+    
+}
+.my-link:hover{
+    font-size: larger;
+ background: linear-gradient(
+    90deg,
+    rgb(29, 3, 60) 30%,
+    #79737b 50%,  /* drita që do kalojë */
+    rgb(52, 4, 107) 70%
+  );
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text; 
+  color: transparent; /* për të aplikuar gradientin mbi tekst */
+  animation: shine 3s linear infinite;
+}
+
+@keyframes shine {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+

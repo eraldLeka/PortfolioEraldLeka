@@ -1,0 +1,71 @@
+.expert {
+  display: flex;
+  flex-wrap: wrap; /* lejon rreshta të ndryshëm */
+  gap: 15px;
+  max-width: 600px;
+  margin: 0 auto;
+  align-items: flex-start; /* kutitë nuk zmadhohen sipas lartësisë më të madhe */
+}
+
+.expert-card {
+  flex: 1 1 calc(50% - 15px); /* 2 kolona me hapësirë midis tyre */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  min-width: 250px; /* kufi minimal për mobile */
+}
+
+.expert-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  cursor: pointer;
+  background-color: #f8f9fa;
+  transition: background-color 0.3s ease;
+}
+
+.expert-header:hover {
+  background-color: #e9ecef;
+}
+
+.expert-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+}
+
+.expert-content {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease;
+  background-color: #fff;
+}
+
+.expert-card.open .expert-content {
+  max-height: 1000px; /* shumë i madh për listat më të gjata, por vetëm kutia e hapur do të zgjatet */
+}
+
+.expert-content ul {
+  padding: 10px 20px;
+  margin: 0;
+  list-style-type: disc;
+}
+
+.expert-content li {
+  margin: 5px 0;
+}
+
+.open .expert-header {
+  font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .expert-card {
+    flex: 1 1 100%; /* 1 kolonë mobile */
+  }
+}
