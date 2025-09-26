@@ -134,6 +134,7 @@
   display: flex;
   align-items: flex-start;
   gap: 10px;
+
 }
 
 .university {
@@ -145,6 +146,7 @@
 .university-info h4 {
   font-size: 27px;
   margin: 0;
+  
 }
 
 .university-info p {

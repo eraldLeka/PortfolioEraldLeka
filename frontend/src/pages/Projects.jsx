@@ -61,7 +61,7 @@ function Projects(){
             rel="noopener noreferrer"
             className="project-link"
             >
-            <FaGithub color="black" /> View Project
+            <FaGithub /> View Project
             </a>
   </div>
 
@@ -84,7 +84,7 @@ function Projects(){
             rel="noopener noreferrer"
             className="project-link"
             >
-            <FaGithub color="black" /> View Project
+            <FaGithub /> View Project
             </a>
   </div>
 
@@ -104,7 +104,7 @@ function Projects(){
         rel="noopener noreferrer"
         className="project-link"
         >
-        <FaGithub color="black" /> View Project
+        <FaGithub  /> View Project
         </a>
   </div>
 </section>

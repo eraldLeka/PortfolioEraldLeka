@@ -1,73 +1,63 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/Achievements.css";
 import freecodecamp from "../assets/freeCodeCamp.png";
 import java from "../assets/java.jpg";
 import data from "../assets/data.jpg";
-import { 
-  FaUser,
-  FaLightbulb,
-} from "react-icons/fa";
 
+function Achievements() {
+  const [modalImg, setModalImg] = useState(null); // state për modal
 
+  const certs = [
+    { img: freecodecamp, name: "FreeCodeCamp - Responsive Web Design", date: "June 2024" },
+    { img: java, name: "Java - Object Oriented Programming", date: "August 2025" },
+    { img: data, name: "Data Science and AI", date: "May 2024" },
+  ];
 
+  const handleClick = (img) => {
+    setModalImg(modalImg === img ? null : img); // toggle modal
+  };
 
-function About() {
   return (
     <div className="achieve-page">
       <section className="achieve-section">
-        {/* Video në kolonën e majtë */}
         <div className="achieve-video-wrapper">
           <video autoPlay loop muted playsInline className="achieve-video">
             <source src="/videos/achieveVideo.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
           </video>
         </div>
-        
         <div className="about-content">
           <h1>What I've Achieved?</h1>
         </div>
       </section>
 
-
-<section className="certification">
-  <h2 className="cert-title">My Certifications</h2>
-  <div className="certification-grid">
-
-        <div className="cert-card">
-            <img src={freecodecamp} alt="FreeCodeCamp Certificate" className="cert-img" />
-            <div className="cert-info">
-                <p className="cert-name">FreeCodeCamp - Responsive Web Design</p>
-                <p className="cert-date">Issued: June 2024</p>
+      <section className="certification">
+        <h2 className="cert-title">My Certifications</h2>
+        <div className="certification-grid">
+          {certs.map((cert, index) => (
+            <div className="cert-card" key={index}>
+              <img
+                src={cert.img}
+                alt={cert.name}
+                className="cert-img"
+                onClick={() => handleClick(cert.img)}
+              />
+              <div className="cert-info">
+                <p className="cert-name">{cert.name}</p>
+                <p className="cert-date">Issued: {cert.date}</p>
+              </div>
             </div>
+          ))}
         </div>
+      </section>
 
-
-        <div className="cert-card">
-            <img src={java} alt="Java-Objected Oriented Programming" className="cert-img" />
-            <div className="cert-info">
-                <p className="cert-name">Java-Objected Oriented Programming</p>
-                <p className="cert-date">Issued: August 2025</p>
-            </div>
+      {/* Modal */}
+      {modalImg && (
+        <div className="modal-overlay" onClick={() => setModalImg(null)}>
+          <img src={modalImg} alt="Certification" className="modal-img" />
         </div>
-
-        <div className="cert-card">
-            <img src={data} alt="Data Science and AI" className="cert-img" />
-            <div className="cert-info">
-                <p className="cert-name">Data Science and AI</p>
-                <p className="cert-date">Issued: May 2024</p>
-            </div>
-        </div>
-
-
-  </div>
-</section>
-
-
-
-
-
+      )}
     </div>
   );
 }
 
-export default About;
+export default Achievements;

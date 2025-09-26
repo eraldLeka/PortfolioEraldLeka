@@ -57,6 +57,9 @@
 
 .expert-content li {
   margin: 5px 0;
+  list-style: none;
+  font-size: large;
+  font-weight: 600;
 }
 
 .open .expert-header {
