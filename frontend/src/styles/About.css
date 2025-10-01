@@ -258,4 +258,173 @@
   color: transparent; 
   animation: shine 3s linear infinite;
 }
+/* ===================== RESPONSIVE ONLY ===================== */
+
+/* Për laptop/desktop më të vegjël se 1024px */
+@media (max-width: 1024px) {
+  .about-section {
+    flex-direction: column;
+    height: auto;
+  }
+  .about-video-wrapper {
+    flex: 1;
+    margin-bottom: 15px;
+  }
+  .about-content {
+    flex: 1;
+    padding: 30px;
+  }
+  .about-content h1 {
+    font-size: 3.5rem;
+  }
+
+  .personal-content {
+    flex-direction: column;
+    height: auto;
+  }
+  .personal-bio {
+    font-size: 20px;
+    height: auto;
+    padding: 5px;
+  }
+
+  .education {
+    height: auto;
+    min-height: 500px;
+    padding: 8px;
+  }
+  .education h3 {
+    font-size: 24px;
+  }
+  .university-info h4 {
+    font-size: 24px;
+  }
+  .university-info p {
+    font-size: 18px;
+  }
+  .education-text p {
+    font-size: 1rem;
+  }
+  .skills-inline li {
+    font-size: 0.95rem;
+  }
+
+  .expert-section {
+    height: auto;
+  }
+  .expert-section h2 {
+    font-size: 1.8rem;
+  }
+}
+
+/* Për tablet/mobil (768px dhe më pak) */
+@media (max-width: 768px) {
+  .about-section {
+    flex-direction: column;
+    padding: 10px;
+  }
+  .about-video-wrapper,
+  .about-content {
+    flex: 1;
+    width: 100%;
+    padding: 10px;
+  }
+  .about-content h1 {
+    font-size: 2.8rem;
+    text-align: center;
+  }
+
+  .personal-content {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+  }
+  .personal-bio {
+    font-size: 18px;
+  }
+
+  .education {
+    flex-direction: column;
+    height: auto;
+    min-height: 400px;
+    padding: 10px;
+  }
+  .education h3 {
+    font-size: 22px;
+  }
+  .university-info h4 {
+    font-size: 22px;
+  }
+  .university-info p {
+    font-size: 16px;
+  }
+  .education-text p {
+    font-size: 0.95rem;
+  }
+  .skills-inline li {
+    font-size: 0.9rem;
+  }
+
+  .expert-section {
+    height: auto;
+    padding: 10px;
+  }
+  .expert-section h2 {
+    font-size: 1.6rem;
+  }
+}
+
+/* Për mobile të vogël (480px dhe më pak) */
+@media (max-width: 480px) {
+  .about-section {
+    flex-direction: column;
+    padding: 5px;
+  }
+  .about-video-wrapper,
+  .about-content {
+    width: 100%;
+    padding: 5px;
+  }
+  .about-content h1 {
+    font-size: 2rem;
+    text-align: center;
+
+  }
+
+  .personal-content {
+    flex-direction: column;
+    padding: 5px;
+  }
+  .personal-bio {
+    font-size: 16px;
+  }
+
+  .education {
+    flex-direction: column;
+    padding: 5px;
+    min-height: auto;
+  }
+  .education h3 {
+    font-size: 20px;
+  }
+  .university-info h4 {
+    font-size: 20px;
+  }
+  .university-info p {
+    font-size: 14px;
+  }
+  .education-text p {
+    font-size: 0.9rem;
+  }
+  .skills-inline li {
+    font-size: 0.85rem;
+  }
+
+  .expert-section {
+    padding: 5px;
+  }
+  .expert-section h2 {
+    font-size: 1.4rem;
+  }
+}
 

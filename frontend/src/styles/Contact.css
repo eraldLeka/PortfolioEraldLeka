@@ -134,3 +134,160 @@
   font-size: 0.9rem;
   color: #555;
 }
+
+
+/* ===================== RESPONSIVE ONLY ===================== */
+
+/* Për laptop/desktop më të vegjël se 1024px */
+@media (max-width: 1024px) {
+  .contact-section {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+  }
+
+  .contact-video-wrapper,
+  .contact-content {
+    width: 100%;
+    flex: 1;
+    margin-bottom: 20px;
+    padding: 10px;
+  }
+
+  .contact-content h1 {
+    font-size: 3.5rem;
+  }
+
+  .contact-title {
+    font-size: 1.8rem;
+  }
+
+  .contact-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 kartela per rresht */
+    gap: 15px;
+  }
+
+  .contact-card {
+    width: 100%;
+    max-width: 180px;
+    padding: 15px;
+  }
+
+  .contact-icon {
+    font-size: 1.8rem;
+  }
+
+  .contact-card span {
+    font-size: 0.85rem;
+  }
+}
+
+/* Për tablet/mobil (768px dhe më pak) */
+@media (max-width: 768px) {
+  .contact-section {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .contact-video-wrapper,
+  .contact-content {
+    width: 100%;
+    flex: 1;
+    padding: 8px;
+  }
+
+  .contact-content h1 {
+    font-size: 2.8rem;
+    text-align: center;
+  }
+
+  .contact-title {
+    font-size: 1.6rem;
+    margin-bottom: 30px;
+  }
+
+  .contact-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 kartela per rresht */
+    gap: 12px;
+  }
+
+  .contact-card {
+    width: 100%;
+    max-width: 160px;
+    padding: 12px;
+  }
+
+  .contact-icon {
+    font-size: 1.6rem;
+  }
+
+  .contact-card span {
+    font-size: 0.8rem;
+  }
+}
+
+/* Për mobile të vogël (480px dhe më pak) */
+@media (max-width: 480px) {
+  .contact-section {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .contact-video-wrapper,
+  .contact-content {
+    width: 100%;
+    flex: 1;
+    padding: 5px;
+  }
+
+  .contact-content h1 {
+    font-size: 2rem;
+    text-align: center;
+
+  }
+
+  .contact-title {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr; /* 1 kartel per rresht */
+    gap: 10px;
+  }
+
+  .contact-card {
+    width: 100%;
+    max-width: 140px;
+    padding: 10px;
+  }
+
+  .contact-icon {
+    font-size: 1.4rem;
+  }
+
+  .contact-card span {
+    font-size: 0.75rem;
+  }
+}
+
+/* Opsionale: Për ekrane shumë të vogla (<360px) */
+@media (max-width: 360px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .contact-card {
+    max-width: 120px;
+    padding: 8px;
+  }
+
+  .contact-icon {
+    font-size: 1.2rem;
+  }
+
+  .contact-card span {
+    font-size: 0.7rem;
+  }
+}

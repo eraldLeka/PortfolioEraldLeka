@@ -22,6 +22,7 @@
     border: 1px solid rgb(212, 210, 210);
     border-radius: 30px;
     box-sizing: border-box;
+    background-color: white;
 }
 
 .hero-video {
@@ -132,7 +133,7 @@
   gap: 20px;
   background: #fafafa;
   border-radius: 12px;
-  border: 1px solid black;
+  border: 3px solid rgb(229, 227, 227);
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   transition: transform 0.3s ease;
   min-height: 200px;
@@ -197,4 +198,223 @@
 .project-link:hover {
   background: #2e2d30;
   color: white;
+}
+
+
+/* ===================== RESPONSIVE ONLY ===================== */
+
+/* Për laptop/desktop më të vegjël se 1024px */
+@media (max-width: 1024px) {
+  .hero-section {
+    height: 50vh;
+    border-radius: 20px;
+    background-color: white;
+  }
+
+
+  .hero-video {
+    height: 100%;
+    width: 100%;
+    height: 100%; 
+    object-fit: cover; 
+    border-radius: 20px;
+    object-position: center; 
+    display: block;
+    grid-area: 1 / 1;
+    z-index: 0;
+
+  }
+
+  .skills {
+    padding: 8px;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .featured-projects {
+    border-radius: 8px;
+    margin-top: 12px;
+  }
+
+  .projects-grid {
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+  }
+
+  .project-card {
+    flex: 0 0 48%;
+    width: auto;
+    min-height: 180px;
+  }
+
+  .project-img {
+    width: 100%;
+    height: 120px;
+  }
+
+  .project-content h3 {
+    font-size: 1.2rem;
+  }
+
+  .project-content p {
+    font-size: 0.9rem;
+  }
+
+  .tech-icon {
+    font-size: 1.2rem;
+  }
+
+  .project-link {
+    font-size: 0.85rem;
+    padding: 5px 10px;
+  }
+}
+
+/* Për tablet/mobil (768px dhe më pak) */
+@media (max-width: 768px) {
+  .hero-section {
+    height: 45vh;
+    border-radius: 15px;
+    padding: 5px;
+        background-color: white;
+
+  }
+
+  .skills {
+    padding: 6px;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .projects-grid {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .project-card {
+    flex: 0 0 100%;
+    width: 100%;
+    min-height: 160px;
+  }
+
+  .project-img {
+    width: 90%;
+    height: 150px;
+  }
+
+  .project-content h3 {
+    font-size: 1.1rem;
+  }
+
+  .project-content p {
+    font-size: 0.85rem;
+  }
+
+  .tech-icon {
+    font-size: 1rem;
+  }
+
+  .project-link {
+    font-size: 0.8rem;
+    padding: 4px 8px;
+  }
+}
+
+/* Për mobile të vogël (480px dhe më pak) */
+@media (max-width: 480px) {
+  .hero-section {
+    height: 40vh;
+    border-radius: 10px;
+    padding: 5px;
+        background-color: white;
+
+  }
+
+  .skills {
+    padding: 4px;
+  }
+
+  .section-title {
+    font-size: 1.3rem;
+  }
+
+  .projects-grid {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .project-card {
+    flex: 0 0 100%;
+    width: 100%;
+    min-height: 140px;
+  }
+
+  .project-img {
+    width: 100%;
+    height: 90px;
+  }
+
+  .project-content h3 {
+    font-size: 1rem;
+  }
+
+  .project-content p {
+    font-size: 0.8rem;
+  }
+
+  .tech-icon {
+    font-size: 0.9rem;
+  }
+
+  .project-link {
+    font-size: 0.75rem;
+    padding: 3px 6px;
+  }
+}
+
+/* Opsionale: Për ekrane shumë të vogla (<360px) */
+@media (max-width: 360px) {
+  .hero-section {
+    height: 35vh;
+        background-color: white;
+
+  }
+
+  .section-title {
+    font-size: 1.1rem;
+  }
+
+  .projects-grid {
+    gap: 6px;
+  }
+
+  .project-card {
+    min-height: 120px;
+  }
+
+  .project-img {
+    height: 80px;
+  }
+
+  .project-content h3 {
+    font-size: 0.95rem;
+  }
+
+  .project-content p {
+    font-size: 0.75rem;
+  }
+
+  .tech-icon {
+    font-size: 0.8rem;
+  }
+
+  .project-link {
+    font-size: 0.7rem;
+    padding: 2px 5px;
+  }
 }

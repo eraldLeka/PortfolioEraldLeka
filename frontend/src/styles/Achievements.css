@@ -181,3 +181,132 @@
     opacity: 1;
   }
 }
+
+
+/* ===================== RESPONSIVE ONLY ===================== */
+
+/* Për laptop/desktop më të vegjël se 1024px */
+@media (max-width: 1024px) {
+  .achieve-section {
+    flex-direction: column;
+    height: auto;
+  }
+  .achieve-video-wrapper,
+  .achieve-content {
+    width: 100%;
+    flex: 1;
+    margin-bottom: 15px;
+    padding: 20px;
+  }
+  .achieve-content h1 {
+    font-size: 3.5rem;
+  }
+
+  .certification {
+    height: auto;
+    padding: 10px;
+  }
+  .cert-title {
+    font-size: 1.8rem;
+  }
+  .certification-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 certifikata per rresht */
+    gap: 20px;
+  }
+  .cert-card {
+    max-width: 100%;
+  }
+  .cert-name {
+    font-size: 0.95rem;
+  }
+  .cert-date {
+    font-size: 0.85rem;
+  }
+}
+
+/* Për tablet/mobil (768px dhe më pak) */
+@media (max-width: 768px) {
+  .achieve-section {
+    flex-direction: column;
+    padding: 10px;
+  }
+  .achieve-video-wrapper,
+  .achieve-content {
+    width: 100%;
+    flex: 1;
+    padding: 10px;
+  }
+  .achieve-content h1 {
+    font-size: 2.8rem;
+  }
+
+  .certification {
+    flex-direction: column;
+    padding: 8px;
+  }
+  .cert-title {
+    font-size: 1.6rem;
+  }
+  .certification-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 certifikata per rresht */
+    gap: 30px;
+  }
+  .cert-card {
+    max-width: 100%;
+    padding: 12px;
+  }
+  .cert-name {
+    font-size: 0.9rem;
+  }
+  .cert-date {
+    font-size: 0.8rem;
+  }
+}
+
+/* Për mobile të vogël (480px dhe më pak) */
+@media (max-width: 480px) {
+  .achieve-section {
+    flex-direction: column;
+    padding: 5px;
+  }
+  .achieve-video-wrapper,
+  .achieve-content {
+    width: 100%;
+    flex: 1;
+    padding: 5px;
+  }
+  .achieve-content h1 {
+    font-size: 2rem;
+  }
+
+  .certification {
+    padding: 5px;
+  }
+  .cert-title {
+    font-size: 1.4rem;
+  }
+  .certification-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 certifikata per rresht */
+    gap: 10px;
+  }
+  .cert-card {
+    padding: 10px;
+  }
+  .cert-name {
+    font-size: 0.85rem;
+  }
+  .cert-date {
+    font-size: 0.75rem;
+  }
+}
+
+/* Opsionale: Për ekrane shumë të vogla (<360px) bëhet 1 certifikatë per rresht */
+@media (max-width: 360px) {
+  .certification-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}

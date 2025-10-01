@@ -204,3 +204,173 @@ color: #336791;
   background-color: #2e2d30;
   color: white;
 }
+/* ===================== RESPONSIVE ONLY ===================== */
+
+/* Për laptop/desktop më të vegjël se 1024px */
+@media (max-width: 1024px) {
+  .projects-section {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+  }
+
+  .projects-video-wrapper,
+  .projects-content {
+    width: 100%;
+    flex: 1;
+    margin-bottom: 15px;
+  }
+
+  .projects-content h1 {
+    font-size: 3.5rem;
+  }
+
+  .projects-title {
+    font-size: 1.8rem;
+  }
+
+  .projects-file {
+    gap: 40px;
+    padding: 20px;
+  }
+
+  .project-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .projectVideo,
+  .gallery {
+    height: 180px;
+  }
+
+  .tech-icon {
+    font-size: 1.6rem;
+  }
+
+  .project-link {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Për tablet/mobil (768px dhe më pak) */
+@media (max-width: 768px) {
+  .projects-section {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .projects-video-wrapper,
+  .projects-content {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .projects-content h1 {
+    font-size: 2.8rem;
+    text-align: center;
+  }
+
+  .projects-title {
+    font-size: 1.6rem;
+  }
+
+  .projects-file {
+    gap: 25px;
+    padding: 15px;
+  }
+
+  .project-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .projectVideo,
+  .gallery {
+    height: 160px;
+  }
+
+  .tech-icon {
+    font-size: 1.4rem;
+  }
+
+  .project-link {
+    padding: 7px 14px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Për mobile të vogël (480px dhe më pak) */
+@media (max-width: 480px) {
+  .projects-section {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .projects-video-wrapper,
+  .projects-content {
+    width: 100%;
+    padding: 5px;
+  }
+
+  .projects-content h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .projects-title {
+    font-size: 1.4rem;
+  }
+
+  .projects-file {
+    gap: 15px;
+    padding: 10px;
+  }
+
+  .project-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .projectVideo,
+  .gallery {
+    height: 140px;
+  }
+
+  .tech-icon {
+    font-size: 1.2rem;
+  }
+
+  .project-link {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+}
+
+/* Për ekrane shumë të vogla (<360px) */
+@media (max-width: 360px) {
+  .projects-content h1 {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .projects-title {
+    font-size: 1.2rem;
+  }
+
+  .project-card h3 {
+    font-size: 1rem;
+  }
+
+  .projectVideo,
+  .gallery {
+    height: 120px;
+  }
+
+  .tech-icon {
+    font-size: 1rem;
+  }
+
+  .project-link {
+    padding: 5px 10px;
+    font-size: 0.75rem;
+  }
+}

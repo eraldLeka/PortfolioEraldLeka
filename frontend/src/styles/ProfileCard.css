@@ -8,7 +8,9 @@
     font-size: 18px;
     top: 22px;
     position: fixed;
-    width: 200px;
+    width: 240px;
+  box-sizing: border-box; 
+
 }
 .profile-card:hover{
     box-shadow: 0 6px 15px rgba(0,0,0,0.15);
@@ -110,3 +112,94 @@
   }
 }
 
+/* ===================== MOBILE ONLY ===================== */
+
+/* Për pajisje 768px dhe më poshtë */
+@media (max-width: 768px) {
+    /* Sidebar fillimisht fshehur jashtë ekranit */
+    .profile-card {
+        position: fixed;
+        top: 0;
+        left: -100%;      /* total jashtë ekranit */
+        width: 240px;
+        height: 100%;
+        padding: 20px;
+        overflow-y: auto;
+        box-shadow: 2px 0 15px rgba(0,0,0,0.2);
+        transition: left 0.3s ease;
+        z-index: 100;
+    }
+
+    /* Kur menu hapet */
+    .profile-card.open {
+        left: 0;
+    }
+
+    /* Hamburger shfaqet */
+    .hamburger {
+        display: block;
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        z-index: 200;
+        cursor: pointer;
+        color: #290e84;
+    }
+}
+
+/* Për mobile shumë të vogël (480px dhe më poshtë) */
+@media (max-width: 480px) {
+    .profile-card {
+        width: 200px;
+        padding: 15px;
+        left: -100%; /* sigurohemi që të jetë total jashtë ekranit */
+    }
+}
+
+/* ===================== HAMBURGER RESPONSIVE ===================== */
+
+/* Hamburger button (default hidden në desktop) */
+.hamburger {
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 200;
+    cursor: pointer;
+    background-color: white;
+    color: #0b0326;
+}
+
+/* Për tablet dhe mobile */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block; /* shfaq hamburger */
+    }
+
+    /* Sidebar fshehet jashtë ekranit */
+    .profile-card {
+        position: fixed;
+        top: 0;
+        left: -260px; /* fshehur jashtë ekranit */
+        width: 240px;
+        height: 100%;
+        padding: 20px;
+        overflow-y: auto;
+        box-shadow: 2px 0 15px rgba(0,0,0,0.2);
+        transition: all 0.3s ease;
+        z-index: 100;
+    }
+
+    /* Kur menu është hapur */
+    .profile-card.open {
+        left: 0;
+    }
+}
+
+/* Për mobile më të vogël (480px) */
+@media (max-width: 480px) {
+    .profile-card {
+        width: 200px;
+        padding: 15px;
+    }
+}
