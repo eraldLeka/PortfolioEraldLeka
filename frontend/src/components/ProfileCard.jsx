@@ -22,7 +22,6 @@ function ProfileCard() {
           <img src={profilePhoto} alt="Erald" className="profile-img" />  
           <h3>Erald Leka</h3>
           <h5>Full-Stack Developer </h5> 
-          <h5>Machine Learning</h5>
 
           <a href="/EraldLekaCV.pdf" target="_blank" rel="noopener noreferrer" className="cv-button">
               Resume

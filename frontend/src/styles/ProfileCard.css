@@ -149,10 +149,37 @@
 
 /* Për mobile shumë të vogël (480px dhe më poshtë) */
 @media (max-width: 480px) {
-    .profile-card {
-        width: 200px;
-        padding: 15px;
-        left: -100%; /* sigurohemi që të jetë total jashtë ekranit */
+     .profile-card {
+        position: sticky;  
+        top: 10px;        
+        width: 180px;      
+        padding: 10px;    
+        font-size: 1.4rem; 
+        left: auto;        
+        height: auto;      
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        border-radius: 8px;
+    }
+    .profile-card h3 {
+        font-size: 1.2rem;  /* titulli pak më i vogël */
+    }
+
+    .profile-card h5 {
+        font-size: 1.2rem; /* profesioni/tekst i vogël */
+    }
+
+    .cv-button {
+        font-size: 1.1rem;
+        padding: 6px;
+    }
+
+    .icon-item span {
+        font-size: 1.4rem;
+    }
+
+    .icons-container {
+        gap: 10px;
+        padding: 5px;
     }
 }
 
