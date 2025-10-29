@@ -228,22 +228,26 @@
 
 /* Për mobile të vogël (480px dhe më pak) */
 @media (max-width: 480px) {
-  .contact-section {
+   .contact-section {
     flex-direction: column;
     padding: 10px;
+    gap: 5px; 
   }
 
-  .contact-video-wrapper,
+
+  .contact-video-wrapper {
+    margin-bottom: 5px; /* ✅ afron videon me titullin */
+  }
+
   .contact-content {
-    width: 100%;
-    flex: 1;
     padding: 5px;
   }
 
   .contact-content h1 {
     font-size: 2rem;
+    margin-top: -10px;      /* ✅ heq boshllëkun sipër */
+    margin-bottom: 5px; /* ✅ pak më afër videos */
     text-align: center;
-
   }
 
   .contact-title {
@@ -252,7 +256,7 @@
   }
 
   .contact-grid {
-    grid-template-columns: 1fr; /* 1 kartel per rresht */
+    grid-template-columns: 1fr 1fr ; /* 1 kartel per rresht */
     gap: 10px;
   }
 

@@ -1,61 +1,63 @@
+/* ===================== STRUKTURA E APP ===================== */
+
 .app-container {
-    display: grid;
-    grid-template-columns: 270px 1fr;
-    min-height: 100vh;
-    gap: 0px;
-    padding: 20px;
+  display: grid;
+  grid-template-columns: 270px 1fr;
+  min-height: 100vh;
+  gap: 0px;
+  padding: 20px;
 }
 
 .sidebar {
-    position: sticky;
-    align-self: start;
+  position: sticky;
+  align-self: start;
 }
 
-/* Stile të reja për Intro Video */
+/* ===================== INTRO VIDEO ===================== */
+
 .intro-video-container {
-  position: fixed; 
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100vw; 
-  height: 100vh; 
-  z-index: 9999; 
-  overflow: hidden;
-  background-color: #000; /* Mbush me të zezë nëse videoja nuk mbulon plotësisht */
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.6s ease-in-out;
 }
 
 .intro-video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Mbulon të gjithë ekranin duke prerë pjesët e tepërta, pa shtrirje */
-  object-position: center; /* Qendër – ndrysho nëse dëshiron crop (p.sh., center top) */
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;          
+  object-fit: cover;            
+  object-position: center;      
+  overflow: hidden;            
+  box-shadow: 0 0 35px rgba(255, 255, 255, 0.3); 
 }
 
-/* Opsionale: Fade Out i Butë (animacion kur zhduket) */
-.intro-video-container {
-  transition: opacity 0.5s ease-out; /* Fade out i butë në 0.5 sekonda */
-}
-
+/* Kur intro mbaron */
 .intro-video-container.hidden {
   opacity: 0;
-  pointer-events: none; /* Nuk interagon më me mouse/touch */
+  pointer-events: none;
 }
 
-/* ===================== RESPONSIVE ONLY ===================== */
+/* ===================== RESPONSIVE ===================== */
 
-/* Për laptop/desktop më të vegjël se 1200px */
 @media (max-width: 1200px) {
   .app-container {
-    grid-template-columns: 220px 1fr; /* sidebar pak më e vogël */
-    gap: 15px;
+    grid-template-columns: 220px 1fr;
     padding: 15px;
   }
 }
 
-/* Për tablet (768px dhe më pak) */
 @media (max-width: 768px) {
   .app-container {
     display: flex;
-    flex-direction: column; /* sidebar mbi content */
+    flex-direction: column;
     padding: 10px;
   }
 
@@ -64,72 +66,18 @@
     width: 100%;
     margin-bottom: 15px;
   }
-}
-
-/* Për mobile të vogël (480px dhe më pak) */
-@media (max-width: 480px) {
-  .app-container {
-    flex-direction: column;
-    padding: 5px;
-  }
-
-  .sidebar {
-    width: 100%;
-    margin-bottom: 10px;
-  }
-}
-
-/* ===================== INTRO VIDEO RESPONSIVE ===================== */
-
-/* Për laptop/desktop */
-.intro-video-container {
-  width: 100vw;
-  height: 100vh;
-}
-
-.intro-video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-
-/* Për tablet/mobil */
-@media (max-width: 768px) {
-  .intro-video-container {
-    width: 100vw;
-    height: 100vh; /* full-screen edhe në mobile */
-  }
 
   .intro-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
+    width: 10px;
+    height: 10px;
+    border: 3px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 35px rgba(255, 255, 255, 0.5);
   }
 }
 
-/* Për mobile të vogël (<480px) */
 @media (max-width: 480px) {
-  .intro-video-container {
-    width: 100vw;
-    height: 100vh;
-  }
-
   .intro-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top; /* ndonjëherë qendra nuk duket mirë në ekran shumë të vogël */
+    width: 250px;
+    height: 250px;
   }
-}
-
-/* Opsionale: fade out i videove intro ruhet gjithashtu */
-.intro-video-container {
-  transition: opacity 0.5s ease-out;
-}
-
-.intro-video-container.hidden {
-  opacity: 0;
-  pointer-events: none;
 }
