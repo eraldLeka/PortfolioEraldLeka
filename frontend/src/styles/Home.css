@@ -72,7 +72,8 @@
 .section-title {
   font-size: 2rem;
   text-align: left;
-  color: rgb(23, 4, 44);   /* ngjyra bazë */
+  margin-left: 20px;
+  color: rgb(23, 4, 44);
   position: relative;
   display: block;
   align-self: flex-start;
@@ -80,13 +81,13 @@
   background: linear-gradient(
     90deg,
     rgb(29, 3, 60) 30%,
-    #79737b 50%,  /* drita që do kalojë */
+    #79737b 50%, 
     rgb(52, 4, 107) 70%
   );
   background-size: 200% 100%;
   background-clip: text;
   -webkit-background-clip: text; 
-  color: transparent; /* për të aplikuar gradientin mbi tekst */
+  color: transparent; 
   animation: shine 3s linear infinite;
 }
 
@@ -100,45 +101,48 @@
 }
 
 
-.featured-projects{
- position: relative;
-    width: 100%;
-    min-height: 50px;
-    overflow: hidden;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    place-items: center;
-    gap: 0;
-    border: 1px solid rgb(212, 210, 210);
-    border-radius: 10px;
-    box-sizing: border-box;
-    margin-top: 14px;
-    background-color: white;
+.featured-projects {
+  position: relative;
+  width: 100%;
+  min-height: 50px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  border: 1px solid rgb(212, 210, 210);
+  border-radius: 10px;
+  box-sizing: border-box;
+  margin-top: 14px;
+  background-color: white;
 }
 
 
 .projects-grid {
-  display: flex;
-  justify-content: center;
-  gap: 10px;              /* hapësira mes kartave */
-  flex-wrap: nowrap;      /* qëndrojnë në një rresht */
-  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  justify-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px;   
+  gap: 20px;       
 }
 
+
 .project-card {
-  flex: 0 0 48%;          /* secila kartë zë ~50% */
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 20px;
   background: #fafafa;
   border-radius: 12px;
   border: 3px solid rgb(229, 227, 227);
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   transition: transform 0.3s ease;
-  min-height: 200px;
-  width: 350px;
+  min-height: 150px;         
+  width: 100%;         
+  max-width: 470px;         
+  box-sizing: border-box;
 }
+
 
 .project-card:hover {
   transform: translateY(-5px);
@@ -186,7 +190,7 @@
   align-self: center;
   display: inline-block;
   margin-top: auto;
-  background-color: #9d9d9e;
+  background-color: #aeaeb1;
   padding: 6px 12px;
   border-radius: 8px;
   font-size: 0.9rem;
