@@ -1,74 +1,260 @@
+/* ==================== EXPERT CARDS CONTAINER ==================== */
 .expert {
-  display: flex;
-  flex-wrap: wrap; /* lejon rreshta të ndryshëm */
-  gap: 15px;
-  max-width: 600px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  max-width: 800px;
   margin: 0 auto;
-  align-items: flex-start; /* kutitë nuk zmadhohen sipas lartësisë më të madhe */
+  padding: 10px;
+  box-sizing: border-box;
 }
 
+/* ==================== EXPERT CARD ==================== */
 .expert-card {
-  flex: 1 1 calc(50% - 15px); /* 2 kolona me hapësirë midis tyre */
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  border: 2px solid #e5e5e5;
+  border-radius: 12px;
   overflow: hidden;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-  min-width: 250px; /* kufi minimal për mobile */
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-sizing: border-box;
 }
 
+.expert-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  transform: translateY(-3px);
+}
+
+.expert-card.open {
+  border-color: #290e84;
+  box-shadow: 0 8px 24px rgba(41, 14, 132, 0.15);
+}
+
+/* ==================== EXPERT HEADER (CLICKABLE) ==================== */
 .expert-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 20px;
+  padding: 18px 20px;
   cursor: pointer;
-  background-color: #f8f9fa;
-  transition: background-color 0.3s ease;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  transition: all 0.3s ease;
+  user-select: none;
+  border-bottom: 1px solid transparent;
 }
 
 .expert-header:hover {
-  background-color: #e9ecef;
+  background: linear-gradient(135deg, #e9ecef 0%, #f8f9fa 100%);
 }
 
+.expert-card.open .expert-header {
+  background: linear-gradient(135deg, #290e84 0%, #3d1bb8 100%);
+  color: #fff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* ==================== EXPERT TITLE ==================== */
 .expert-title {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-weight: bold;
+  gap: 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  transition: color 0.3s ease;
 }
 
+.expert-card.open .expert-title {
+  color: #fff;
+}
+
+.expert-title .icon {
+  font-size: 1.4rem;
+  transition: transform 0.3s ease;
+}
+
+.expert-card.open .expert-title .icon {
+  transform: rotate(15deg) scale(1.1);
+}
+
+/* ==================== TOGGLE ICON (CHEVRON) ==================== */
+.expert-toggle {
+  font-size: 1.3rem;
+  color: #666;
+  transition: all 0.3s ease;
+  line-height: 1;
+}
+
+.expert-card.open .expert-toggle {
+  color: #fff;
+  transform: rotate(180deg);
+}
+
+/* ==================== EXPERT CONTENT (EXPANDABLE) ==================== */
 .expert-content {
-  overflow: hidden;
   max-height: 0;
-  transition: max-height 0.3s ease;
+  overflow: hidden;
   background-color: #fff;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .expert-card.open .expert-content {
-  max-height: 1000px; /* shumë i madh për listat më të gjata, por vetëm kutia e hapur do të zgjatet */
+  max-height: 1200px;
 }
 
 .expert-content ul {
-  padding: 10px 20px;
+  padding: 20px 24px;
   margin: 0;
-  list-style-type: disc;
+  list-style: none;
 }
 
 .expert-content li {
-  margin: 5px 0;
-  list-style: none;
-  font-size: large;
+  position: relative;
+  padding-left: 28px;
+  margin: 12px 0;
+  font-size: 1rem;
   font-weight: 600;
+  color: #333;
+  line-height: 1.6;
+  transition: all 0.2s ease;
 }
 
-.open .expert-header {
+/* Custom bullet points */
+.expert-content li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: #290e84;
+  font-size: 1.2rem;
   font-weight: bold;
+  transition: transform 0.2s ease;
 }
 
-/* Responsive */
-@media (max-width: 600px) {
+.expert-content li:hover {
+  color: #290e84;
+  padding-left: 32px;
+}
+
+.expert-content li:hover::before {
+  transform: translateX(4px);
+}
+
+/* ==================== ANIMATION FOR OPENING ==================== */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.expert-card.open .expert-content ul {
+  animation: slideDown 0.4s ease-out;
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+
+/* Tablet (≤ 768px) */
+@media (max-width: 768px) {
+  .expert {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    max-width: 600px;
+  }
+
+  .expert-header {
+    padding: 16px 18px;
+  }
+
+  .expert-title {
+    font-size: 1.05rem;
+    gap: 10px;
+  }
+
+  .expert-title .icon {
+    font-size: 1.3rem;
+  }
+
+  .expert-toggle {
+    font-size: 1.2rem;
+  }
+
+  .expert-content ul {
+    padding: 18px 20px;
+  }
+
+  .expert-content li {
+    font-size: 0.95rem;
+    padding-left: 26px;
+  }
+
+  .expert-content li::before {
+    font-size: 1.1rem;
+  }
+}
+
+/* Mobile (≤ 480px) */
+@media (max-width: 480px) {
+  .expert {
+    gap: 14px;
+    padding: 5px;
+  }
+
   .expert-card {
-    flex: 1 1 100%; /* 1 kolonë mobile */
+    border-radius: 10px;
+  }
+
+  .expert-header {
+    padding: 14px 16px;
+  }
+
+  .expert-title {
+    font-size: 1rem;
+    gap: 8px;
+  }
+
+  .expert-title .icon {
+    font-size: 1.2rem;
+  }
+
+  .expert-toggle {
+    font-size: 1.1rem;
+  }
+
+  .expert-content ul {
+    padding: 16px 18px;
+  }
+
+  .expert-content li {
+    font-size: 0.9rem;
+    margin: 10px 0;
+    padding-left: 24px;
+  }
+
+  .expert-content li::before {
+    font-size: 1rem;
+  }
+}
+
+/* Extra Small Mobile (≤ 360px) */
+@media (max-width: 360px) {
+  .expert-header {
+    padding: 12px 14px;
+  }
+
+  .expert-title {
+    font-size: 0.95rem;
+  }
+
+  .expert-content ul {
+    padding: 14px 16px;
+  }
+
+  .expert-content li {
+    font-size: 0.85rem;
+    margin: 8px 0;
   }
 }

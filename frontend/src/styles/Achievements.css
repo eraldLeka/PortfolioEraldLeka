@@ -1,312 +1,454 @@
+/* ==================== ACHIEVEMENTS PAGE CONTAINER ==================== */
 .achieve-page {
-    width: 100%;
-    min-height: auto;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    border-radius: 10px;
+  width: 100%;
+  min-height: auto;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border-radius: 10px;
 }
 
-/* Seksioni kryesor – ndahet në dy kolona */
+/* ==================== SHARED GRADIENT ANIMATION ==================== */
+@keyframes shine {
+  0% { background-position: -100% 0; }
+  100% { background-position: 100% 0; }
+}
+
+/* ==================== ACHIEVEMENTS HERO SECTION ==================== */
 .achieve-section {
-    display: flex;
-    width: 100%;
-    height: 60vh; 
-    min-height: 340px;
-    border: none;
-    border-radius: 10px;
-    overflow: hidden;
-    padding: 10px;
-    background-color: white;
-    box-sizing: border-box;
-    
+  display: flex;
+  width: 100%;
+  min-height: 60vh;
+  border-radius: 16px;
+  overflow: hidden;
+  padding: 12px;
+  background-color: #fff;
+  box-sizing: border-box;
+  gap: 20px;
 }
 
-/* Kolona e videos (50%) */
+/* Video Wrapper */
 .achieve-video-wrapper {
-    flex: 1.2; /* 50% */
-    overflow: hidden;
+  flex: 1.5;
+  overflow: hidden;
+  border-radius: 12px;
 }
 
 .achieve-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-    border:1px solid white ;
-    border-radius: 10px;
-    box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border: 1px solid #f0f0f0;
+  border-radius: 12px;
+  box-sizing: border-box;
 }
 
-/* Kolona e përmbajtjes (50%) */
+/* Content Wrapper */
 .achieve-content {
-    flex: 0.5; /* 50% */
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  flex: 1;
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .achieve-content h1 {
-    font-size: 4.5rem;
-    margin-bottom: 1rem;
-      background: linear-gradient(
-    90deg,
-    rgb(29, 3, 60) 30%,
-    #79737b 50%,
-    rgb(52, 4, 107) 70%
-  );
+  font-size: 4rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+  background: linear-gradient(90deg, #1d033c 30%, #79737b 50%, #34046b 70%);
   background-size: 200% 100%;
   background-clip: text;
-  -webkit-background-clip: text; 
-  color: transparent; 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   animation: shine 3s linear infinite;
 }
-.certification {
-    display: flex;
-    width: 100%;
-    height: 73vh;
-    border: none;
-    border-radius: 10px;
-    overflow: hidden;
-    padding: 10px;
-    background-color: white;
-    flex-direction: column;
-    margin-top: 12px;
-    box-sizing: border-box;
-}
 
+/* ==================== CERTIFICATION SECTION ==================== */
+.certification {
+  margin-top: 16px;
+  width: 100%;
+  min-height: auto;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  box-sizing: border-box;
+}
 
 .cert-title {
-  text-align: left; /* qendërzon titullin */
   font-size: 2rem;
-  background: linear-gradient(
-    90deg,
-    rgb(29, 3, 60) 30%,
-    #79737b 50%,
-    rgb(52, 4, 107) 70%
-  );
+  font-weight: 700;
+  text-align: left;
+  margin: 0;
+  background: linear-gradient(90deg, #1d033c 30%, #79737b 50%, #34046b 70%);
   background-size: 200% 100%;
   background-clip: text;
-  -webkit-background-clip: text; 
-  color: transparent; 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   animation: shine 3s linear infinite;
 }
 
+/* ==================== CERTIFICATION GRID ==================== */
 .certification-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
   width: 100%;
-  max-width: 1100px;
 }
 
-
+/* ==================== CERTIFICATION CARD ==================== */
 .cert-card {
-  background-color: #fff;
-  border-radius: 12px;
-  padding: 15px;
+  background-color: #fafafa;
+  border: 2px solid #e5e5e5;
+  border-radius: 16px;
+  padding: 20px;
   text-align: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
-
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  /* Bëjmë që kartat të kenë të njëjtën lartësi */
+  gap: 15px;
   height: 100%;
+  box-sizing: border-box;
 }
 
+.cert-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+  border-color: #290e84;
+  background-color: #fff;
+}
+
+/* ==================== CERTIFICATE IMAGE ==================== */
 .cert-img {
   width: 100%;
   max-width: 220px;
   height: auto;
+  aspect-ratio: 4 / 3;
   object-fit: contain;
-  border-radius: 8px;
+  border-radius: 12px;
   cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: #f8f8f8;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
 }
 
+.cert-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(41, 14, 132, 0.2);
+}
 
+/* ==================== CERTIFICATE INFO ==================== */
 .cert-info {
-  margin-top: auto; /* gjithmonë në fund */
+  margin-top: auto;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
+  width: 100%;
+  padding-top: 10px;
+  border-top: 1px solid #e5e5e5;
 }
 
 .cert-name {
   font-size: 1rem;
-  font-weight: 600;
-  color: #080010;
+  font-weight: 700;
+  color: #1a1a1a;
   margin: 0;
+  line-height: 1.4;
 }
 
 .cert-date {
   font-size: 0.9rem;
-  color: #555;
+  font-weight: 500;
+  color: #666;
   margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
 }
-/* Modal overlay për desktop dhe mobile */
+
+.cert-date::before {
+  content: '📅';
+  font-size: 0.9rem;
+}
+
+/* ==================== MODAL OVERLAY ==================== */
 .modal-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.7);
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(5px);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 999;
+  z-index: 9999;
   cursor: pointer;
   opacity: 0;
-  animation: fadeIn 0.3s forwards;
+  animation: fadeIn 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
-/* Modal image */
-.modal-img {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 10px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-  transform: scale(1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Animacion fade in */
 @keyframes fadeIn {
   to {
     opacity: 1;
   }
 }
 
+/* ==================== MODAL IMAGE ==================== */
+.modal-img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  transform: scale(0.9);
+  animation: zoomIn 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
 
-/* ===================== RESPONSIVE ONLY ===================== */
+@keyframes zoomIn {
+  to {
+    transform: scale(1);
+  }
+}
 
-/* Për laptop/desktop më të vegjël se 1024px */
+/* Close hint */
+.modal-overlay::after {
+  content: 'Click anywhere to close';
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  animation: fade-pulse 2s ease-in-out infinite;
+}
+
+@keyframes fade-pulse {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+
+/* Laptop/Desktop (≤ 1024px) */
 @media (max-width: 1024px) {
   .achieve-section {
     flex-direction: column;
-    height: auto;
+    min-height: auto;
+    gap: 15px;
   }
-  .achieve-video-wrapper,
-  .achieve-content {
-    width: 100%;
+
+  .achieve-video-wrapper {
     flex: 1;
-    margin-bottom: 15px;
-    padding: 20px;
+    min-height: 300px;
   }
+
+  .achieve-content {
+    flex: 1;
+    padding: 30px 20px;
+  }
+
   .achieve-content h1 {
     font-size: 3.5rem;
   }
 
   .certification {
-    height: auto;
-    padding: 10px;
+    padding: 25px;
+    gap: 20px;
   }
+
   .cert-title {
     font-size: 1.8rem;
   }
+
   .certification-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 certifikata per rresht */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 20px;
   }
+
   .cert-card {
-    max-width: 100%;
+    padding: 18px;
   }
+
   .cert-name {
     font-size: 0.95rem;
   }
+
   .cert-date {
     font-size: 0.85rem;
   }
 }
 
-/* Për tablet/mobil (768px dhe më pak) */
+/* Tablet (≤ 768px) */
 @media (max-width: 768px) {
   .achieve-section {
-    flex-direction: column;
-    padding: 10px;
+    padding: 12px;
+    gap: 12px;
   }
-  .achieve-video-wrapper,
+
   .achieve-content {
-    width: 100%;
-    flex: 1;
-    padding: 10px;
+    padding: 20px 15px;
   }
+
   .achieve-content h1 {
     font-size: 2.8rem;
+    text-align: center;
   }
 
   .certification {
-    flex-direction: column;
-    padding: 8px;
+    padding: 20px;
   }
+
   .cert-title {
     font-size: 1.6rem;
   }
+
   .certification-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 certifikata per rresht */
-    gap: 30px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
   }
+
   .cert-card {
-    max-width: 100%;
-    padding: 12px;
+    padding: 16px;
   }
+
+  .cert-img {
+    max-width: 100%;
+  }
+
   .cert-name {
     font-size: 0.9rem;
   }
+
   .cert-date {
     font-size: 0.8rem;
   }
+
+  .modal-overlay::after {
+    bottom: 25px;
+    font-size: 0.85rem;
+  }
 }
 
-/* Për mobile të vogël (480px dhe më pak) */
+/* Mobile (≤ 480px) */
 @media (max-width: 480px) {
   .achieve-section {
-    flex-direction: column;
-    padding: 5px;
+    padding: 10px;
+    gap: 10px;
+    border-radius: 12px;
   }
-  .achieve-video-wrapper,
+
+  .achieve-video-wrapper {
+    min-height: 200px;
+  }
+
   .achieve-content {
-    width: 100%;
-    flex: 1;
-    padding: 5px;
+    padding: 15px 10px;
   }
+
   .achieve-content h1 {
     font-size: 2rem;
+    margin-bottom: 10px;
   }
 
   .certification {
-    padding: 5px;
+    padding: 18px;
+    margin-top: 12px;
   }
+
   .cert-title {
     font-size: 1.4rem;
   }
+
   .certification-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 certifikata per rresht */
-    gap: 10px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
   }
+
   .cert-card {
-    padding: 10px;
+    padding: 14px;
+    border-radius: 12px;
   }
+
+  .cert-info {
+    padding-top: 8px;
+    gap: 5px;
+  }
+
   .cert-name {
     font-size: 0.85rem;
   }
+
   .cert-date {
     font-size: 0.75rem;
   }
+
+  .modal-overlay::after {
+    bottom: 20px;
+    font-size: 0.8rem;
+  }
+
+  .modal-img {
+    max-width: 95%;
+    max-height: 85%;
+  }
 }
 
-/* Opsionale: Për ekrane shumë të vogla (<360px) bëhet 1 certifikatë per rresht */
+/* Extra Small Mobile (≤ 360px) */
 @media (max-width: 360px) {
+  .achieve-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .cert-title {
+    font-size: 1.2rem;
+  }
+
   .certification-grid {
     grid-template-columns: 1fr;
-    gap: 8px;
+    gap: 12px;
+  }
+
+  .cert-card {
+    padding: 12px;
+  }
+
+  .cert-name {
+    font-size: 0.8rem;
+  }
+
+  .cert-date {
+    font-size: 0.7rem;
+  }
+}
+
+/* ==================== PRINT STYLES ==================== */
+@media print {
+  .modal-overlay {
+    display: none !important;
+  }
+
+  .cert-card {
+    break-inside: avoid;
+  }
+
+  .certification-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }

@@ -1,180 +1,252 @@
+/* ==================== CONTACT PAGE CONTAINER ==================== */
 .contact-page {
-    width: 100%;
-    min-height: auto;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    border-radius: 10px;
+  width: 100%;
+  min-height: auto;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border-radius: 10px;
 }
 
-/* Seksioni kryesor – ndahet në dy kolona */
+/* ==================== SHARED GRADIENT ANIMATION ==================== */
+@keyframes shine {
+  0% { background-position: -100% 0; }
+  100% { background-position: 100% 0; }
+}
+
+/* ==================== CONTACT HERO SECTION ==================== */
 .contact-section {
-    display: flex;
-    width: 100%;
-    height: 60vh; 
-    min-height: 340px;
-    border: none;
-    border-radius: 10px;
-    overflow: hidden;
-    padding: 10px;
-    background-color: white;
-    box-sizing: border-box;
-    
+  display: flex;
+  width: 100%;
+  min-height: 60vh;
+  border-radius: 16px;
+  overflow: hidden;
+  padding: 12px;
+  background-color: #fff;
+  box-sizing: border-box;
+  gap: 20px;
 }
 
-/* Kolona e videos (50%) */
+/* Video Wrapper */
 .contact-video-wrapper {
-    flex: 1.2; /* 50% */
-    overflow: hidden;
+  flex: 1.5;
+  overflow: hidden;
+  border-radius: 12px;
 }
 
 .contact-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-    border:1px solid white ;
-    border-radius: 10px;
-    box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border: 1px solid #f0f0f0;
+  border-radius: 12px;
+  box-sizing: border-box;
 }
 
-/* Kolona e përmbajtjes (50%) */
+/* Content Wrapper */
 .contact-content {
-    flex: 0.5; /* 50% */
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  flex: 1;
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .contact-content h1 {
-    font-size: 4.5rem;
-    margin-bottom: 1rem;
-    background: linear-gradient(
-    90deg,
-    rgb(29, 3, 60) 30%,
-    #79737b 50%,
-    rgb(52, 4, 107) 70%
-  );
+  font-size: 4rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+  background: linear-gradient(90deg, #1d033c 30%, #79737b 50%, #34046b 70%);
   background-size: 200% 100%;
   background-clip: text;
-  -webkit-background-clip: text; 
-  color: transparent; 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   animation: shine 3s linear infinite;
 }
 
-
+/* ==================== CONTACT INFO SECTION ==================== */
 .contact-info {
-  margin-top: 14px;
-  padding: 20px 30px;
-  background-color: white;
-  border-radius: 10px;
-  text-align: center;
+  margin-top: 16px;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 16px;
   width: 100%;
   box-sizing: border-box;
 }
 
 .contact-title {
   font-size: 2rem;
-  margin-bottom: 40px;
+  font-weight: 700;
+  margin-bottom: 35px;
   text-align: left;
-  color: #080010;
-  background: linear-gradient(
-    90deg,
-    rgb(29, 3, 60) 30%,
-    #79737b 50%,
-    rgb(52, 4, 107) 70%
-  );
+  background: linear-gradient(90deg, #1d033c 30%, #79737b 50%, #34046b 70%);
   background-size: 200% 100%;
   background-clip: text;
-  -webkit-background-clip: text; 
-  color: transparent; 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   animation: shine 3s linear infinite;
 }
 
+/* ==================== CONTACT GRID ==================== */
 .contact-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
   justify-items: center;
 }
 
+/* ==================== CONTACT CARD ==================== */
 .contact-card {
-  background-color: #fff;
-  border-radius: 12px;
-  padding: 20px;
+  width: 100%;
+  max-width: 180px;
+  background-color: #fafafa;
+  border: 2px solid #e5e5e5;
+  border-radius: 16px;
+  padding: 25px 20px;
   text-align: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   text-decoration: none;
   color: inherit;
-  width: 140px;
+  box-sizing: border-box;
+  cursor: pointer;
 }
 
 .contact-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+  border-color: #290e84;
+  background-color: #fff;
 }
 
+/* ==================== CONTACT ICON ==================== */
 .contact-icon {
-  font-size: 2rem;
+  font-size: 2.2rem;
+  color: #290e84;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
 
+.contact-card:hover .contact-icon {
+  transform: scale(1.15) rotate(5deg);
+  filter: drop-shadow(0 4px 8px rgba(41, 14, 132, 0.3));
+}
+
+/* ==================== CONTACT TEXT ==================== */
 .contact-card p {
-  margin: 0;
-  font-weight: 600;
+  margin: 5px 0 0 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  transition: color 0.3s ease;
+}
+
+.contact-card:hover p {
+  color: #290e84;
 }
 
 .contact-card span {
   font-size: 0.9rem;
-  color: #555;
+  font-weight: 500;
+  color: #666;
+  line-height: 1.4;
+  transition: color 0.3s ease;
 }
 
+.contact-card:hover span {
+  color: #444;
+}
 
-/* ===================== RESPONSIVE ONLY ===================== */
+/* ==================== SPECIAL CARD STYLES BY TYPE ==================== */
+.contact-card.email .contact-icon {
+  color: #ea4335;
+}
 
-/* Për laptop/desktop më të vegjël se 1024px */
+.contact-card.phone .contact-icon {
+  color: #34a853;
+}
+
+.contact-card.linkedin .contact-icon {
+  color: #0077b5;
+}
+
+.contact-card.github .contact-icon {
+  color: #333;
+}
+
+/* Hover maintains original colors */
+.contact-card.email:hover {
+  border-color: #ea4335;
+}
+
+.contact-card.phone:hover {
+  border-color: #34a853;
+}
+
+.contact-card.linkedin:hover {
+  border-color: #0077b5;
+}
+
+.contact-card.github:hover {
+  border-color: #333;
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+
+/* Laptop/Desktop (≤ 1024px) */
 @media (max-width: 1024px) {
   .contact-section {
     flex-direction: column;
-    height: auto;
-    padding: 20px;
+    min-height: auto;
+    gap: 15px;
   }
 
-  .contact-video-wrapper,
-  .contact-content {
-    width: 100%;
+  .contact-video-wrapper {
     flex: 1;
-    margin-bottom: 20px;
-    padding: 10px;
+    min-height: 300px;
+  }
+
+  .contact-content {
+    flex: 1;
+    padding: 30px 20px;
   }
 
   .contact-content h1 {
     font-size: 3.5rem;
   }
 
+  .contact-info {
+    padding: 25px;
+  }
+
   .contact-title {
     font-size: 1.8rem;
+    margin-bottom: 30px;
   }
 
   .contact-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 kartela per rresht */
-    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 18px;
   }
 
   .contact-card {
-    width: 100%;
-    max-width: 180px;
-    padding: 15px;
+    max-width: 170px;
+    padding: 20px 18px;
   }
 
   .contact-icon {
-    font-size: 1.8rem;
+    font-size: 2rem;
+  }
+
+  .contact-card p {
+    font-size: 0.95rem;
   }
 
   .contact-card span {
@@ -182,18 +254,15 @@
   }
 }
 
-/* Për tablet/mobil (768px dhe më pak) */
+/* Tablet (≤ 768px) */
 @media (max-width: 768px) {
   .contact-section {
-    flex-direction: column;
-    padding: 15px;
+    padding: 12px;
+    gap: 12px;
   }
 
-  .contact-video-wrapper,
   .contact-content {
-    width: 100%;
-    flex: 1;
-    padding: 8px;
+    padding: 20px 15px;
   }
 
   .contact-content h1 {
@@ -201,24 +270,31 @@
     text-align: center;
   }
 
+  .contact-info {
+    padding: 20px;
+  }
+
   .contact-title {
     font-size: 1.6rem;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
   }
 
   .contact-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 kartela per rresht */
-    gap: 12px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
   }
 
   .contact-card {
-    width: 100%;
-    max-width: 160px;
-    padding: 12px;
+    max-width: 100%;
+    padding: 18px 16px;
   }
 
   .contact-icon {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
+  }
+
+  .contact-card p {
+    font-size: 0.9rem;
   }
 
   .contact-card span {
@@ -226,28 +302,30 @@
   }
 }
 
-/* Për mobile të vogël (480px dhe më pak) */
+/* Mobile (≤ 480px) */
 @media (max-width: 480px) {
-   .contact-section {
-    flex-direction: column;
+  .contact-section {
     padding: 10px;
-    gap: 5px; 
+    gap: 10px;
+    border-radius: 12px;
   }
 
-
   .contact-video-wrapper {
-    margin-bottom: 5px; /* ✅ afron videon me titullin */
+    min-height: 200px;
   }
 
   .contact-content {
-    padding: 5px;
+    padding: 15px 10px;
   }
 
   .contact-content h1 {
     font-size: 2rem;
-    margin-top: -10px;      /* ✅ heq boshllëkun sipër */
-    margin-bottom: 5px; /* ✅ pak më afër videos */
-    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .contact-info {
+    padding: 18px;
+    margin-top: 12px;
   }
 
   .contact-title {
@@ -256,18 +334,22 @@
   }
 
   .contact-grid {
-    grid-template-columns: 1fr 1fr ; /* 1 kartel per rresht */
-    gap: 10px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
   }
 
   .contact-card {
-    width: 100%;
-    max-width: 140px;
-    padding: 10px;
+    max-width: 100%;
+    padding: 16px 14px;
+    border-radius: 12px;
   }
 
   .contact-icon {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
+  }
+
+  .contact-card p {
+    font-size: 0.85rem;
   }
 
   .contact-card span {
@@ -275,20 +357,33 @@
   }
 }
 
-/* Opsionale: Për ekrane shumë të vogla (<360px) */
+/* Extra Small Mobile (≤ 360px) */
 @media (max-width: 360px) {
+  .contact-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .contact-title {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+  }
+
   .contact-grid {
     grid-template-columns: 1fr;
-    gap: 8px;
+    gap: 10px;
   }
 
   .contact-card {
-    max-width: 120px;
-    padding: 8px;
+    max-width: 100%;
+    padding: 14px 12px;
   }
 
   .contact-icon {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+  }
+
+  .contact-card p {
+    font-size: 0.8rem;
   }
 
   .contact-card span {
