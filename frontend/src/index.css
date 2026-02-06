@@ -1,26 +1,78 @@
-/* ================== GLOBAL STYLES ================== */
-html, body, #root {
-    width: 100%;
-    min-height: 100vh;  /* siguron që të mbulojë të gjithë ekranin */
-    margin: 0;
-    padding: 0;
-    background-color: rgb(232, 236, 237);
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+:root {
+  --font-body: "Manrope", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --font-display: "Space Grotesk", "Manrope", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+  --bg: #f4f7fb;
+  --surface: #ffffff;
+  --surface-alt: #f8fafc;
+  --text: #0f172a;
+  --muted: #667085;
+  --accent: #2563eb;
+  --accent-strong: #1e40af;
+  --border: #e2e8f0;
+  --ring: rgba(37, 99, 235, 0.18);
+
+  --shadow-xs: 0 2px 8px rgba(15, 23, 42, 0.06);
+  --shadow-sm: 0 8px 20px rgba(15, 23, 42, 0.08);
+  --shadow-md: 0 18px 38px rgba(15, 23, 42, 0.12);
+
+  --radius-sm: 10px;
+  --radius: 16px;
+  --radius-lg: 22px;
 }
 
-/* Siguron që të gjitha elementët trashëgojnë box-sizing */
+html {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 100%;
+}
+
 *, *::before, *::after {
-    box-sizing: inherit;
+  box-sizing: inherit;
 }
 
-/* Opsionale: për mobil */
+body {
+  margin: 0;
+  min-height: 100%;
+  font-family: var(--font-body);
+  color: var(--text);
+  background:
+    radial-gradient(1200px 600px at 10% -10%, rgba(37, 99, 235, 0.08), transparent 60%),
+    radial-gradient(1200px 600px at 90% -20%, rgba(56, 189, 248, 0.08), transparent 60%),
+    var(--bg);
+  line-height: 1.6;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
 @media (max-width: 768px) {
-    html, body, #root {
-        font-size: 14px; /* zvogëlon tekstin pak për ekrane të vegjël */
-    }
+  body {
+    font-size: 14px;
+  }
 }
 
 @media (max-width: 480px) {
-    html, body, #root {
-        font-size: 13px;
-    }
+  body {
+    font-size: 13px;
+  }
 }

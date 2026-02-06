@@ -1,4 +1,4 @@
-/* ==================== EXPERT CARDS CONTAINER ==================== */
+/* ==================== EXPERT CARDS ==================== */
 .expert {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -9,46 +9,45 @@
   box-sizing: border-box;
 }
 
-/* ==================== EXPERT CARD ==================== */
 .expert-card {
-  border: 2px solid #e5e5e5;
-  border-radius: 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
   overflow: hidden;
-  background-color: #fff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: var(--surface);
+  box-shadow: var(--shadow-xs);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
   box-sizing: border-box;
 }
 
 .expert-card:hover {
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  box-shadow: var(--shadow-sm);
   transform: translateY(-3px);
 }
 
 .expert-card.open {
-  border-color: #290e84;
-  box-shadow: 0 8px 24px rgba(41, 14, 132, 0.15);
+  border-color: rgba(37, 99, 235, 0.5);
+  box-shadow: var(--shadow-md);
 }
 
-/* ==================== EXPERT HEADER (CLICKABLE) ==================== */
+/* ==================== EXPERT HEADER ==================== */
 .expert-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 18px 20px;
   cursor: pointer;
-  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-  transition: all 0.3s ease;
+  background: var(--surface-alt);
+  transition: background 0.25s ease, color 0.25s ease;
   user-select: none;
   border-bottom: 1px solid transparent;
 }
 
 .expert-header:hover {
-  background: linear-gradient(135deg, #e9ecef 0%, #f8f9fa 100%);
+  background: #eef2f7;
 }
 
 .expert-card.open .expert-header {
-  background: linear-gradient(135deg, #290e84 0%, #3d1bb8 100%);
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-strong) 100%);
   color: #fff;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
@@ -60,8 +59,8 @@
   gap: 12px;
   font-size: 1.1rem;
   font-weight: 700;
-  color: #1a1a1a;
-  transition: color 0.3s ease;
+  color: var(--text);
+  transition: color 0.2s ease;
 }
 
 .expert-card.open .expert-title {
@@ -69,19 +68,19 @@
 }
 
 .expert-title .icon {
-  font-size: 1.4rem;
-  transition: transform 0.3s ease;
+  font-size: 1.35rem;
+  transition: transform 0.2s ease;
 }
 
 .expert-card.open .expert-title .icon {
-  transform: rotate(15deg) scale(1.1);
+  transform: rotate(10deg) scale(1.05);
 }
 
-/* ==================== TOGGLE ICON (CHEVRON) ==================== */
+/* ==================== TOGGLE ICON ==================== */
 .expert-toggle {
   font-size: 1.3rem;
-  color: #666;
-  transition: all 0.3s ease;
+  color: var(--muted);
+  transition: transform 0.25s ease, color 0.25s ease;
   line-height: 1;
 }
 
@@ -90,12 +89,12 @@
   transform: rotate(180deg);
 }
 
-/* ==================== EXPERT CONTENT (EXPANDABLE) ==================== */
+/* ==================== EXPERT CONTENT ==================== */
 .expert-content {
   max-height: 0;
   overflow: hidden;
-  background-color: #fff;
-  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: var(--surface);
+  transition: max-height 0.4s ease;
 }
 
 .expert-card.open .expert-content {
@@ -114,24 +113,23 @@
   margin: 12px 0;
   font-size: 1rem;
   font-weight: 600;
-  color: #333;
+  color: var(--text);
   line-height: 1.6;
-  transition: all 0.2s ease;
+  transition: color 0.2s ease, padding-left 0.2s ease;
 }
 
-/* Custom bullet points */
 .expert-content li::before {
-  content: '▸';
+  content: ">";
   position: absolute;
   left: 0;
-  color: #290e84;
-  font-size: 1.2rem;
-  font-weight: bold;
+  color: var(--accent);
+  font-size: 1rem;
+  font-weight: 700;
   transition: transform 0.2s ease;
 }
 
 .expert-content li:hover {
-  color: #290e84;
+  color: var(--accent-strong);
   padding-left: 32px;
 }
 
@@ -139,11 +137,11 @@
   transform: translateX(4px);
 }
 
-/* ==================== ANIMATION FOR OPENING ==================== */
+/* ==================== OPEN ANIMATION ==================== */
 @keyframes slideDown {
   from {
     opacity: 0;
-    transform: translateY(-10px);
+    transform: translateY(-8px);
   }
   to {
     opacity: 1;
@@ -152,12 +150,10 @@
 }
 
 .expert-card.open .expert-content ul {
-  animation: slideDown 0.4s ease-out;
+  animation: slideDown 0.35s ease-out;
 }
 
-/* ==================== RESPONSIVE DESIGN ==================== */
-
-/* Tablet (≤ 768px) */
+/* ==================== RESPONSIVE ==================== */
 @media (max-width: 768px) {
   .expert {
     grid-template-columns: 1fr;
@@ -175,7 +171,7 @@
   }
 
   .expert-title .icon {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
   }
 
   .expert-toggle {
@@ -190,13 +186,8 @@
     font-size: 0.95rem;
     padding-left: 26px;
   }
-
-  .expert-content li::before {
-    font-size: 1.1rem;
-  }
 }
 
-/* Mobile (≤ 480px) */
 @media (max-width: 480px) {
   .expert {
     gap: 14px;
@@ -204,7 +195,7 @@
   }
 
   .expert-card {
-    border-radius: 10px;
+    border-radius: var(--radius-sm);
   }
 
   .expert-header {
@@ -217,7 +208,7 @@
   }
 
   .expert-title .icon {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
   }
 
   .expert-toggle {
@@ -233,13 +224,8 @@
     margin: 10px 0;
     padding-left: 24px;
   }
-
-  .expert-content li::before {
-    font-size: 1rem;
-  }
 }
 
-/* Extra Small Mobile (≤ 360px) */
 @media (max-width: 360px) {
   .expert-header {
     padding: 12px 14px;

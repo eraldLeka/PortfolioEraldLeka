@@ -4,120 +4,102 @@
   top: 22px;
   left: 0;
   width: 240px;
-  padding: 25px;
-  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-  border-right: 4px solid #290e84;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  text-align: center;
+  padding: 22px 20px 18px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--accent);
+  border-radius: 18px;
+  box-shadow: var(--shadow-sm);
+  text-align: left;
   font-size: 1rem;
   box-sizing: border-box;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
   z-index: 50;
 }
 
 .profile-card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
-  left: 0;
   right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, #290e84, #764ba2, #290e84);
-  background-size: 200% 100%;
-  border-radius: 12px 12px 0 0;
-  animation: shimmer 3s linear infinite;
-}
-
-@keyframes shimmer {
-  0% { background-position: -100% 0; }
-  100% { background-position: 100% 0; }
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(
+    circle at top right,
+    rgba(37, 99, 235, 0.16),
+    transparent 70%
+  );
+  pointer-events: none;
 }
 
 .profile-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(41, 14, 132, 0.15);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
 }
 
 /* ==================== PROFILE IMAGE ==================== */
 .profile-img {
-  width: 100px;
-  height: 100px;
+  width: 82px;
+  height: 82px;
   object-fit: cover;
   border-radius: 50%;
-  border: 3px solid #290e84;
-  box-shadow: 
-    0 4px 12px rgba(41, 14, 132, 0.2),
-    0 0 0 6px rgba(41, 14, 132, 0.1);
-  transition: all 0.3s ease;
-  margin-bottom: 8px;
+  border: 2px solid var(--border);
+  box-shadow:
+    0 8px 20px rgba(15, 23, 42, 0.15),
+    0 0 0 6px var(--ring);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  margin: 0 0 12px 0;
+  display: block;
 }
 
 .profile-img:hover {
-  transform: scale(1.08);
-  box-shadow: 
-    0 6px 20px rgba(41, 14, 132, 0.3),
-    0 0 0 8px rgba(41, 14, 132, 0.15);
+  transform: scale(1.05);
+  box-shadow:
+    0 10px 24px rgba(15, 23, 42, 0.18),
+    0 0 0 7px var(--ring);
 }
 
 /* ==================== PROFILE TEXT ==================== */
 .profile-card h3 {
   margin: 8px 0 4px 0;
-  font-size: 1.3rem;
+  font-size: 1.02rem;
   font-weight: 700;
-  color: #1a1a1a;
-  letter-spacing: 0.3px;
+  color: var(--text);
 }
 
 .profile-card h5 {
-  margin: 0 0 15px 0;
-  font-size: 0.95rem;
+  margin: 0 0 12px 0;
+  font-size: 0.7rem;
   font-weight: 500;
-  color: #666;
-  font-style: italic;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
 }
 
 /* ==================== CV BUTTON ==================== */
 .cv-button {
   display: inline-block;
-  margin-top: 12px;
+  margin-top: 8px;
   width: 100%;
-  padding: 10px 16px;
-  background: linear-gradient(135deg, #290e84 0%, #3d1bb8 100%);
-  color: #fff;
+  padding: 8px 14px;
+  background: transparent;
+  color: var(--accent-strong);
   font-weight: 600;
-  font-size: 0.9rem;
-  border: none;
-  border-radius: 8px;
+  font-size: 0.86rem;
+  border: 1px solid rgba(37, 99, 235, 0.4);
+  border-radius: var(--radius-sm);
   text-decoration: none;
   text-align: center;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
   cursor: pointer;
-  position: relative;
-  overflow: hidden;
-}
-
-.cv-button::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.2);
-  transform: translate(-50%, -50%);
-  transition: width 0.6s, height 0.6s;
-}
-
-.cv-button:hover::before {
-  width: 300px;
-  height: 300px;
+  box-shadow: none;
 }
 
 .cv-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(41, 14, 132, 0.4);
+  background: var(--accent);
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(37, 99, 235, 0.25);
 }
 
 .cv-button:active {
@@ -128,105 +110,107 @@
 .icons-container {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 12px;
-  margin-top: 18px;
-  padding-top: 18px;
-  border-top: 2px solid #f0f0f0;
+  align-items: stretch;
+  gap: 6px;
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--border);
 }
 
 .icon-item {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   width: 100%;
   cursor: pointer;
-  padding: 6px 8px;
-  border-radius: 8px;
-  transition: all 0.2s ease;
-  position: relative;
-}
-
-.icon-item::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  width: 0;
-  height: 100%;
-  background: linear-gradient(90deg, rgba(41, 14, 132, 0.08), transparent);
-  border-radius: 8px;
-  transition: width 0.3s ease;
-}
-
-.icon-item:hover::before {
-  width: 100%;
+  padding: 8px 10px;
+  border-radius: 12px;
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .icon-item:hover {
-  transform: translateX(4px);
+  background: #ffffff;
+  border-color: rgba(37, 99, 235, 0.35);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-xs);
 }
 
 .icon-item .icon {
-  color: #290e84;
-  font-size: 1.2rem;
+  color: var(--accent);
+  font-size: 0.98rem;
   flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 10px;
+  background: rgba(37, 99, 235, 0.12);
+  display: grid;
+  place-items: center;
   transition: transform 0.2s ease;
-  z-index: 1;
 }
 
 .icon-item:hover .icon {
-  transform: scale(1.15) rotate(5deg);
+  transform: scale(1.08);
 }
 
 .icon-item span {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 600;
-  color: #333;
-  z-index: 1;
+  color: var(--text);
   transition: color 0.2s ease;
 }
 
 .icon-item:hover span {
-  color: #290e84;
+  color: var(--accent-strong);
 }
 
 /* ==================== SOCIAL LINKS ==================== */
 .my-link {
   text-decoration: none;
-  color: #1a1a1a;
+  color: var(--text);
   font-weight: 600;
-  font-size: 0.95rem;
-  transition: all 0.3s ease;
-  position: relative;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+  display: flex;
+  align-items: center;
+  flex: 1;
 }
 
 .my-link::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: linear-gradient(90deg, #290e84, #764ba2);
-  transition: width 0.3s ease;
-}
-
-.my-link:hover::after {
-  width: 100%;
+  display: none;
 }
 
 .my-link:hover {
-  background: linear-gradient(90deg, #1d033c 30%, #79737b 50%, #34046b 70%);
-  background-size: 200% 100%;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: shine 3s linear infinite;
+  color: var(--accent-strong);
 }
 
-@keyframes shine {
-  0% { background-position: -100% 0; }
-  100% { background-position: 100% 0; }
+.my-link:hover::after {
+  transform: none;
+}
+
+.icon-item:last-child {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-strong) 100%);
+  border-color: transparent;
+  box-shadow: 0 12px 24px rgba(37, 99, 235, 0.28);
+}
+
+.icon-item:last-child:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 28px rgba(37, 99, 235, 0.32);
+}
+
+.icon-item:last-child .icon {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.icon-item:last-child span {
+  color: #fff;
+}
+
+.icon-item:last-child .my-link {
+  color: #fff;
 }
 
 /* ==================== HAMBURGER MENU ==================== */
@@ -238,12 +222,12 @@
   z-index: 200;
   width: 44px;
   height: 44px;
-  background: linear-gradient(135deg, #290e84 0%, #3d1bb8 100%);
-  border: none;
-  border-radius: 10px;
+  background: var(--accent);
+  border: 1px solid var(--accent-strong);
+  border-radius: 12px;
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(41, 14, 132, 0.3);
-  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -252,12 +236,13 @@
 }
 
 .hamburger:hover {
-  transform: scale(1.08);
-  box-shadow: 0 6px 20px rgba(41, 14, 132, 0.4);
+  background: var(--accent-strong);
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(37, 99, 235, 0.3);
 }
 
 .hamburger:active {
-  transform: scale(0.95);
+  transform: translateY(0);
 }
 
 /* ==================== OVERLAY ==================== */
@@ -265,7 +250,7 @@
   display: none;
   position: fixed;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(15, 23, 42, 0.45);
   backdrop-filter: blur(3px);
   z-index: 90;
   opacity: 0;
@@ -284,13 +269,13 @@
   .hamburger {
     display: none !important;
   }
-  
+
   .sidebar-overlay {
     display: none !important;
   }
 }
 
-/* Tablet & Mobile (≤ 768px) */
+/* Tablet & Mobile (<= 768px) */
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
@@ -302,17 +287,20 @@
     left: -260px;
     width: 240px;
     height: 100vh;
-    padding: 20px;
+    padding: 18px 18px 16px;
     border-radius: 0;
-    border-right: none;
-    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.15);
+    border: none;
+    border-top: none;
+    border-right: 2px solid var(--accent);
+    box-shadow: 8px 0 24px rgba(15, 23, 42, 0.12);
     overflow-y: auto;
-    transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: left 0.3s ease;
     z-index: 100;
   }
 
   .profile-card::before {
-    border-radius: 0;
+    width: 100px;
+    height: 100px;
   }
 
   .profile-card.open {
@@ -320,41 +308,41 @@
   }
 
   .profile-img {
-    width: 90px;
-    height: 90px;
+    width: 76px;
+    height: 76px;
   }
 
   .profile-card h3 {
-    font-size: 1.2rem;
+    font-size: 1.05rem;
   }
 
   .profile-card h5 {
-    font-size: 0.9rem;
+    font-size: 0.68rem;
   }
 
   .cv-button {
-    padding: 9px 14px;
-    font-size: 0.85rem;
+    padding: 8px 12px;
+    font-size: 0.8rem;
   }
 
   .icon-item {
-    gap: 10px;
+    gap: 8px;
   }
 
   .icon-item .icon {
-    font-size: 1.1rem;
+    font-size: 0.95rem;
   }
 
   .icon-item span {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
   }
 
   .my-link {
-    font-size: 0.9rem;
+    font-size: 0.86rem;
   }
 }
 
-/* Mobile (≤ 480px) */
+/* Mobile (<= 480px) */
 @media (max-width: 480px) {
   .hamburger {
     top: 15px;
@@ -366,29 +354,29 @@
 
   .profile-card {
     width: 220px;
-    padding: 18px;
+    padding: 16px 16px 14px;
   }
 
   .profile-img {
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
   }
 
   .profile-card h3 {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
   .cv-button {
-    padding: 8px 12px;
+    padding: 7px 10px;
   }
 
   .icons-container {
-    gap: 10px;
-    padding-top: 15px;
+    gap: 6px;
+    padding-top: 10px;
   }
 }
 
-/* Scrollbar styling për sidebar në mobile */
+/* Scrollbar styling for sidebar on mobile */
 @media (max-width: 768px) {
   .profile-card::-webkit-scrollbar {
     width: 6px;
@@ -399,11 +387,11 @@
   }
 
   .profile-card::-webkit-scrollbar-thumb {
-    background: #290e84;
+    background: var(--accent);
     border-radius: 3px;
   }
 
   .profile-card::-webkit-scrollbar-thumb:hover {
-    background: #1d0a5f;
+    background: var(--accent-strong);
   }
 }

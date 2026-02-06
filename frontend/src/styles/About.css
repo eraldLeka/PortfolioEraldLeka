@@ -1,51 +1,36 @@
-/* ==================== ABOUT PAGE CONTAINER ==================== */
+/* ==================== ABOUT PAGE ==================== */
 .about-page {
   width: 100%;
   min-height: auto;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  border-radius: 10px;
-}
-
-/* ==================== SHARED GRADIENT ANIMATION ==================== */
-@keyframes shine {
-  0% { background-position: -100% 0; }
-  100% { background-position: 100% 0; }
+  border-radius: var(--radius-sm);
 }
 
 .gradient-text {
-  background: linear-gradient(
-    90deg,
-    #1d033c 30%,
-    #79737b 50%,
-    #34046b 70%
-  );
-  background-size: 200% 100%;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: shine 3s linear infinite;
+  color: var(--accent-strong);
 }
 
-/* ==================== ABOUT SECTION (HERO) ==================== */
+/* ==================== ABOUT HERO ==================== */
 .about-section {
   display: flex;
   width: 100%;
   min-height: 60vh;
-  border-radius: 16px;
+  border-radius: var(--radius-lg);
   overflow: hidden;
   padding: 12px;
-  background-color: #fff;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
   box-sizing: border-box;
   gap: 20px;
 }
 
-/* Video Wrapper */
 .about-video-wrapper {
   flex: 1.5;
   overflow: hidden;
-  border-radius: 12px;
+  border-radius: var(--radius);
 }
 
 .about-video {
@@ -54,40 +39,36 @@
   object-fit: cover;
   object-position: center;
   display: block;
-  border: 1px solid #f0f0f0;
-  border-radius: 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
 }
 
-/* Content Wrapper */
 .about-content {
   flex: 1;
   padding: 40px 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap: 16px;
 }
 
 .about-content h1 {
-  font-size: 4rem;
-  font-weight: 800;
-  margin-bottom: 1.5rem;
+  font-size: 3.6rem;
+  font-weight: 700;
   line-height: 1.1;
-  background: linear-gradient(90deg, #1d033c 30%, #79737b 50%, #34046b 70%);
-  background-size: 200% 100%;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: shine 3s linear infinite;
+  color: var(--text);
 }
 
-/* ==================== PERSONAL BIO SECTION ==================== */
+/* ==================== PERSONAL BIO ==================== */
 .personal-content {
   margin-top: 16px;
   width: 100%;
   min-height: 150px;
-  border-radius: 16px;
+  border-radius: var(--radius-lg);
   padding: 30px;
-  background-color: #fff;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-xs);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -95,27 +76,24 @@
 }
 
 .personal-bio {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 500;
   line-height: 1.7;
   text-align: center;
-  padding: 20px;
-  background: linear-gradient(90deg, #1d033c 30%, #79737b 50%, #090113 70%);
-  background-size: 200% 100%;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: shine 3s linear infinite;
+  padding: 10px 20px;
+  color: var(--text);
 }
 
-/* ==================== EDUCATION SECTION ==================== */
+/* ==================== EDUCATION ==================== */
 .education {
   margin-top: 16px;
   width: 100%;
   min-height: auto;
-  border-radius: 16px;
+  border-radius: var(--radius-lg);
   padding: 30px;
-  background-color: #fff;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-xs);
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
@@ -128,15 +106,9 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  background: linear-gradient(90deg, #1d033c 30%, #79737b 50%, #34046b 70%);
-  background-size: 200% 100%;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: shine 3s linear infinite;
+  color: var(--text);
 }
 
-/* University Header */
 .university-wrapper {
   display: flex;
   align-items: center;
@@ -155,23 +127,23 @@
 }
 
 .university-info h4 {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   font-weight: 700;
   margin: 0 0 5px 0;
-  color: #1a1a1a;
+  color: var(--text);
 }
 
 .university-info p {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   margin: 0;
-  color: #666;
+  color: var(--muted);
   font-weight: 500;
 }
 
 .education-date {
   margin-left: auto;
-  font-size: 1rem;
-  color: #888;
+  font-size: 0.95rem;
+  color: var(--muted);
   display: flex;
   align-items: center;
   gap: 6px;
@@ -179,11 +151,10 @@
 }
 
 .calendar-icon {
-  color: #888;
+  color: var(--muted);
   font-size: 1.1rem;
 }
 
-/* University Content */
 .university-content {
   display: flex;
   gap: 25px;
@@ -199,13 +170,12 @@
 .education-text p {
   font-size: 1.05rem;
   line-height: 1.7;
-  color: #333;
+  color: var(--text);
   text-align: justify;
   font-weight: 400;
   margin-bottom: 15px;
 }
 
-/* Skills List */
 .skills-inline {
   list-style: none;
   padding: 0;
@@ -218,17 +188,16 @@
   gap: 10px;
   margin-bottom: 10px;
   font-size: 1rem;
-  color: #2c3e50;
+  color: var(--text);
   font-weight: 600;
 }
 
 .skills-inline .icon {
-  color: #130442;
-  font-size: 1.3rem;
+  color: var(--accent);
+  font-size: 1.2rem;
   flex-shrink: 0;
 }
 
-/* Education Image */
 .education-image {
   flex: 0 0 220px;
   display: flex;
@@ -238,9 +207,10 @@
 .education-img {
   width: 100%;
   height: auto;
-  border-radius: 12px;
+  border-radius: var(--radius);
   object-fit: cover;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-xs);
 }
 
 /* ==================== EXPERTISE SECTION ==================== */
@@ -248,9 +218,11 @@
   margin-top: 16px;
   width: 100%;
   min-height: auto;
-  border-radius: 16px;
+  border-radius: var(--radius-lg);
   padding: 30px;
-  background-color: #fff;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-xs);
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
@@ -261,17 +233,10 @@
   font-weight: 700;
   margin-bottom: 30px;
   text-align: left;
-  background: linear-gradient(90deg, #1d033c 30%, #79737b 50%, #34046b 70%);
-  background-size: 200% 100%;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: shine 3s linear infinite;
+  color: var(--text);
 }
 
-/* ==================== RESPONSIVE DESIGN ==================== */
-
-/* Laptop/Desktop (≤ 1024px) */
+/* ==================== RESPONSIVE ==================== */
 @media (max-width: 1024px) {
   .about-section {
     flex-direction: column;
@@ -290,7 +255,7 @@
   }
 
   .about-content h1 {
-    font-size: 3.5rem;
+    font-size: 3.2rem;
   }
 
   .personal-content {
@@ -298,7 +263,7 @@
   }
 
   .personal-bio {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
   }
 
   .education {
@@ -330,7 +295,6 @@
   }
 }
 
-/* Tablet (≤ 768px) */
 @media (max-width: 768px) {
   .about-section {
     padding: 10px;
@@ -342,7 +306,7 @@
   }
 
   .about-content h1 {
-    font-size: 2.8rem;
+    font-size: 2.6rem;
     text-align: center;
   }
 
@@ -351,7 +315,7 @@
   }
 
   .personal-bio {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
   }
 
   .education {
@@ -372,7 +336,7 @@
   }
 
   .university-info h4 {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
   }
 
   .university-info p {
@@ -415,11 +379,10 @@
   }
 }
 
-/* Mobile (≤ 480px) */
 @media (max-width: 480px) {
   .about-section {
     padding: 8px;
-    border-radius: 12px;
+    border-radius: var(--radius);
   }
 
   .about-video-wrapper {
@@ -481,7 +444,6 @@
   }
 }
 
-/* Extra Small Mobile (≤ 360px) */
 @media (max-width: 360px) {
   .about-content h1 {
     font-size: 1.8rem;

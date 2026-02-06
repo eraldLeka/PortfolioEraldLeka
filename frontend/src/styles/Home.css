@@ -1,106 +1,82 @@
-/* Stile për Home Container (ekzistuese, por përmirësuar) */
+/* ===================== HOME CONTAINER ===================== */
 .home-container {
-    width: 100%;
-    min-height: 100vh;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-    box-sizing: border-box;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
+/* ===================== HERO SECTION ===================== */
 .hero-section {
-    position: relative;
-    width: 100%;
-    height: 60vh; 
-    min-height: 300px;
-    overflow: hidden;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    place-items: center;
-    gap: 0;
-    border: 1px solid rgb(212, 210, 210);
-    border-radius: 30px;
-    box-sizing: border-box;
-    background-color: white;
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  min-height: 300px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  place-items: center;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-sizing: border-box;
+  background-color: var(--surface);
+  box-shadow: var(--shadow-sm);
 }
 
 .hero-video {
-    width: 100%;
-    height: 100%; 
-    object-fit: cover; 
-    object-position: center; 
-    display: block;
-    grid-area: 1 / 1;
-    z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  grid-area: 1 / 1;
+  z-index: 0;
 }
 
-
-.intro-video-container { 
-    position: fixed; 
-    top: 0;
-    left: 0;
-    width: 100vw; 
-    height: 100vh; 
-    z-index: 9999; 
-    overflow: hidden;
-    cursor: pointer; 
-}
-
-.intro-video { 
-    width: 100%;
-    height: 100%;
-    object-fit: cover; 
-    object-position: center; 
-    display: block;
-}
-
-.skills{
-    margin-top: 10px; 
-    width: 100%;
-    border: 2px solid white;
-    border-radius: 30px;
-    box-sizing: border-box;
-    display: flex;          
-    justify-content: center;
-    align-items: center;     
-    padding: 10px;     
-    flex-direction: column; 
-    background-color: rgb(255, 255, 255);
+/* ===================== SKILLS SECTION ===================== */
+.skills {
+  margin-top: 12px;
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 14px;
+  flex-direction: column;
+  background-color: var(--surface);
+  box-shadow: var(--shadow-xs);
 }
 
 .section-title {
   font-size: 2rem;
   text-align: left;
-  margin-left: 20px;
-  color: rgb(23, 4, 44);
+  margin: 6px 0 10px 18px;
+  color: var(--text);
   position: relative;
   display: block;
   align-self: flex-start;
-
-  background: linear-gradient(
-    90deg,
-    rgb(29, 3, 60) 30%,
-    #79737b 50%, 
-    rgb(52, 4, 107) 70%
-  );
-  background-size: 200% 100%;
-  background-clip: text;
-  -webkit-background-clip: text; 
-  color: transparent; 
-  animation: shine 3s linear infinite;
+  font-weight: 700;
+  padding-bottom: 6px;
 }
 
-@keyframes shine {
-  0% {
-    background-position: -100% 0;
-  }
-  100% {
-    background-position: 100% 0;
-  }
+.section-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 60px;
+  height: 3px;
+  background: var(--accent);
+  border-radius: 3px;
+  opacity: 0.8;
 }
 
-
+/* ===================== FEATURED PROJECTS ===================== */
 .featured-projects {
   position: relative;
   width: 100%;
@@ -109,13 +85,13 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 0;
-  border: 1px solid rgb(212, 210, 210);
-  border-radius: 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
   box-sizing: border-box;
   margin-top: 14px;
-  background-color: white;
+  background-color: var(--surface);
+  box-shadow: var(--shadow-xs);
 }
-
 
 .projects-grid {
   display: grid;
@@ -123,37 +99,40 @@
   justify-items: center;
   width: 100%;
   box-sizing: border-box;
-  padding: 20px;   
-  gap: 20px;       
+  padding: 20px;
+  gap: 20px;
 }
 
-
+/* ===================== PROJECT CARD ===================== */
 .project-card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #fafafa;
-  border-radius: 12px;
-  border: 3px solid rgb(229, 227, 227);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
-  min-height: 150px;         
-  width: 100%;         
-  max-width: 470px;         
+  background: var(--surface);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-xs);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  min-height: 160px;
+  width: 100%;
+  max-width: 470px;
   box-sizing: border-box;
+  padding: 14px;
 }
 
-
 .project-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-sm);
+  border-color: rgba(37, 99, 235, 0.35);
 }
 
 .project-img {
-  width: 300px;
-  height: 140px;
+  width: 100%;
+  height: 150px;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: var(--radius-sm);
   flex-shrink: 0;
+  border: 1px solid var(--border);
 }
 
 .project-content {
@@ -161,16 +140,18 @@
   flex-direction: column;
   justify-content: space-around;
   flex: 1;
+  width: 100%;
 }
-
 
 .project-content h3 {
   font-size: 1.3rem;
+  text-align: center;
+  margin: 12px 0 6px 0;
 }
 
 .project-content p {
   font-size: 0.95rem;
-  color: #444;
+  color: var(--muted);
   margin-bottom: 12px;
   text-align: center;
 }
@@ -180,6 +161,7 @@
   gap: 8px;
   margin-bottom: 10px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .tech-icon {
@@ -190,47 +172,32 @@
   align-self: center;
   display: inline-block;
   margin-top: auto;
-  background-color: #aeaeb1;
-  padding: 6px 12px;
-  border-radius: 8px;
+  background-color: var(--accent);
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
   font-size: 0.9rem;
   text-decoration: none;
-  color: black;
-  transition: 0.3s ease;
+  color: #fff;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  box-shadow: 0 8px 18px rgba(37, 99, 235, 0.25);
 }
 
 .project-link:hover {
-  background: #2e2d30;
-  color: white;
+  background: var(--accent-strong);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(37, 99, 235, 0.3);
 }
 
-
-/* ===================== RESPONSIVE ONLY ===================== */
-
-/* Për laptop/desktop më të vegjël se 1024px */
+/* ===================== RESPONSIVE ===================== */
 @media (max-width: 1024px) {
   .hero-section {
     height: 50vh;
-    border-radius: 20px;
-    background-color: white;
-  }
-
-
-  .hero-video {
-    height: 100%;
-    width: 100%;
-    height: 100%; 
-    object-fit:fill; 
-    border-radius: 20px;
-    object-position: center; 
-    display: block;
-    grid-area: 1 / 1;
-    z-index: 0;
-
+    border-radius: var(--radius);
   }
 
   .skills {
-    padding: 8px;
+    padding: 12px;
   }
 
   .section-title {
@@ -238,25 +205,21 @@
   }
 
   .featured-projects {
-    border-radius: 8px;
+    border-radius: var(--radius);
     margin-top: 12px;
   }
 
   .projects-grid {
-    flex-wrap: wrap;
-    gap: 12px;
-    justify-content: center;
+    gap: 16px;
+    padding: 18px;
   }
 
   .project-card {
-    flex: 0 0 48%;
-    width: auto;
     min-height: 180px;
   }
 
   .project-img {
-    width: 100%;
-    height: 120px;
+    height: 130px;
   }
 
   .project-content h3 {
@@ -273,22 +236,19 @@
 
   .project-link {
     font-size: 0.85rem;
-    padding: 5px 10px;
+    padding: 6px 12px;
   }
 }
 
-/* Për tablet/mobil (768px dhe më pak) */
 @media (max-width: 768px) {
   .hero-section {
     height: 45vh;
-    border-radius: 15px;
+    border-radius: var(--radius);
     padding: 5px;
-        background-color: white;
-
   }
 
   .skills {
-    padding: 6px;
+    padding: 10px;
   }
 
   .section-title {
@@ -296,19 +256,16 @@
   }
 
   .projects-grid {
-    flex-direction: column;
-    gap: 10px;
+    gap: 12px;
   }
 
   .project-card {
-    flex: 0 0 100%;
     width: 100%;
-    min-height: 160px;
+    min-height: 170px;
   }
 
   .project-img {
-    width: 90%;
-    height: 150px;
+    height: 140px;
   }
 
   .project-content h3 {
@@ -325,22 +282,19 @@
 
   .project-link {
     font-size: 0.8rem;
-    padding: 4px 8px;
+    padding: 6px 10px;
   }
 }
 
-/* Për mobile të vogël (480px dhe më pak) */
 @media (max-width: 480px) {
   .hero-section {
     height: 40vh;
-    border-radius: 10px;
+    border-radius: var(--radius-sm);
     padding: 5px;
-        background-color: white;
-
   }
 
   .skills {
-    padding: 4px;
+    padding: 8px;
   }
 
   .section-title {
@@ -348,19 +302,16 @@
   }
 
   .projects-grid {
-    flex-direction: column;
-    gap: 8px;
+    gap: 10px;
+    padding: 14px;
   }
 
   .project-card {
-    flex: 0 0 100%;
-    width: 100%;
-    min-height: 140px;
+    min-height: 150px;
   }
 
   .project-img {
-    width: 100%;
-    height: 90px;
+    height: 110px;
   }
 
   .project-content h3 {
@@ -377,16 +328,13 @@
 
   .project-link {
     font-size: 0.75rem;
-    padding: 3px 6px;
+    padding: 5px 9px;
   }
 }
 
-/* Opsionale: Për ekrane shumë të vogla (<360px) */
 @media (max-width: 360px) {
   .hero-section {
     height: 35vh;
-        background-color: white;
-
   }
 
   .section-title {
@@ -394,15 +342,15 @@
   }
 
   .projects-grid {
-    gap: 6px;
+    gap: 8px;
   }
 
   .project-card {
-    min-height: 120px;
+    min-height: 130px;
   }
 
   .project-img {
-    height: 80px;
+    height: 90px;
   }
 
   .project-content h3 {
@@ -419,6 +367,6 @@
 
   .project-link {
     font-size: 0.7rem;
-    padding: 2px 5px;
+    padding: 4px 8px;
   }
 }

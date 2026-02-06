@@ -1,37 +1,32 @@
-/* ==================== CONTACT PAGE CONTAINER ==================== */
+/* ==================== CONTACT PAGE ==================== */
 .contact-page {
   width: 100%;
   min-height: auto;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  border-radius: 10px;
+  border-radius: var(--radius-sm);
 }
 
-/* ==================== SHARED GRADIENT ANIMATION ==================== */
-@keyframes shine {
-  0% { background-position: -100% 0; }
-  100% { background-position: 100% 0; }
-}
-
-/* ==================== CONTACT HERO SECTION ==================== */
+/* ==================== CONTACT HERO ==================== */
 .contact-section {
   display: flex;
   width: 100%;
   min-height: 60vh;
-  border-radius: 16px;
+  border-radius: var(--radius-lg);
   overflow: hidden;
   padding: 12px;
-  background-color: #fff;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
   box-sizing: border-box;
   gap: 20px;
 }
 
-/* Video Wrapper */
 .contact-video-wrapper {
   flex: 1.5;
   overflow: hidden;
-  border-radius: 12px;
+  border-radius: var(--radius);
 }
 
 .contact-video {
@@ -40,12 +35,11 @@
   object-fit: cover;
   object-position: center;
   display: block;
-  border: 1px solid #f0f0f0;
-  border-radius: 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
   box-sizing: border-box;
 }
 
-/* Content Wrapper */
 .contact-content {
   flex: 1;
   padding: 40px 30px;
@@ -55,24 +49,21 @@
 }
 
 .contact-content h1 {
-  font-size: 4rem;
-  font-weight: 800;
+  font-size: 3.6rem;
+  font-weight: 700;
   margin-bottom: 1.5rem;
   line-height: 1.1;
-  background: linear-gradient(90deg, #1d033c 30%, #79737b 50%, #34046b 70%);
-  background-size: 200% 100%;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: shine 3s linear infinite;
+  color: var(--text);
 }
 
-/* ==================== CONTACT INFO SECTION ==================== */
+/* ==================== CONTACT INFO ==================== */
 .contact-info {
   margin-top: 16px;
   padding: 30px;
-  background-color: #fff;
-  border-radius: 16px;
+  background-color: var(--surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-xs);
   width: 100%;
   box-sizing: border-box;
 }
@@ -80,14 +71,9 @@
 .contact-title {
   font-size: 2rem;
   font-weight: 700;
-  margin-bottom: 35px;
+  margin-bottom: 32px;
   text-align: left;
-  background: linear-gradient(90deg, #1d033c 30%, #79737b 50%, #34046b 70%);
-  background-size: 200% 100%;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: shine 3s linear infinite;
+  color: var(--text);
 }
 
 /* ==================== CONTACT GRID ==================== */
@@ -101,14 +87,14 @@
 /* ==================== CONTACT CARD ==================== */
 .contact-card {
   width: 100%;
-  max-width: 180px;
-  background-color: #fafafa;
-  border: 2px solid #e5e5e5;
-  border-radius: 16px;
-  padding: 25px 20px;
+  max-width: 190px;
+  background-color: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px 18px;
   text-align: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--shadow-xs);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -120,51 +106,49 @@
 }
 
 .contact-card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
-  border-color: #290e84;
-  background-color: #fff;
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(37, 99, 235, 0.35);
+  background-color: var(--surface);
 }
 
-/* ==================== CONTACT ICON ==================== */
 .contact-icon {
   font-size: 2.2rem;
-  color: #290e84;
-  transition: all 0.3s ease;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  color: var(--accent);
+  transition: transform 0.25s ease, filter 0.25s ease;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.08));
 }
 
 .contact-card:hover .contact-icon {
-  transform: scale(1.15) rotate(5deg);
-  filter: drop-shadow(0 4px 8px rgba(41, 14, 132, 0.3));
+  transform: scale(1.08);
+  filter: drop-shadow(0 4px 8px rgba(37, 99, 235, 0.25));
 }
 
-/* ==================== CONTACT TEXT ==================== */
 .contact-card p {
   margin: 5px 0 0 0;
   font-size: 1rem;
   font-weight: 700;
-  color: #1a1a1a;
-  transition: color 0.3s ease;
+  color: var(--text);
+  transition: color 0.2s ease;
 }
 
 .contact-card:hover p {
-  color: #290e84;
+  color: var(--accent-strong);
 }
 
 .contact-card span {
   font-size: 0.9rem;
   font-weight: 500;
-  color: #666;
+  color: var(--muted);
   line-height: 1.4;
-  transition: color 0.3s ease;
+  transition: color 0.2s ease;
 }
 
 .contact-card:hover span {
-  color: #444;
+  color: var(--muted);
 }
 
-/* ==================== SPECIAL CARD STYLES BY TYPE ==================== */
+/* ==================== SPECIAL CARD COLORS ==================== */
 .contact-card.email .contact-icon {
   color: #ea4335;
 }
@@ -178,29 +162,26 @@
 }
 
 .contact-card.github .contact-icon {
-  color: #333;
+  color: #0f172a;
 }
 
-/* Hover maintains original colors */
 .contact-card.email:hover {
-  border-color: #ea4335;
+  border-color: rgba(234, 67, 53, 0.45);
 }
 
 .contact-card.phone:hover {
-  border-color: #34a853;
+  border-color: rgba(52, 168, 83, 0.45);
 }
 
 .contact-card.linkedin:hover {
-  border-color: #0077b5;
+  border-color: rgba(0, 119, 181, 0.45);
 }
 
 .contact-card.github:hover {
-  border-color: #333;
+  border-color: rgba(15, 23, 42, 0.35);
 }
 
-/* ==================== RESPONSIVE DESIGN ==================== */
-
-/* Laptop/Desktop (≤ 1024px) */
+/* ==================== RESPONSIVE ==================== */
 @media (max-width: 1024px) {
   .contact-section {
     flex-direction: column;
@@ -219,7 +200,7 @@
   }
 
   .contact-content h1 {
-    font-size: 3.5rem;
+    font-size: 3.2rem;
   }
 
   .contact-info {
@@ -228,7 +209,7 @@
 
   .contact-title {
     font-size: 1.8rem;
-    margin-bottom: 30px;
+    margin-bottom: 28px;
   }
 
   .contact-grid {
@@ -237,8 +218,8 @@
   }
 
   .contact-card {
-    max-width: 170px;
-    padding: 20px 18px;
+    max-width: 175px;
+    padding: 20px 16px;
   }
 
   .contact-icon {
@@ -254,7 +235,6 @@
   }
 }
 
-/* Tablet (≤ 768px) */
 @media (max-width: 768px) {
   .contact-section {
     padding: 12px;
@@ -276,7 +256,7 @@
 
   .contact-title {
     font-size: 1.6rem;
-    margin-bottom: 25px;
+    margin-bottom: 24px;
   }
 
   .contact-grid {
@@ -286,7 +266,7 @@
 
   .contact-card {
     max-width: 100%;
-    padding: 18px 16px;
+    padding: 18px 14px;
   }
 
   .contact-icon {
@@ -302,12 +282,11 @@
   }
 }
 
-/* Mobile (≤ 480px) */
 @media (max-width: 480px) {
   .contact-section {
     padding: 10px;
     gap: 10px;
-    border-radius: 12px;
+    border-radius: var(--radius);
   }
 
   .contact-video-wrapper {
@@ -340,8 +319,8 @@
 
   .contact-card {
     max-width: 100%;
-    padding: 16px 14px;
-    border-radius: 12px;
+    padding: 16px 12px;
+    border-radius: var(--radius);
   }
 
   .contact-icon {
@@ -357,7 +336,6 @@
   }
 }
 
-/* Extra Small Mobile (≤ 360px) */
 @media (max-width: 360px) {
   .contact-content h1 {
     font-size: 1.8rem;
@@ -375,7 +353,7 @@
 
   .contact-card {
     max-width: 100%;
-    padding: 14px 12px;
+    padding: 14px 10px;
   }
 
   .contact-icon {

@@ -1,37 +1,32 @@
-/* ==================== ACHIEVEMENTS PAGE CONTAINER ==================== */
+/* ==================== ACHIEVEMENTS PAGE ==================== */
 .achieve-page {
   width: 100%;
   min-height: auto;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  border-radius: 10px;
+  border-radius: var(--radius-sm);
 }
 
-/* ==================== SHARED GRADIENT ANIMATION ==================== */
-@keyframes shine {
-  0% { background-position: -100% 0; }
-  100% { background-position: 100% 0; }
-}
-
-/* ==================== ACHIEVEMENTS HERO SECTION ==================== */
+/* ==================== ACHIEVEMENTS HERO ==================== */
 .achieve-section {
   display: flex;
   width: 100%;
   min-height: 60vh;
-  border-radius: 16px;
+  border-radius: var(--radius-lg);
   overflow: hidden;
   padding: 12px;
-  background-color: #fff;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
   box-sizing: border-box;
   gap: 20px;
 }
 
-/* Video Wrapper */
 .achieve-video-wrapper {
   flex: 1.5;
   overflow: hidden;
-  border-radius: 12px;
+  border-radius: var(--radius);
 }
 
 .achieve-video {
@@ -40,12 +35,11 @@
   object-fit: cover;
   object-position: center;
   display: block;
-  border: 1px solid #f0f0f0;
-  border-radius: 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
   box-sizing: border-box;
 }
 
-/* Content Wrapper */
 .achieve-content {
   flex: 1;
   padding: 40px 30px;
@@ -55,26 +49,23 @@
 }
 
 .achieve-content h1 {
-  font-size: 4rem;
-  font-weight: 800;
+  font-size: 3.6rem;
+  font-weight: 700;
   margin-bottom: 1.5rem;
   line-height: 1.1;
-  background: linear-gradient(90deg, #1d033c 30%, #79737b 50%, #34046b 70%);
-  background-size: 200% 100%;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: shine 3s linear infinite;
+  color: var(--text);
 }
 
-/* ==================== CERTIFICATION SECTION ==================== */
+/* ==================== CERTIFICATIONS ==================== */
 .certification {
   margin-top: 16px;
   width: 100%;
   min-height: auto;
   padding: 30px;
-  background-color: #fff;
-  border-radius: 16px;
+  background-color: var(--surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-xs);
   display: flex;
   flex-direction: column;
   gap: 25px;
@@ -86,15 +77,9 @@
   font-weight: 700;
   text-align: left;
   margin: 0;
-  background: linear-gradient(90deg, #1d033c 30%, #79737b 50%, #34046b 70%);
-  background-size: 200% 100%;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: shine 3s linear infinite;
+  color: var(--text);
 }
 
-/* ==================== CERTIFICATION GRID ==================== */
 .certification-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -102,15 +87,14 @@
   width: 100%;
 }
 
-/* ==================== CERTIFICATION CARD ==================== */
 .cert-card {
-  background-color: #fafafa;
-  border: 2px solid #e5e5e5;
-  border-radius: 16px;
+  background-color: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
   padding: 20px;
   text-align: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--shadow-xs);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -120,33 +104,31 @@
 }
 
 .cert-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
-  border-color: #290e84;
-  background-color: #fff;
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(37, 99, 235, 0.35);
+  background-color: var(--surface);
 }
 
-/* ==================== CERTIFICATE IMAGE ==================== */
 .cert-img {
   width: 100%;
   max-width: 220px;
   height: auto;
   aspect-ratio: 4 / 3;
   object-fit: contain;
-  border-radius: 12px;
+  border-radius: var(--radius-sm);
   cursor: pointer;
-  transition: all 0.3s ease;
-  background-color: #f8f8f8;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  background-color: #f5f7fb;
   padding: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--border);
 }
 
 .cert-img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 16px rgba(41, 14, 132, 0.2);
+  transform: scale(1.04);
+  box-shadow: var(--shadow-sm);
 }
 
-/* ==================== CERTIFICATE INFO ==================== */
 .cert-info {
   margin-top: auto;
   display: flex;
@@ -154,13 +136,13 @@
   gap: 6px;
   width: 100%;
   padding-top: 10px;
-  border-top: 1px solid #e5e5e5;
+  border-top: 1px solid var(--border);
 }
 
 .cert-name {
   font-size: 1rem;
   font-weight: 700;
-  color: #1a1a1a;
+  color: var(--text);
   margin: 0;
   line-height: 1.4;
 }
@@ -168,26 +150,26 @@
 .cert-date {
   font-size: 0.9rem;
   font-weight: 500;
-  color: #666;
+  color: var(--muted);
   margin: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 5px;
+  gap: 6px;
 }
 
 .cert-date::before {
-  content: '📅';
-  font-size: 0.9rem;
+  content: "-";
+  font-size: 1rem;
 }
 
-/* ==================== MODAL OVERLAY ==================== */
+/* ==================== MODAL ==================== */
 .modal-overlay {
   position: fixed;
   inset: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.85);
+  background: rgba(15, 23, 42, 0.85);
   backdrop-filter: blur(5px);
   display: flex;
   justify-content: center;
@@ -195,7 +177,7 @@
   z-index: 9999;
   cursor: pointer;
   opacity: 0;
-  animation: fadeIn 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation: fadeIn 0.3s ease forwards;
 }
 
 @keyframes fadeIn {
@@ -204,14 +186,13 @@
   }
 }
 
-/* ==================== MODAL IMAGE ==================== */
 .modal-img {
   max-width: 90%;
   max-height: 90%;
-  border-radius: 12px;
+  border-radius: var(--radius);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
   transform: scale(0.9);
-  animation: zoomIn 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation: zoomIn 0.3s ease forwards;
 }
 
 @keyframes zoomIn {
@@ -220,17 +201,16 @@
   }
 }
 
-/* Close hint */
 .modal-overlay::after {
-  content: 'Click anywhere to close';
+  content: "Click anywhere to close";
   position: absolute;
   bottom: 30px;
   left: 50%;
   transform: translateX(-50%);
   color: rgba(255, 255, 255, 0.8);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 500;
-  letter-spacing: 1px;
+  letter-spacing: 0.8px;
   text-transform: uppercase;
   animation: fade-pulse 2s ease-in-out infinite;
 }
@@ -244,9 +224,7 @@
   }
 }
 
-/* ==================== RESPONSIVE DESIGN ==================== */
-
-/* Laptop/Desktop (≤ 1024px) */
+/* ==================== RESPONSIVE ==================== */
 @media (max-width: 1024px) {
   .achieve-section {
     flex-direction: column;
@@ -265,7 +243,7 @@
   }
 
   .achieve-content h1 {
-    font-size: 3.5rem;
+    font-size: 3.2rem;
   }
 
   .certification {
@@ -295,7 +273,6 @@
   }
 }
 
-/* Tablet (≤ 768px) */
 @media (max-width: 768px) {
   .achieve-section {
     padding: 12px;
@@ -342,16 +319,15 @@
 
   .modal-overlay::after {
     bottom: 25px;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
   }
 }
 
-/* Mobile (≤ 480px) */
 @media (max-width: 480px) {
   .achieve-section {
     padding: 10px;
     gap: 10px;
-    border-radius: 12px;
+    border-radius: var(--radius);
   }
 
   .achieve-video-wrapper {
@@ -383,7 +359,7 @@
 
   .cert-card {
     padding: 14px;
-    border-radius: 12px;
+    border-radius: var(--radius);
   }
 
   .cert-info {
@@ -401,7 +377,7 @@
 
   .modal-overlay::after {
     bottom: 20px;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
   }
 
   .modal-img {
@@ -410,7 +386,6 @@
   }
 }
 
-/* Extra Small Mobile (≤ 360px) */
 @media (max-width: 360px) {
   .achieve-content h1 {
     font-size: 1.8rem;
@@ -438,7 +413,6 @@
   }
 }
 
-/* ==================== PRINT STYLES ==================== */
 @media print {
   .modal-overlay {
     display: none !important;
