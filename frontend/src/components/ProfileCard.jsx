@@ -23,7 +23,7 @@ function ProfileCard() {
           <h3>Erald Leka</h3>
           <h5>Full-Stack Developer </h5> 
 
-          <a href="/EraldLekaCV.pdf"  target="_blank" rel="noopener noreferrer" className="cv-button">
+          <a href="/EraldLekaCv.pdf"  target="_blank" rel="noopener noreferrer" className="cv-button">
               Resume
           </a>
 
