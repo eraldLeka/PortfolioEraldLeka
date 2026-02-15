@@ -7,7 +7,7 @@ import { MdWork } from "react-icons/md";
 import { Link } from 'react-router-dom';
 
 function ProfileCard() {
-  const [isOpen, setIsOpen] = useState(false); // kontrollon hamburger menu
+  const [isOpen, setIsOpen] = useState(false); 
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
@@ -23,7 +23,7 @@ function ProfileCard() {
           <h3>Erald Leka</h3>
           <h5>Full-Stack Developer </h5> 
 
-          <a href="/EraldLekaCV.pdf" target="_blank" rel="noopener noreferrer" className="cv-button">
+          <a href="/EraldLeka CV.pdf" target="_blank" rel="noopener noreferrer" className="cv-button">
               Resume
           </a>
 

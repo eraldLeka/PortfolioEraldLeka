@@ -6,6 +6,7 @@ import Contact from "./pages/Contact";
 import Achievements from "./pages/Achievements";
 import Projects from "./pages/Projects";
 import welcome from "./assets/Welcome.mp4";
+
 import "./styles/App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
