@@ -8,55 +8,7 @@ import Projects from "./pages/Projects";
 import welcome from "./assets/Welcome.mp4";
 
 import "./styles/App.css";
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
-
-function AppLayout() {
-  const location = useLocation();
-
-  useEffect(() => {
-    const prefersReducedMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
-    if (prefersReducedMotion) return;
-
-    const sections = Array.from(document.querySelectorAll(".main-content section"));
-    if (sections.length === 0) return;
-
-    sections.forEach((section) => {
-      section.classList.add("reveal-on-scroll");
-    });
-
-    const observer = new IntersectionObserver(
-      (entries, obs) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          entry.target.classList.add("is-visible");
-          obs.unobserve(entry.target);
-        });
-      },
-      { threshold: 0.12, rootMargin: "0px 0px -10% 0px" },
-    );
-
-    sections.forEach((section) => observer.observe(section));
-
-    return () => observer.disconnect();
-  }, [location.pathname]);
-
-  return (
-    <div className="app-container">
-      <div className="sidebar">
-        <ProfileCard />
-      </div>
-      <div className="main-content">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/achievements" element={<Achievements />} />
-        </Routes>
-      </div>
-    </div>
-  );
-}
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   const [showIntro, setShowIntro] = useState(true);
@@ -94,9 +46,22 @@ function App() {
           </video>
         </div>
       ) : (
-        <Router>
-          <AppLayout />
-        </Router>
+        <div className="app-container">
+          <Router>
+            <div className="sidebar">
+              <ProfileCard />
+            </div>
+            <div className="main-content">
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/projects" element={<Projects />} />
+                <Route path="/achievements" element={<Achievements />} />
+              </Routes>
+            </div>
+          </Router>
+        </div>
       )}
     </>
   );
