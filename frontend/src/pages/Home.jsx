@@ -11,7 +11,7 @@ function Home() {
   return (
     <div className="home-container">
       <section className="hero-section"> {/* Bashkim i hero-container + hero-video-section */}
-        <video autoPlay loop muted className="hero-video">
+        <video autoPlay loop muted playsInline className="hero-video">
           <source src={heroVideo} type="video/mp4" />
           Your browser does not support the video tag.
         </video>

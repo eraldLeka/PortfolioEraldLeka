@@ -242,7 +242,8 @@
 
 @media (max-width: 768px) {
   .hero-section {
-    height: 45vh;
+    height: 300px;
+    min-height: 240px;
     border-radius: var(--radius);
     padding: 5px;
   }
@@ -288,7 +289,8 @@
 
 @media (max-width: 480px) {
   .hero-section {
-    height: 40vh;
+    height: 200px;
+    min-height: 200px;
     border-radius: var(--radius-sm);
     padding: 5px;
   }
@@ -334,7 +336,8 @@
 
 @media (max-width: 360px) {
   .hero-section {
-    height: 35vh;
+    height: 180px;
+    min-height: 180px;
   }
 
   .section-title {
