@@ -13,6 +13,10 @@
   align-self: start;
 }
 
+.main-content {
+  min-width: 0;
+}
+
 /* ===================== INTRO VIDEO ===================== */
 .intro-video-container {
   position: fixed;
@@ -61,9 +65,14 @@
   }
 
   .sidebar {
-    position: relative;
+    position: static;
     width: 100%;
-    margin-bottom: 15px;
+    margin-bottom: 0;
+    height: 0;
+  }
+
+  .main-content {
+    padding-top: 150px;
   }
 
   .intro-video {
@@ -75,8 +84,33 @@
 }
 
 @media (max-width: 480px) {
+  .main-content {
+    padding-top: 140px;
+  }
+
   .intro-video {
     width: 240px;
     height: 240px;
+  }
+}
+
+/* ===================== SCROLL REVEAL ===================== */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-on-scroll {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }
