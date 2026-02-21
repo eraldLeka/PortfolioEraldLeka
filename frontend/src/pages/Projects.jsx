@@ -51,6 +51,26 @@ useEffect(() => {
 
 <section className="projects-file">
   <div className="project-card">
+    <h3>TCP Server-Client</h3>
+    <div className="gallery">
+<img src={tcpImages[tcpCurrent]} alt="Project screenshot" />
+    </div>
+     <div className="tech-stack">
+   
+    <SiDotnet className="tech-icon dotnet" title=".NET"/>
+    <SiSharp className="tech-icon sharp" title="C#"/>
+    </div>
+        <p>A TCP Server-Client desktop application.</p>
+        <a 
+        href="https://github.com/eraldLeka/TCP-Server-Client.git" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="project-link"
+        >
+        <FaGithub  /> View Project
+        </a>
+  </div>
+  <div className="project-card">
     <h3> IT Incident Management</h3>
     <video autoPlay loop muted controls playsInline className="projectVideo">
         <source src="/videos/IncidentManagment.mp4" type="video/mp4" />
@@ -122,26 +142,7 @@ useEffect(() => {
         <FaGithub  /> View Project
         </a>
   </div>
-  <div className="project-card">
-    <h3>TCP Server-Client</h3>
-    <div className="gallery">
-<img src={tcpImages[tcpCurrent]} alt="Project screenshot" />
-    </div>
-     <div className="tech-stack">
-   
-    <SiDotnet className="tech-icon dotnet" title=".NET"/>
-    <SiSharp className="tech-icon sharp" title="C#"/>
-    </div>
-        <p>A TCP Server-Client desktop application.</p>
-        <a 
-        href="https://github.com/eraldLeka/TCP-Server-Client.git" 
-        target="_blank" 
-        rel="noopener noreferrer"
-        className="project-link"
-        >
-        <FaGithub  /> View Project
-        </a>
-  </div>
+
 
   <div className="project-card">
     <h3>SVM Model for Classification</h3>
