@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../styles/Technologies.css";
 import { FaReact, FaPython, FaJava, FaHtml5, FaCss3Alt, FaGitAlt, FaFlask } from "react-icons/fa";
-import { SiJavascript, SiMysql, SiDocker, SiFastapi,SiPostgresql, SiR } from "react-icons/si";
+import { SiJavascript, SiMysql, SiDocker, SiFastapi,SiPostgresql, SiR, SiDotnet} from "react-icons/si";
 
 function Technologies() {
   const icons = [
@@ -18,6 +18,8 @@ function Technologies() {
     { icon: <SiFastapi />, color: "#009688", name: "FastAPI" },
     {icon: <SiPostgresql/>, color:"#075087ff", name: "Postgresql"},
     {icon: <SiR/>, color:"#184a71ff", name: "R"},
+    {icon: <SiDotnet/>, color:"#512bd4ff", name: ".NET"},
+    
 
   ];
 

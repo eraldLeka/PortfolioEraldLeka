@@ -48,6 +48,7 @@ const ExpertSection = () => {
       icon: <FaBrain style={{ color: "#800080" }} />,
       items: ["Python", "Pandas", "R"],
     },
+   
   ];
 
   return (

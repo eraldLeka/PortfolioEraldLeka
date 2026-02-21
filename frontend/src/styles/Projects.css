@@ -137,6 +137,12 @@
   transition: opacity 0.5s ease-in-out;
 }
 
+.gallery--contain img {
+  object-fit: contain;
+  padding: clamp(6px, 1.2vw, 10px);
+  box-sizing: border-box;
+}
+
 /* ==================== TECH STACK ==================== */
 .tech-stack {
   display: flex;
