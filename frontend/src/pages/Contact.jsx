@@ -11,8 +11,6 @@ import {
 } from "react-icons/fa";
 
 
-
-
 function About() {
   return (
     <div className="contact-page">
@@ -52,7 +50,7 @@ function About() {
       <span>eraldLeka</span>
     </a>
 
-    <a href="https://wa.me/yourphonenumber" className="contact-card" target="_blank" rel="noopener noreferrer">
+    <a href="https://wa.me/355692218305" className="contact-card" target="_blank" rel="noopener noreferrer">
       <FaWhatsapp className="contact-icon" color= "#33ae48ff"  />
       <p>WhatsApp</p>
       <span>+355 69 22 18 305</span>
