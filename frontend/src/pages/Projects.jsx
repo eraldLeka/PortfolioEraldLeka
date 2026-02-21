@@ -9,6 +9,7 @@ import img3 from "../assets/diploma3.png";
 import img4 from "../assets/calculator.png";
 import tcpclient from "../assets/tcpclient.png";
 import tcpserver from "../assets/tcpserver.png";
+import compress from "../assets/compress.png";
 
 function Projects(){
 
@@ -96,6 +97,27 @@ useEffect(() => {
             </a>
   </div>
 
+<div className="project-card project-card--calculator">
+    <h3>Compress-Decompress</h3>
+    <div className="gallery gallery--contain">
+      <img src={compress} alt="Compress-Decompress App" className="project-img" />
+    </div>
+     <div className="tech-stack">
+ <SiDotnet className="tech-icon dotnet" title=".NET"/>
+    <SiSharp className="tech-icon sharp" title="C#"/>   
+
+    </div>
+         <p>A desktop application for compressing and decompressing files.</p>
+        <a 
+        href="https://github.com/eraldLeka/Compress-Decompress-Project.git" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="project-link"
+        >
+        <FaGithub  /> View Project
+        </a>
+  </div>
+  
 <div className="project-card">
     <h3>Weather Albania Map App</h3>
     <video autoPlay loop muted controls playsInline className="projectVideo">
