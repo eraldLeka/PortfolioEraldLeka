@@ -18,6 +18,8 @@ import { FaGraduationCap, FaCalendarAlt } from "react-icons/fa";
 import university from "../assets/university.png"; 
 import education from "../assets/education.jpeg";
 import ExpertSection from "../components/ExpertSection";
+import LazyVideo from "../components/LazyVideo.jsx";
+import LazyImage from "../components/LazyImage.jsx";
 
 
 
@@ -27,10 +29,18 @@ function About() {
       <section className="about-section">
         {/* Video në kolonën e majtë */}
         <div className="about-video-wrapper">
-          <video autoPlay loop muted playsInline className="about-video">
-            <source src="/videos/aboutIntro.mp4" type="video/mp4" />
+          <LazyVideo
+            src="/videos/aboutIntro.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="none"
+            className="about-video"
+            rootMargin="600px"
+          >
             Your browser does not support the video tag.
-          </video>
+          </LazyVideo>
         </div>
 
         <div className="about-content">
@@ -62,7 +72,7 @@ function About() {
         </h3>
 
         <div className="university-wrapper">
-          <img src={university} alt="University" className="university" />
+          <LazyImage src={university} alt="University" className="university" />
 
           <div className="university-info">
             <h4>BSc in Information Technologies</h4>
@@ -95,7 +105,7 @@ function About() {
 
         {/* Div për foto */}
         <div className="education-image">
-          <img src={education} alt="Education" className="education-img" />
+          <LazyImage src={education} alt="Education" className="education-img" />
         </div>
       </div>
 

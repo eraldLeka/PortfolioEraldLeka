@@ -3,6 +3,8 @@ import "../styles/Achievements.css";
 import freecodecamp from "../assets/freeCodeCamp.png";
 import java from "../assets/java.jpg";
 import data from "../assets/data.jpg";
+import LazyVideo from "../components/LazyVideo.jsx";
+import LazyImage from "../components/LazyImage.jsx";
 
 function Achievements() {
   const [modalImg, setModalImg] = useState(null); // state për modal
@@ -21,9 +23,16 @@ function Achievements() {
     <div className="achieve-page">
       <section className="achieve-section">
         <div className="achieve-video-wrapper">
-          <video autoPlay loop muted playsInline className="achieve-video">
-            <source src="/videos/achieveVideo.mp4" type="video/mp4" />
-          </video>
+          <LazyVideo
+            src="/videos/achieveVideo.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="none"
+            className="achieve-video"
+            rootMargin="600px"
+          />
         </div>
         <div className="about-content">
           <h1>What I've Achieved?</h1>
@@ -35,7 +44,7 @@ function Achievements() {
         <div className="certification-grid">
           {certs.map((cert, index) => (
             <div className="cert-card" key={index}>
-              <img
+              <LazyImage
                 src={cert.img}
                 alt={cert.name}
                 className="cert-img"

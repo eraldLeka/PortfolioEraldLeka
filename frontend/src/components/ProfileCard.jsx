@@ -11,7 +11,14 @@ function ProfileCard() {
     <>
       <div className="profile-card">
         <div className="profile-top">
-          <img src={profilePhoto} alt="Erald" className="profile-img" />
+          <img
+            src={profilePhoto}
+            alt="Erald"
+            className="profile-img"
+            loading="eager"
+            decoding="async"
+            fetchPriority="high"
+          />
           <div className="profile-meta">
             <h3>Erald Leka</h3>
             <h5>Full-Stack Developer</h5>

@@ -10,6 +10,8 @@ import img4 from "../assets/calculator.png";
 import tcpclient from "../assets/tcpclient.png";
 import tcpserver from "../assets/tcpserver.png";
 import compress from "../assets/compress.png";
+import LazyVideo from "../components/LazyVideo.jsx";
+import LazyImage from "../components/LazyImage.jsx";
 
 function Projects(){
 
@@ -39,10 +41,18 @@ useEffect(() => {
             <section className="projects-section">
                 {/* Video në kolonën e majtë */}
                 <div className="projects-video-wrapper">
-                <video autoPlay loop muted playsInline className="projects-video">
-                    <source src="/videos/projectVideo.mp4" type="video/mp4" />
+                <LazyVideo
+                    src="/videos/projectVideo.mp4"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    preload="none"
+                    className="projects-video"
+                    rootMargin="600px"
+                >
                     Your browser does not support the video tag.
-                </video>
+                </LazyVideo>
                 </div>
 
                 <div className="projects-content">
@@ -54,7 +64,7 @@ useEffect(() => {
   <div className="project-card">
     <h3>TCP Server-Client</h3>
     <div className="gallery">
-<img src={tcpImages[tcpCurrent]} alt="Project screenshot" />
+<LazyImage src={tcpImages[tcpCurrent]} alt="Project screenshot" />
     </div>
      <div className="tech-stack">
    
@@ -73,10 +83,19 @@ useEffect(() => {
   </div>
   <div className="project-card">
     <h3> IT Incident Management</h3>
-    <video autoPlay loop muted controls playsInline className="projectVideo">
-        <source src="/videos/IncidentManagment.mp4" type="video/mp4" />
+    <LazyVideo
+        src="/videos/IncidentManagment.mp4"
+        autoPlay
+        loop
+        muted
+        controls
+        playsInline
+        preload="none"
+        className="projectVideo"
+        rootMargin="400px"
+    >
         Your browser does not support the video tag.
-    </video>
+    </LazyVideo>
      <div className="tech-stack">
       <FaReact className="tech-icon react" title="React" />
       <FaPython className="tech-icon python" title="Python" />
@@ -100,7 +119,7 @@ useEffect(() => {
 <div className="project-card project-card--calculator">
     <h3>Compress-Decompress</h3>
     <div className="gallery gallery--contain">
-      <img src={compress} alt="Compress-Decompress App" className="project-img" />
+      <LazyImage src={compress} alt="Compress-Decompress App" className="project-img" />
     </div>
      <div className="tech-stack">
  <SiDotnet className="tech-icon dotnet" title=".NET"/>
@@ -120,10 +139,19 @@ useEffect(() => {
   
 <div className="project-card">
     <h3>Weather Albania Map App</h3>
-    <video autoPlay loop muted controls playsInline className="projectVideo">
-        <source src="/videos/WeatherApp.mp4" type="video/mp4" />
+    <LazyVideo
+        src="/videos/WeatherApp.mp4"
+        autoPlay
+        loop
+        muted
+        controls
+        playsInline
+        preload="none"
+        className="projectVideo"
+        rootMargin="400px"
+    >
         Your browser does not support the video tag.
-    </video>
+    </LazyVideo>
     <div className="tech-stack">
     <FaReact className="tech-icon react" title="React" />
     <FaPython className="tech-icon python" title="Python" />
@@ -145,7 +173,7 @@ useEffect(() => {
 <div className="project-card project-card--calculator">
     <h3>Calculator</h3>
     <div className="gallery gallery--contain">
-      <img src={img4} alt="Calculator App" className="project-img" />
+      <LazyImage src={img4} alt="Calculator App" className="project-img" />
     </div>
      <div className="tech-stack">
    
@@ -169,7 +197,7 @@ useEffect(() => {
   <div className="project-card">
     <h3>SVM Model for Classification</h3>
     <div className="gallery">
-<img src={images[current]} alt="Project screenshot" />
+<LazyImage src={images[current]} alt="Project screenshot" />
     </div>
      <div className="tech-stack">
    

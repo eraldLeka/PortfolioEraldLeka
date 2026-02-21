@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/Contact.css";
+import LazyVideo from "../components/LazyVideo.jsx";
 
 
 import { 
@@ -11,16 +12,24 @@ import {
 } from "react-icons/fa";
 
 
-function About() {
+function Contact() {
   return (
     <div className="contact-page">
       <section className="contact-section">
         {/* Video në kolonën e majtë */}
         <div className="contact-video-wrapper">
-          <video autoPlay loop muted playsInline className="contact-video">
-            <source src="/videos/contactVideo.mp4" type="video/mp4" />
+          <LazyVideo
+            src="/videos/contactVideo.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="none"
+            className="contact-video"
+            rootMargin="600px"
+          >
             Your browser does not support the video tag.
-          </video>
+          </LazyVideo>
         </div>
         
         <div className="contact-content">
@@ -63,4 +72,4 @@ function About() {
   );
 }
 
-export default About;
+export default Contact;
