@@ -34,7 +34,7 @@ function Achievements() {
             rootMargin="600px"
           />
         </div>
-        <div className="about-content">
+        <div className="achieve-content">
           <h1>What I've Achieved?</h1>
         </div>
       </section>

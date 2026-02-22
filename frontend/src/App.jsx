@@ -17,11 +17,11 @@ function App() {
 
   useEffect(() => {
     const fadeTimer = setTimeout(() => {
-      setFadeOut(true); // nis fade-out
-    }, 2500); // fillon zbehja pas 2.5 sekondash
+      setFadeOut(true);
+    }, 2500); 
 
     const hideTimer = setTimeout(() => {
-      setShowIntro(false); // fsheh komplet pas 3 sekondash
+      setShowIntro(false); 
     }, 3000);
 
     return () => {
