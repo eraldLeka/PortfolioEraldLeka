@@ -1,0 +1,339 @@
+/* ==================== PROFILE CARD (SIDEBAR) ==================== */
+.profile-card {
+  position: fixed;
+  top: 22px;
+  left: 0;
+  width: 240px;
+  padding: 22px 20px 18px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--accent);
+  border-radius: 18px;
+  box-shadow: var(--shadow-sm);
+  text-align: left;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  z-index: 50;
+}
+
+.profile-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(
+    circle at top right,
+    rgba(37, 99, 235, 0.16),
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.profile-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* ==================== PROFILE IMAGE ==================== */
+.profile-img {
+  width: 82px;
+  height: 82px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  box-shadow:
+    0 8px 20px rgba(15, 23, 42, 0.15),
+    0 0 0 6px var(--ring);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  margin: 0 0 12px 0;
+  display: block;
+}
+
+.profile-img:hover {
+  transform: scale(1.05);
+  box-shadow:
+    0 10px 24px rgba(15, 23, 42, 0.18),
+    0 0 0 7px var(--ring);
+}
+
+/* ==================== PROFILE TEXT ==================== */
+.profile-card h3 {
+  margin: 8px 0 4px 0;
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.profile-card h5 {
+  margin: 0 0 12px 0;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+/* ==================== CV BUTTON ==================== */
+.cv-button {
+  display: inline-block;
+  margin-top: 8px;
+  width: 100%;
+  padding: 8px 14px;
+  background: transparent;
+  color: var(--accent-strong);
+  font-weight: 600;
+  font-size: 0.86rem;
+  border: 1px solid rgba(37, 99, 235, 0.4);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  cursor: pointer;
+  box-shadow: none;
+}
+
+.cv-button:hover {
+  background: var(--accent);
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(37, 99, 235, 0.25);
+}
+
+.cv-button:active {
+  transform: translateY(0);
+}
+
+/* ==================== PROFILE TOP WRAPPER ==================== */
+.profile-top {
+  display: block;
+}
+
+.profile-meta {
+  display: block;
+}
+
+/* ==================== ICONS CONTAINER ==================== */
+.icons-container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 6px;
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--border);
+}
+
+.icon-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  cursor: pointer;
+  padding: 8px 10px;
+  border-radius: 12px;
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.icon-item:hover {
+  background: #ffffff;
+  border-color: rgba(37, 99, 235, 0.35);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-xs);
+}
+
+.icon-item .icon {
+  color: var(--accent);
+  font-size: 0.98rem;
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 10px;
+  background: rgba(37, 99, 235, 0.12);
+  display: grid;
+  place-items: center;
+  transition: transform 0.2s ease;
+}
+
+.icon-item:hover .icon {
+  transform: scale(1.08);
+}
+
+.icon-item span {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text);
+  transition: color 0.2s ease;
+}
+
+.icon-item:hover span {
+  color: var(--accent-strong);
+}
+
+/* ==================== SOCIAL LINKS ==================== */
+.icon-item:last-child {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-strong) 100%);
+  border-color: transparent;
+  box-shadow: 0 12px 24px rgba(37, 99, 235, 0.28);
+  color: #fff;
+}
+
+.icon-item:last-child:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 28px rgba(37, 99, 235, 0.32);
+}
+
+.icon-item:last-child .icon {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.icon-item:last-child span {
+  color: #fff;
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+
+/* Desktop & Laptop (> 768px) */
+@media (min-width: 769px) {
+}
+
+/* Tablet & Mobile (<= 768px) */
+@media (max-width: 768px) {
+  .profile-card {
+    position: fixed;
+    top: 14px;
+    left: 14px;
+    right: 14px;
+    width: auto;
+    padding: 14px 14px 12px;
+    border-radius: 18px;
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--accent);
+    box-shadow: var(--shadow-sm);
+    transform: none;
+    z-index: 200;
+  }
+
+  .profile-card:hover {
+    transform: none;
+  }
+
+  .profile-card::before {
+    width: 90px;
+    height: 90px;
+  }
+
+  .profile-top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .profile-img {
+    width: 48px;
+    height: 48px;
+    margin: 0;
+    box-shadow:
+      0 6px 14px rgba(15, 23, 42, 0.14),
+      0 0 0 5px var(--ring);
+  }
+
+  .profile-meta {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .profile-card h3 {
+    margin: 0;
+    font-size: 1rem;
+  }
+
+  .profile-card h5 {
+    display: none;
+  }
+
+  .cv-button {
+    margin-top: 0;
+    width: auto;
+    padding: 7px 10px;
+    font-size: 0.78rem;
+  }
+
+  .icons-container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 12px;
+    padding-top: 10px;
+    overflow-x: auto;
+    border-top: 1px dashed var(--border);
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .icon-item {
+    width: auto;
+    padding: 8px 10px;
+    flex: 0 0 auto;
+  }
+
+  .icon-item span {
+    display: none;
+  }
+}
+
+/* Mobile (<= 480px) */
+@media (max-width: 480px) {
+  .profile-card {
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    padding: 12px 12px 10px;
+  }
+
+  .profile-img {
+    width: 44px;
+    height: 44px;
+  }
+
+  .profile-card h3 {
+    font-size: 1rem;
+  }
+
+  .cv-button {
+    padding: 6px 9px;
+  }
+
+  .icons-container {
+    gap: 8px;
+    padding-top: 10px;
+  }
+}
+
+/* Scrollbar styling for horizontal nav on mobile */
+@media (max-width: 768px) {
+  .icons-container::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .icons-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 999px;
+  }
+
+  .icons-container::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border-radius: 999px;
+  }
+
+  .icons-container::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-strong);
+  }
+}

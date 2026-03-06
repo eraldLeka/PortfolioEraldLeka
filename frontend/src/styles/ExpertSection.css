@@ -1,0 +1,246 @@
+/* ==================== EXPERT CARDS ==================== */
+.expert {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.expert-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background-color: var(--surface);
+  box-shadow: var(--shadow-xs);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  box-sizing: border-box;
+}
+
+.expert-card:hover {
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-3px);
+}
+
+.expert-card.open {
+  border-color: rgba(37, 99, 235, 0.5);
+  box-shadow: var(--shadow-md);
+}
+
+/* ==================== EXPERT HEADER ==================== */
+.expert-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 20px;
+  cursor: pointer;
+  background: var(--surface-alt);
+  transition: background 0.25s ease, color 0.25s ease;
+  user-select: none;
+  border-bottom: 1px solid transparent;
+}
+
+.expert-header:hover {
+  background: #eef2f7;
+}
+
+.expert-card.open .expert-header {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-strong) 100%);
+  color: #fff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* ==================== EXPERT TITLE ==================== */
+.expert-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+  transition: color 0.2s ease;
+}
+
+.expert-card.open .expert-title {
+  color: #fff;
+}
+
+.expert-title .icon {
+  font-size: 1.35rem;
+  transition: transform 0.2s ease;
+}
+
+.expert-card.open .expert-title .icon {
+  transform: rotate(10deg) scale(1.05);
+}
+
+/* ==================== TOGGLE ICON ==================== */
+.expert-toggle {
+  font-size: 1.3rem;
+  color: var(--muted);
+  transition: transform 0.25s ease, color 0.25s ease;
+  line-height: 1;
+}
+
+.expert-card.open .expert-toggle {
+  color: #fff;
+  transform: rotate(180deg);
+}
+
+/* ==================== EXPERT CONTENT ==================== */
+.expert-content {
+  max-height: 0;
+  overflow: hidden;
+  background-color: var(--surface);
+  transition: max-height 0.4s ease;
+}
+
+.expert-card.open .expert-content {
+  max-height: 1200px;
+}
+
+.expert-content ul {
+  padding: 20px 24px;
+  margin: 0;
+  list-style: none;
+}
+
+.expert-content li {
+  position: relative;
+  padding-left: 28px;
+  margin: 12px 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.6;
+  transition: color 0.2s ease, padding-left 0.2s ease;
+}
+
+.expert-content li::before {
+  content: ">";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 1rem;
+  font-weight: 700;
+  transition: transform 0.2s ease;
+}
+
+.expert-content li:hover {
+  color: var(--accent-strong);
+  padding-left: 32px;
+}
+
+.expert-content li:hover::before {
+  transform: translateX(4px);
+}
+
+/* ==================== OPEN ANIMATION ==================== */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.expert-card.open .expert-content ul {
+  animation: slideDown 0.35s ease-out;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 768px) {
+  .expert {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    max-width: 600px;
+  }
+
+  .expert-header {
+    padding: 16px 18px;
+  }
+
+  .expert-title {
+    font-size: 1.05rem;
+    gap: 10px;
+  }
+
+  .expert-title .icon {
+    font-size: 1.25rem;
+  }
+
+  .expert-toggle {
+    font-size: 1.2rem;
+  }
+
+  .expert-content ul {
+    padding: 18px 20px;
+  }
+
+  .expert-content li {
+    font-size: 0.95rem;
+    padding-left: 26px;
+  }
+}
+
+@media (max-width: 480px) {
+  .expert {
+    gap: 14px;
+    padding: 5px;
+  }
+
+  .expert-card {
+    border-radius: var(--radius-sm);
+  }
+
+  .expert-header {
+    padding: 14px 16px;
+  }
+
+  .expert-title {
+    font-size: 1rem;
+    gap: 8px;
+  }
+
+  .expert-title .icon {
+    font-size: 1.15rem;
+  }
+
+  .expert-toggle {
+    font-size: 1.1rem;
+  }
+
+  .expert-content ul {
+    padding: 16px 18px;
+  }
+
+  .expert-content li {
+    font-size: 0.9rem;
+    margin: 10px 0;
+    padding-left: 24px;
+  }
+}
+
+@media (max-width: 360px) {
+  .expert-header {
+    padding: 12px 14px;
+  }
+
+  .expert-title {
+    font-size: 0.95rem;
+  }
+
+  .expert-content ul {
+    padding: 14px 16px;
+  }
+
+  .expert-content li {
+    font-size: 0.85rem;
+    margin: 8px 0;
+  }
+}

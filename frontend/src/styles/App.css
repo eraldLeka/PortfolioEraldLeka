@@ -1,0 +1,95 @@
+/* ===================== APP LAYOUT ===================== */
+.app-container {
+  display: grid;
+  grid-template-columns: 270px 1fr;
+  min-height: 100vh;
+  gap: 24px;
+  padding: 24px;
+}
+
+.sidebar {
+  position: sticky;
+  top: 24px;
+  align-self: start;
+}
+
+.main-content {
+  min-width: 0;
+}
+
+/* ===================== INTRO VIDEO ===================== */
+.intro-video-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #0b0f1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.6s ease-in-out;
+}
+
+.intro-video {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.4);
+}
+
+.intro-video-container.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 1200px) {
+  .app-container {
+    grid-template-columns: 220px 1fr;
+    gap: 20px;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-container {
+    display: flex;
+    flex-direction: column;
+    padding: 14px;
+  }
+
+  .sidebar {
+    position: static;
+    width: 100%;
+    margin-bottom: 0;
+    height: 0;
+  }
+
+  .main-content {
+    padding-top: 150px;
+  }
+
+  .intro-video {
+    width: 280px;
+    height: 280px;
+    border: 3px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+  }
+}
+
+@media (max-width: 480px) {
+  .main-content {
+    padding-top: 140px;
+  }
+
+  .intro-video {
+    width: 240px;
+    height: 240px;
+  }
+}
