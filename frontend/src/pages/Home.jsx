@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../styles/Home.css";
-import heroVideo from "../assets/heroVideo.mp4";
+import homeVideoWebm from "../assets/homeVideo.webm";
+import homeVideoMp4 from "../assets/homeVideo.mp4";
 import Technologies from "../components/Technologies.jsx";
 import pr1 from "../assets/pr1.png";
 import conv1 from "../assets/conv1.png";
@@ -27,7 +28,9 @@ function Home() {
     <div className="home-container">
       <section className="hero-section"> {/* Bashkim i hero-container + hero-video-section */}
         <LazyVideo
-          src={heroVideo}
+          sources={[
+            { src: homeVideoMp4, type: "video/mp4" },
+          ]}
           autoPlay
           loop
           muted
