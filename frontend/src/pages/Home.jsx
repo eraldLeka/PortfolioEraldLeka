@@ -26,7 +26,7 @@ function Home() {
 
   return (
     <div className="home-container">
-      <section className="hero-section"> {/* Bashkim i hero-container + hero-video-section */}
+      <section className="hero-section"> {}
         <LazyVideo
           sources={[
             { src: homeVideoMp4, type: "video/mp4" },
