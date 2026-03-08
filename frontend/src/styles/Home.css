@@ -254,7 +254,12 @@
 @media (max-width: 768px) {
   .hero-section {
     border-radius: var(--radius);
-    padding: 5px;
+    padding: 0;
+    height: auto;
+  }
+
+  .hero-video {
+    object-fit: cover;
   }
 
   .skills {
@@ -299,7 +304,7 @@
 @media (max-width: 480px) {
   .hero-section {
     border-radius: var(--radius-sm);
-    padding: 5px;
+    padding: 0;
   }
 
   .skills {
