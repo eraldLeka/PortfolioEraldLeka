@@ -1,15 +1,28 @@
-import React from "react"; // Hiq useEffect/useState – nuk nevojiten më
+import React, { useEffect, useState } from "react";
 import "../styles/Home.css";
 import heroVideo from "../assets/heroVideo.mp4";
 import Technologies from "../components/Technologies.jsx";
 import pr1 from "../assets/pr1.png";
-import pr2 from "../assets/pr2.png";
+import conv1 from "../assets/conv1.png";
 import LazyVideo from "../components/LazyVideo.jsx";
 import LazyImage from "../components/LazyImage.jsx";
 import { FaReact, FaPython, FaJs, FaDatabase, FaGithub } from "react-icons/fa";
 import { SiJavascript, SiMysql, SiDocker, SiFastapi,SiPostgresql, SiR } from "react-icons/si";
 
 function Home() {
+  const [modalImg, setModalImg] = useState(null);
+
+  useEffect(() => {
+    if (!modalImg) return;
+    const handleKey = (event) => {
+      if (event.key === "Escape") {
+        setModalImg(null);
+      }
+    };
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  }, [modalImg]);
+
   return (
     <div className="home-container">
       <section className="hero-section"> {/* Bashkim i hero-container + hero-video-section */}
@@ -36,9 +49,39 @@ function Home() {
   <h2 className="section-title">New Projects</h2>
   <div className="projects-grid">
     <div className="project-card">
-      <LazyImage src={pr1} alt="Incident Management App" className="project-img" />
+      <LazyImage
+        src={conv1}
+        alt="WebChat App"
+        className="project-img project-img--contain zoomable"
+        onClick={() => setModalImg(conv1)}
+      />
+      <h3>WebChat</h3>
+      <p>Full-stack chat platform with React, FastAPI, and PostgreSQL, emphasizing conversation management, responsive layouts, real-time messaging, and a clean, modern UX.</p>
+        <div className="tech-stack">
+            <FaReact className="tech-icon react" title="React" />
+            <SiJavascript className="tech-icon js" title="JavaScript" />
+            <SiPostgresql className="tech-icon postgres" title="PostgreSQL" />
+            <SiFastapi className="tech-icon fp" title="FastAPI"/>
+          </div>
+      <a 
+        href="https://github.com/eraldLeka/WebChat.git"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="project-link"
+      >
+        View Project
+      </a>
+    </div>
+
+    <div className="project-card">
+      <LazyImage
+        src={pr1}
+        alt="Incident Management App"
+        className="project-img zoomable"
+        onClick={() => setModalImg(pr1)}
+      />
       <h3>Incident Management App</h3>
-      <p>A full-stack web application designed to streamline the process of reporting, tracking, and resolving IT incidents. Built with FastAPI and PostgreSQL on the backend and React.js on the frontend, it provides real-time updates, role-based user access, and a clean dashboard interface for efficient incident management.</p>
+      <p>Incident management system for reporting, tracking, and resolving IT issues with role-based access, real-time updates, workflow dashboards, auditing, and analytics.</p>
         <div className="tech-stack">
             <FaReact className="tech-icon react" title="React" />
             <FaPython className="tech-icon python" title="Python" />
@@ -57,28 +100,13 @@ function Home() {
         View Project
       </a>
     </div>
-
-    <div className="project-card">
-      <LazyImage src={pr2} alt="Weather Albania Map" className="project-img" />
-      <h3>Weather Albania Map</h3>
-         <div className="tech-stack">
-          <FaReact className="tech-icon react" title="React" />
-          <FaPython className="tech-icon python" title="Python" />
-          <SiJavascript className="tech-icon js" title="JavaScript" />
-          <SiFastapi className="tech-icon fp" title="FastAPI"/>
-      
-          </div>
-      <a 
-        href="https://github.com/eraldLeka/Weather.git"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="project-link"
-      >
-        View Project
-      </a>
-    </div>
   </div>
 </section>
+      {modalImg && (
+        <div className="image-modal-overlay" onClick={() => setModalImg(null)}>
+          <img src={modalImg} alt="Project preview" className="image-modal-img" />
+        </div>
+      )}
 
 
     </div>

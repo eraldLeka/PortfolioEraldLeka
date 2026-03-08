@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-label="WebChat preview">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#eef4ff" />
+      <stop offset="100%" stop-color="#f8fbff" />
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#f2f6ff" />
+    </linearGradient>
+    <linearGradient id="bubble" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e6ecff" />
+      <stop offset="100%" stop-color="#d9e3ff" />
+    </linearGradient>
+    <linearGradient id="bubbleAccent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#6366f1" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" rx="40" fill="url(#bg)" />
+
+  <rect x="80" y="120" width="320" height="560" rx="28" fill="url(#panel)" stroke="#d9e3f4" stroke-width="2" />
+  <rect x="110" y="160" width="260" height="54" rx="18" fill="#ffffff" stroke="#d9e3f4" stroke-width="2" />
+  <rect x="110" y="240" width="260" height="52" rx="16" fill="#3b82f6" opacity="0.9" />
+  <rect x="110" y="320" width="260" height="70" rx="20" fill="#ffffff" stroke="#d9e3f4" stroke-width="2" />
+  <rect x="110" y="410" width="260" height="70" rx="20" fill="#ffffff" stroke="#d9e3f4" stroke-width="2" />
+
+  <rect x="440" y="180" width="680" height="440" rx="36" fill="#ffffff" stroke="#d9e3f4" stroke-width="2" />
+  <rect x="520" y="260" width="360" height="90" rx="30" fill="url(#bubble)" />
+  <polygon points="540,350 525,365 555,360" fill="url(#bubble)" />
+  <rect x="720" y="390" width="320" height="80" rx="26" fill="url(#bubbleAccent)" />
+  <polygon points="1000,470 1020,485 980,480" fill="url(#bubbleAccent)" />
+
+  <text x="600" y="620" text-anchor="middle" font-family="Poppins, Segoe UI, Arial, sans-serif" font-size="44" font-weight="700" fill="#1f2937">WebChat</text>
+  <text x="600" y="665" text-anchor="middle" font-family="Poppins, Segoe UI, Arial, sans-serif" font-size="22" fill="#4b5563">Real-time conversations with a clean, modern UI</text>
+</svg>

@@ -52,9 +52,8 @@ function About() {
         <div className="personal-bio">
       <p >
         <AiOutlinePushpin color="red"/>
-        I am a passionate IT graduate with a strong interest in web development and modern technologies. I enjoy building clean and efficient applications, solving challenging problems, and continuously learning to improve my skills. My goal is to contribute to impactful projects while growing as a developer.
-      </p>
-        </div>
+        Backend-focused software developer with experience in C# (.NET) and Python (FastAPI), building RESTful APIs and web applications with React-based frontends. Currently pursuing a Master’s degree in Computer Engineering while developing real-world projects focused on scalable backend architecture, database design, and clean system structure.</p> 
+       </div>
       </section>
       
     <section className="expert-section">

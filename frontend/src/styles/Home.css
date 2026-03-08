@@ -135,6 +135,13 @@
   border: 1px solid var(--border);
 }
 
+.project-img--contain {
+  object-fit: contain;
+  background-color: #fff;
+  padding: 6px;
+  box-sizing: border-box;
+}
+
 .project-content {
   display: flex;
   flex-direction: column;

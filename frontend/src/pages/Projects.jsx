@@ -10,6 +10,10 @@ import img4 from "../assets/calculator.png";
 import tcpclient from "../assets/tcpclient.png";
 import tcpserver from "../assets/tcpserver.png";
 import compress from "../assets/compress.png";
+import conv1 from "../assets/conv1.png";
+import chatwindow1 from "../assets/chatwindow1.png";
+import changes1 from "../assets/changes1.png";
+import login from "../assets/login.png";
 import LazyVideo from "../components/LazyVideo.jsx";
 import LazyImage from "../components/LazyImage.jsx";
 
@@ -34,6 +38,28 @@ useEffect(() => {
   }, 3000);
   return () => clearInterval(interval);
 }, [tcpImages.length]);
+
+const webchatImages = [conv1, chatwindow1, changes1, login];
+const [ webchatCurrent, setWebchatCurrent ] = useState(0);
+useEffect(() => {
+  const interval = setInterval(() => {
+    setWebchatCurrent((prev) => (prev + 1) % webchatImages.length);
+  }, 3000);
+  return () => clearInterval(interval);
+}, [webchatImages.length]);
+
+const [modalImg, setModalImg] = useState(null);
+
+useEffect(() => {
+  if (!modalImg) return;
+  const handleKey = (event) => {
+    if (event.key === "Escape") {
+      setModalImg(null);
+    }
+  };
+  window.addEventListener("keydown", handleKey);
+  return () => window.removeEventListener("keydown", handleKey);
+}, [modalImg]);
 
     return(   
 
@@ -62,16 +88,48 @@ useEffect(() => {
 
 <section className="projects-file">
   <div className="project-card">
+    <h3>WebChat</h3>
+    <div className="gallery gallery--contain">
+      <LazyImage
+        src={webchatImages[webchatCurrent]}
+        alt="WebChat app preview"
+        className="zoomable"
+        onClick={() => setModalImg(webchatImages[webchatCurrent])}
+      />
+    </div>
+     <div className="tech-stack">
+      <FaReact className="tech-icon react" title="React" />
+      <SiJavascript className="tech-icon js" title="JavaScript" />
+      <SiPostgresql className="tech-icon postgres" title="PostgreSQL" />
+      <SiFastapi className="tech-icon fp" title="FastAPI"/>
+    </div>
+        <p>Full-stack chat platform with React, FastAPI, and PostgreSQL, emphasizing conversation management, responsive layouts, real-time messaging, and a clean, modern UX.</p>
+        <a 
+        href="https://github.com/eraldLeka/WebChat.git" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="project-link"
+        >
+        <FaGithub  /> View Project
+        </a>
+  </div>
+
+  <div className="project-card">
     <h3>TCP Server-Client</h3>
-    <div className="gallery">
-<LazyImage src={tcpImages[tcpCurrent]} alt="Project screenshot" />
+    <div className="gallery gallery--contain">
+<LazyImage
+  src={tcpImages[tcpCurrent]}
+  alt="Project screenshot"
+  className="zoomable"
+  onClick={() => setModalImg(tcpImages[tcpCurrent])}
+/>
     </div>
      <div className="tech-stack">
    
     <SiDotnet className="tech-icon dotnet" title=".NET"/>
     <SiSharp className="tech-icon sharp" title="C#"/>
     </div>
-        <p>A TCP Server-Client desktop application.</p>
+        <p>C#/.NET desktop app implementing TCP sockets with structured messaging, resilient reconnection, detailed client/server logging, monitoring tools, and robust error handling.</p>
         <a 
         href="https://github.com/eraldLeka/TCP-Server-Client.git" 
         target="_blank" 
@@ -81,6 +139,7 @@ useEffect(() => {
         <FaGithub  /> View Project
         </a>
   </div>
+
   <div className="project-card">
     <h3> IT Incident Management</h3>
     <LazyVideo
@@ -108,7 +167,7 @@ useEffect(() => {
 
 
     </div>
-            <p>A project for managing IT incidents.</p>
+            <p>Incident management system for reporting, tracking, and resolving IT issues with role-based access, real-time updates, workflow dashboards, auditing, and analytics.</p>
             <a 
             href="https://github.com/eraldLeka/incident-management-app.git" 
             target="_blank" 
@@ -122,14 +181,19 @@ useEffect(() => {
 <div className="project-card project-card--calculator">
     <h3>Compress-Decompress</h3>
     <div className="gallery gallery--contain">
-      <LazyImage src={compress} alt="Compress-Decompress App" className="project-img" />
+      <LazyImage
+        src={compress}
+        alt="Compress-Decompress App"
+        className="project-img zoomable"
+        onClick={() => setModalImg(compress)}
+      />
     </div>
      <div className="tech-stack">
  <SiDotnet className="tech-icon dotnet" title=".NET"/>
     <SiSharp className="tech-icon sharp" title="C#"/>   
 
     </div>
-         <p>A desktop application for compressing and decompressing files.</p>
+         <p>Desktop utility for file compression and extraction with streamlined workflows, integrity checks, progress feedback, and status reporting for reliable results.</p>
         <a 
         href="https://github.com/eraldLeka/Compress-Decompress-Project.git" 
         target="_blank" 
@@ -161,6 +225,7 @@ useEffect(() => {
     <SiFastapi className="tech-icon fp" title="FastAPI"/>
 
     </div>
+            <p>Interactive weather map for Albania with API-driven data, fast rendering, responsive UI, location-based insights, and clear visual daily trends summaries.</p>
             <a 
             href="https://github.com/eraldLeka/Weather.git" 
             target="_blank" 
@@ -174,7 +239,12 @@ useEffect(() => {
 <div className="project-card project-card--calculator">
     <h3>Calculator</h3>
     <div className="gallery gallery--contain">
-      <LazyImage src={img4} alt="Calculator App" className="project-img" />
+      <LazyImage
+        src={img4}
+        alt="Calculator App"
+        className="project-img zoomable"
+        onClick={() => setModalImg(img4)}
+      />
     </div>
      <div className="tech-stack">
    
@@ -183,7 +253,7 @@ useEffect(() => {
     <FaPython className="tech-icon python" title="Python" />
 
     </div>
-         <p>A project for a pretty calculator.</p>
+         <p>Clean, responsive calculator interface with accurate input handling, keyboard-friendly controls, consistent spacing, clear error states, and smooth interactions, polished visuals.</p>
         <a 
         href="https://github.com/eraldLeka/Calculator.git" 
         target="_blank" 
@@ -198,14 +268,19 @@ useEffect(() => {
   <div className="project-card">
     <h3>SVM Model for Classification</h3>
     <div className="gallery">
-<LazyImage src={images[current]} alt="Project screenshot" />
+<LazyImage
+  src={images[current]}
+  alt="Project screenshot"
+  className="zoomable"
+  onClick={() => setModalImg(images[current])}
+/>
     </div>
      <div className="tech-stack">
    
     <SiR className="tech-icon r" title="R"/>
 
     </div>
-        <p>A SVM model trained for classification.</p>
+        <p>Machine learning project implementing SVM classification with feature preprocessing, model tuning, validation splits, balanced metrics, and clear performance evaluation reports.</p>
         <a 
         href="https://github.com/username/project-repo" 
         target="_blank" 
@@ -218,6 +293,11 @@ useEffect(() => {
 
   
 </section>
+            {modalImg && (
+              <div className="image-modal-overlay" onClick={() => setModalImg(null)}>
+                <img src={modalImg} alt="Project preview" className="image-modal-img" />
+              </div>
+            )}
             </div>
     );
 }
