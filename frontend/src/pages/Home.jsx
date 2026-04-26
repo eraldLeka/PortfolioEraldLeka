@@ -3,7 +3,7 @@ import "../styles/Home.css";
 import homeVideoWebm from "../assets/homeVideo.webm";
 import homeVideoMp4 from "../assets/homeVideo.mp4";
 import Technologies from "../components/Technologies.jsx";
-import pr1 from "../assets/pr1.png";
+import pr1 from "../assets/preventv2.png";
 import conv1 from "../assets/conv1.png";
 import LazyVideo from "../components/LazyVideo.jsx";
 import LazyImage from "../components/LazyImage.jsx";
@@ -51,6 +51,30 @@ function Home() {
       <section className="featured-projects">
   <h2 className="section-title">New Projects</h2>
   <div className="projects-grid">
+     <div className="project-card">
+      <LazyImage
+        src={pr1}
+        alt="Estimate Management App"
+        className="project-img project-img--contain zoomable"
+        onClick={() => setModalImg(pr1)}
+      />
+      <h3>Estimate Management App</h3>
+      <p>Full-stack quotation platform with React, FastAPI, and SQLite, emphasizing product management, bilingual PDF generation, secure authentication, and a clean, internationalized UI.</p>
+        <div className="tech-stack">
+            <FaReact className="tech-icon react" title="React" />
+            <FaPython className="tech-icon python" title="Python" />
+            <FaDatabase className="tech-icon SQLite" title="SQLite" />
+          </div>
+      <a 
+        href="https://github.com/eraldLeka/estimate-web.git"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="project-link"
+      >
+        View Project
+      </a>
+    </div>
+
     <div className="project-card">
       <LazyImage
         src={conv1}
@@ -76,33 +100,7 @@ function Home() {
       </a>
     </div>
 
-    <div className="project-card">
-      <LazyImage
-        src={pr1}
-        alt="Incident Management App"
-        className="project-img zoomable"
-        onClick={() => setModalImg(pr1)}
-      />
-      <h3>Incident Management App</h3>
-      <p>Incident management system for reporting, tracking, and resolving IT issues with role-based access, real-time updates, workflow dashboards, auditing, and analytics.</p>
-        <div className="tech-stack">
-            <FaReact className="tech-icon react" title="React" />
-            <FaPython className="tech-icon python" title="Python" />
-            <FaDatabase className="tech-icon postgres" title="PostgreSQL" />
-            <SiJavascript className="tech-icon js" title="JavaScript" />
-            <SiFastapi className="tech-icon fp" title="FastAPI"/>
-      
-      
-          </div>
-      <a 
-        href="https://github.com/eraldLeka/incident-management-app.git"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="project-link"
-      >
-        View Project
-      </a>
-    </div>
+   
   </div>
 </section>
       {modalImg && (

@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/Projects.css";
 import { FaReact, FaPython, FaJs, FaDatabase, FaGithub } from "react-icons/fa";
-import { SiJavascript, SiMysql, SiDocker, SiFastapi,SiPostgresql, SiR, SiDotnet,SiSharp} from "react-icons/si";
+import { SiJavascript, SiMysql, SiDocker, SiFastapi,SiPostgresql, SiR, SiDotnet,SiSharp, SiSqlite} from "react-icons/si";
 import { useState,useEffect } from "react";
 import img1 from "../assets/diploma1.png";
 import img2 from "../assets/diploma2.png";
@@ -16,6 +16,12 @@ import changes1 from "../assets/changes1.png";
 import login from "../assets/login.png";
 import LazyVideo from "../components/LazyVideo.jsx";
 import LazyImage from "../components/LazyImage.jsx";
+import preventiv1 from "../assets/preventv1.png";
+import preventiv2 from "../assets/preventv2.png";
+import preventiv3 from "../assets/preventv3.png";
+import preventiv4 from "../assets/preventv4.png";
+import preventiv5 from "../assets/preventv5.png";
+import preventiv6 from "../assets/preventv6.png";
 
 function Projects(){
 
@@ -30,6 +36,20 @@ function Projects(){
   return () => clearInterval(interval);
 }, [images.length]);
 
+
+//preventive
+const preventiveImages = [preventiv2, preventiv5,preventiv3, preventiv4, preventiv1, preventiv6]
+const [ preventiveCurrent, setPreventiveCurrent] =  useState(0);
+useEffect (() => {
+  const interval = setInterval(() => {
+    setPreventiveCurrent((prev) => (prev + 1) % preventiveImages.length);
+  }, 3000);
+  return () => clearInterval(interval);
+}, [preventiveImages.length]);
+
+
+//tcp
+
 const tcpImages = [tcpclient, tcpserver];
 const [ tcpCurrent, setTcpCurrent ] = useState(0);
 useEffect(() => {
@@ -39,6 +59,8 @@ useEffect(() => {
   return () => clearInterval(interval);
 }, [tcpImages.length]);
 
+
+//webchat
 const webchatImages = [conv1, chatwindow1, changes1, login];
 const [ webchatCurrent, setWebchatCurrent ] = useState(0);
 useEffect(() => {
@@ -49,7 +71,6 @@ useEffect(() => {
 }, [webchatImages.length]);
 
 const [modalImg, setModalImg] = useState(null);
-
 useEffect(() => {
   if (!modalImg) return;
   const handleKey = (event) => {
@@ -87,6 +108,34 @@ useEffect(() => {
             </section>
 
 <section className="projects-file">
+
+<div className="project-card">
+    <h3>Estimate Management Web</h3>
+    <div className="gallery gallery--contain">
+      <LazyImage
+        src={preventiveImages[preventiveCurrent]}
+        alt="Estimate app preview"
+        className="zoomable"
+        onClick={() => setModalImg(preventiveImages[preventiveCurrent])}
+      />
+    </div>
+     <div className="tech-stack">
+      <FaReact className="tech-icon react" title="React" />
+      <SiJavascript className="tech-icon js" title="JavaScript" />
+      <SiSqlite className="tech-icon postgres" title="SQLite" />
+      <SiFastapi className="tech-icon fp" title="FastAPI"/>
+    </div>
+        <p>Developed a FastAPI and React application for managing products and generating automated bilingual (SQ/EN) PDF quotes. Features include JWT authentication, RESTful APIs, and multi-language support (i18n)</p>
+        <a 
+        href="https://github.com/eraldLeka/estimate-web.git" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="project-link"
+        >
+        <FaGithub  /> View Project
+        </a>
+  </div>
+
   <div className="project-card">
     <h3>WebChat</h3>
     <div className="gallery gallery--contain">

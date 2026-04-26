@@ -16,7 +16,6 @@ import {
 import { AiOutlinePushpin } from "react-icons/ai";
 import { FaGraduationCap, FaCalendarAlt } from "react-icons/fa";
 import university from "../assets/university.png"; 
-import education from "../assets/education.jpeg";
 import ExpertSection from "../components/ExpertSection";
 import LazyVideo from "../components/LazyVideo.jsx";
 import LazyImage from "../components/LazyImage.jsx";
@@ -100,11 +99,6 @@ function About() {
             <li><FaUsers className="icon" /> Teamwork & Collaboration</li>
             <li><FaLightbulb className="icon" /> Problem-Solving & Systems Analysis</li>
           </ul>
-        </div>
-
-        {/* Div për foto */}
-        <div className="education-image">
-          <LazyImage src={education} alt="Education" className="education-img" />
         </div>
       </div>
 

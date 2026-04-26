@@ -21,7 +21,7 @@ function ProfileCard() {
           />
           <div className="profile-meta">
             <h3>Erald Leka</h3>
-            <h5>Full-Stack Developer</h5>
+            <h5>Software Developer</h5>
           </div>
 
           <a
