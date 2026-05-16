@@ -39,8 +39,6 @@ const ExpertSection = () => {
       title: "Backend",
       subtitle: "APIs and services",
       Icon: FaServer,
-      accent: "#1e90ff",
-      accentSoft: "rgba(30, 144, 255, 0.14)",
       tech: [
         { label: "Python", Icon: SiPython },
         { label: "C# (.NET)", Icon: SiDotnet },
@@ -55,8 +53,6 @@ const ExpertSection = () => {
       title: "Frontend",
       subtitle: "UI and experience",
       Icon: FaLaptopCode,
-      accent: "#28a745",
-      accentSoft: "rgba(40, 167, 69, 0.14)",
       tech: [
         { label: "React", Icon: SiReact },
         { label: "HTML5", Icon: SiHtml5 },
@@ -69,8 +65,6 @@ const ExpertSection = () => {
       title: "Data and DB",
       subtitle: "Storage and ML",
       Icon: FaDatabase,
-      accent: "#ff8c00",
-      accentSoft: "rgba(255, 140, 0, 0.16)",
       tech: [
         { label: "PostgreSQL", Icon: SiPostgresql },
         { label: "MySQL", Icon: SiMysql },
@@ -96,10 +90,6 @@ const ExpertSection = () => {
             key={section.key}
             type="button"
             className="expert-orbit-btn"
-            style={{
-              "--orbit-accent": section.accent,
-              "--orbit-accent-soft": section.accentSoft,
-            }}
             onClick={() => setActiveKey(section.key)}
           >
             <span className="expert-orbit-icon">
@@ -118,10 +108,6 @@ const ExpertSection = () => {
               <div className="expert-modal-title">
                 <span
                   className="expert-modal-badge"
-                  style={{
-                    "--orbit-accent": activeSection.accent,
-                    "--orbit-accent-soft": activeSection.accentSoft,
-                  }}
                 >
                   <activeSection.Icon />
                 </span>

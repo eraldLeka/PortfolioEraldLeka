@@ -1,0 +1,37 @@
+:root {
+  --bg-base: #0e0e10;
+  --bg-surface: #16161a;
+  --bg-card: #1e1e24;
+  --bg-border: #2e2e38;
+  --accent: #e09b4a;
+  --text-primary: #f0ece4;
+  --text-secondary: #7a7670;
+  --text-mono: #c8864a;
+  --danger: #ef4444;
+
+  --content-max: 1100px;
+  --nav-h: 72px;
+
+  --radius-sm: 6px;
+  --radius: 8px;
+
+  /* Legacy aliases (no new hex values) */
+  --surface: var(--bg-surface);
+  --surface-alt: var(--bg-surface);
+  --border: var(--bg-border);
+  --text: var(--text-primary);
+  --muted: var(--text-secondary);
+  --accent-dim: color-mix(in srgb, var(--accent) 85%, var(--bg-base));
+  --accent-strong: var(--accent-dim);
+  --radius-lg: var(--radius);
+  --shadow-xs: none;
+  --shadow-sm: none;
+  --shadow-md: none;
+  --ring: color-mix(in srgb, var(--accent) 18%, transparent);
+
+  /* Overlays derived from palette */
+  --overlay-12: color-mix(in srgb, var(--bg-base) 12%, transparent);
+  --overlay-24: color-mix(in srgb, var(--bg-base) 24%, transparent);
+  --accent-12: color-mix(in srgb, var(--accent) 12%, transparent);
+  --accent-24: color-mix(in srgb, var(--accent) 24%, transparent);
+}

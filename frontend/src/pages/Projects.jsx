@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/Projects.css";
-import { FaReact, FaPython, FaJs, FaDatabase, FaGithub } from "react-icons/fa";
-import { SiJavascript, SiMysql, SiDocker, SiFastapi,SiPostgresql, SiR, SiDotnet,SiSharp, SiSqlite} from "react-icons/si";
-import { useState,useEffect } from "react";
+import { FaGithub } from "react-icons/fa";
+import LazyImage from "../components/LazyImage.jsx";
+import Reveal from "../components/Reveal.jsx";
+import SectionHeading from "../components/SectionHeading.jsx";
+
 import img1 from "../assets/diploma1.png";
 import img2 from "../assets/diploma2.png";
 import img3 from "../assets/diploma3.png";
@@ -14,340 +16,412 @@ import conv1 from "../assets/conv1.png";
 import chatwindow1 from "../assets/chatwindow1.png";
 import changes1 from "../assets/changes1.png";
 import login from "../assets/login.png";
-import LazyVideo from "../components/LazyVideo.jsx";
-import LazyImage from "../components/LazyImage.jsx";
 import preventiv1 from "../assets/preventv1.png";
 import preventiv2 from "../assets/preventv2.png";
 import preventiv3 from "../assets/preventv3.png";
 import preventiv4 from "../assets/preventv4.png";
 import preventiv5 from "../assets/preventv5.png";
 import preventiv6 from "../assets/preventv6.png";
+import incident from "../assets/incident.png";
+import weather from "../assets/weather.png";
 
-function Projects(){
+function Projects() {
+  const images = [img1, img2, img3];
+  const preventiveImages = [
+    preventiv2,
+    preventiv5,
+    preventiv3,
+    preventiv4,
+    preventiv1,
+    preventiv6,
+  ];
+  const tcpImages = [tcpclient, tcpserver];
+  const webchatImages = [conv1, chatwindow1, changes1, login];
 
-    const images = [img1, img2,img3];
-    const [ current, setCurrent ] = useState(0);
+  const [modalImg, setModalImg] = useState(null);
 
-   useEffect(() => {
-  const interval = setInterval(() => {
-    setCurrent((prev) => (prev + 1) % images.length);
-  }, 3000);
+  useEffect(() => {
+    if (!modalImg) return;
+    const handleKey = (event) => {
+      if (event.key === "Escape") setModalImg(null);
+    };
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  }, [modalImg]);
 
-  return () => clearInterval(interval);
-}, [images.length]);
+  return (
+    <div className="projects page">
+      <SectionHeading number="01" title="What I've Built?" as="h1" />
 
-
-//preventive
-const preventiveImages = [preventiv2, preventiv5,preventiv3, preventiv4, preventiv1, preventiv6]
-const [ preventiveCurrent, setPreventiveCurrent] =  useState(0);
-useEffect (() => {
-  const interval = setInterval(() => {
-    setPreventiveCurrent((prev) => (prev + 1) % preventiveImages.length);
-  }, 3000);
-  return () => clearInterval(interval);
-}, [preventiveImages.length]);
-
-
-//tcp
-
-const tcpImages = [tcpclient, tcpserver];
-const [ tcpCurrent, setTcpCurrent ] = useState(0);
-useEffect(() => {
-  const interval = setInterval(() => {
-    setTcpCurrent((prev) => (prev + 1) % tcpImages.length);
-  }, 3000);
-  return () => clearInterval(interval);
-}, [tcpImages.length]);
-
-
-//webchat
-const webchatImages = [conv1, chatwindow1, changes1, login];
-const [ webchatCurrent, setWebchatCurrent ] = useState(0);
-useEffect(() => {
-  const interval = setInterval(() => {
-    setWebchatCurrent((prev) => (prev + 1) % webchatImages.length);
-  }, 3000);
-  return () => clearInterval(interval);
-}, [webchatImages.length]);
-
-const [modalImg, setModalImg] = useState(null);
-useEffect(() => {
-  if (!modalImg) return;
-  const handleKey = (event) => {
-    if (event.key === "Escape") {
-      setModalImg(null);
-    }
-  };
-  window.addEventListener("keydown", handleKey);
-  return () => window.removeEventListener("keydown", handleKey);
-}, [modalImg]);
-
-    return(   
-
-            <div className="projects-page">
-            <section className="projects-section">
-                {/* Video në kolonën e majtë */}
-                <div className="projects-video-wrapper">
-                <LazyVideo
-                    src="/videos/projectVideo.mp4"
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    preload="none"
-                    className="projects-video"
-                    rootMargin="600px"
-                >
-                    Your browser does not support the video tag.
-                </LazyVideo>
-                </div>
-
-                <div className="projects-content">
-                <h1>What I've Built?</h1>
-                </div>
-            </section>
-
-<section className="projects-file">
-
-<div className="project-card">
-    <h3>Estimate Management Web</h3>
-    <div className="gallery gallery--contain">
-      <LazyImage
-        src={preventiveImages[preventiveCurrent]}
-        alt="Estimate app preview"
-        className="zoomable"
-        onClick={() => setModalImg(preventiveImages[preventiveCurrent])}
-      />
-    </div>
-     <div className="tech-stack">
-      <FaReact className="tech-icon react" title="React" />
-      <SiJavascript className="tech-icon js" title="JavaScript" />
-      <SiSqlite className="tech-icon postgres" title="SQLite" />
-      <SiFastapi className="tech-icon fp" title="FastAPI"/>
-    </div>
-        <p>Developed a FastAPI and React application for managing products and generating automated bilingual (SQ/EN) PDF quotes. Features include JWT authentication, RESTful APIs, and multi-language support (i18n)</p>
-        <a 
-        href="https://github.com/eraldLeka/estimate-web.git" 
-        target="_blank" 
-        rel="noopener noreferrer"
-        className="project-link"
-        >
-        <FaGithub  /> View Project
-        </a>
-  </div>
-
-  <div className="project-card">
-    <h3>WebChat</h3>
-    <div className="gallery gallery--contain">
-      <LazyImage
-        src={webchatImages[webchatCurrent]}
-        alt="WebChat app preview"
-        className="zoomable"
-        onClick={() => setModalImg(webchatImages[webchatCurrent])}
-      />
-    </div>
-     <div className="tech-stack">
-      <FaReact className="tech-icon react" title="React" />
-      <SiJavascript className="tech-icon js" title="JavaScript" />
-      <SiPostgresql className="tech-icon postgres" title="PostgreSQL" />
-      <SiFastapi className="tech-icon fp" title="FastAPI"/>
-    </div>
-        <p>Full-stack chat platform with React, FastAPI, and PostgreSQL, emphasizing conversation management, responsive layouts, real-time messaging, and a clean, modern UX.</p>
-        <a 
-        href="https://github.com/eraldLeka/WebChat.git" 
-        target="_blank" 
-        rel="noopener noreferrer"
-        className="project-link"
-        >
-        <FaGithub  /> View Project
-        </a>
-  </div>
-
-  <div className="project-card">
-    <h3>TCP Server-Client</h3>
-    <div className="gallery gallery--contain">
-<LazyImage
-  src={tcpImages[tcpCurrent]}
-  alt="Project screenshot"
-  className="zoomable"
-  onClick={() => setModalImg(tcpImages[tcpCurrent])}
-/>
-    </div>
-     <div className="tech-stack">
-   
-    <SiDotnet className="tech-icon dotnet" title=".NET"/>
-    <SiSharp className="tech-icon sharp" title="C#"/>
-    </div>
-        <p>C#/.NET desktop app implementing TCP sockets with structured messaging, resilient reconnection, detailed client/server logging, monitoring tools, and robust error handling.</p>
-        <a 
-        href="https://github.com/eraldLeka/TCP-Server-Client.git" 
-        target="_blank" 
-        rel="noopener noreferrer"
-        className="project-link"
-        >
-        <FaGithub  /> View Project
-        </a>
-  </div>
-
-  <div className="project-card">
-    <h3> IT Incident Management</h3>
-    <LazyVideo
-        sources={[
-          { src: "/videos/IncidentManagment.webm", type: "video/webm" },
-          { src: "/videos/IncidentManagment.mp4", type: "video/mp4" },
-        ]}
-        autoPlay
-        loop
-        muted
-        controls
-        playsInline
-        preload="metadata"
-        className="projectVideo"
-        rootMargin="400px"
-    >
-        Your browser does not support the video tag.
-    </LazyVideo>
-     <div className="tech-stack">
-      <FaReact className="tech-icon react" title="React" />
-      <FaPython className="tech-icon python" title="Python" />
-      <FaDatabase className="tech-icon postgres" title="PostgreSQL" />
-      <SiJavascript className="tech-icon js" title="JavaScript" />
-      <SiFastapi className="tech-icon fp" title="FastAPI"/>
-
-
-    </div>
-            <p>Incident management system for reporting, tracking, and resolving IT issues with role-based access, real-time updates, workflow dashboards, auditing, and analytics.</p>
-            <a 
-            href="https://github.com/eraldLeka/incident-management-app.git" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="project-link"
+      <Reveal as="section" className="section projectsGrid">
+        <article className="projectCard">
+          <header className="projectCard__top">
+            <h3 className="projectCard__title">Estimate Management Web</h3>
+            <a
+              href="https://github.com/eraldLeka/estimate-web.git"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="projectCard__iconBtn"
+              aria-label="GitHub"
             >
-            <FaGithub /> View Project
+              <FaGithub />
             </a>
-  </div>
+          </header>
 
-<div className="project-card project-card--calculator">
-    <h3>Compress-Decompress</h3>
-    <div className="gallery gallery--contain">
-      <LazyImage
-        src={compress}
-        alt="Compress-Decompress App"
-        className="project-img zoomable"
-        onClick={() => setModalImg(compress)}
-      />
-    </div>
-     <div className="tech-stack">
- <SiDotnet className="tech-icon dotnet" title=".NET"/>
-    <SiSharp className="tech-icon sharp" title="C#"/>   
+          <div className="projectCard__media">
+            <LazyImage
+              src={preventiveImages[0]}
+              alt="Estimate app preview"
+              className="projectCard__img zoomable"
+              onClick={() => setModalImg(preventiveImages[0])}
+            />
+          </div>
 
-    </div>
-         <p>Desktop utility for file compression and extraction with streamlined workflows, integrity checks, progress feedback, and status reporting for reliable results.</p>
-        <a 
-        href="https://github.com/eraldLeka/Compress-Decompress-Project.git" 
-        target="_blank" 
-        rel="noopener noreferrer"
-        className="project-link"
-        >
-        <FaGithub  /> View Project
-        </a>
-  </div>
-  
-<div className="project-card">
-    <h3>Weather Albania Map App</h3>
-    <LazyVideo
-        src="/videos/WeatherApp.mp4"
-        autoPlay
-        loop
-        muted
-        playsInline
-        preload="metadata"
-        className="projectVideo"
-        rootMargin="400px"
-    >
-        Your browser does not support the video tag.
-    </LazyVideo>
-    <div className="tech-stack">
-    <FaReact className="tech-icon react" title="React" />
-    <FaPython className="tech-icon python" title="Python" />
-    <SiJavascript className="tech-icon js" title="JavaScript" />
-    <SiFastapi className="tech-icon fp" title="FastAPI"/>
+          <p className="projectCard__desc">
+            Developed a FastAPI and React application for managing products and
+            generating automated bilingual (SQ/EN) PDF quotes. Features include
+            JWT authentication, RESTful APIs, and multi-language support (i18n)
+          </p>
 
-    </div>
-            <p>Interactive weather map for Albania with API-driven data, fast rendering, responsive UI, location-based insights, and clear visual daily trends summaries.</p>
-            <a 
-            href="https://github.com/eraldLeka/Weather.git" 
-            target="_blank" 
+          <div className="projectCard__tags">
+            <span className="tag">React</span>
+            <span className="tag">JavaScript</span>
+            <span className="tag">SQLite</span>
+            <span className="tag">FastAPI</span>
+          </div>
+
+          <a
+            href="https://github.com/eraldLeka/estimate-web.git"
+            target="_blank"
             rel="noopener noreferrer"
-            className="project-link"
+            className="projectCard__cta"
+          >
+            View Project
+          </a>
+        </article>
+
+        <article className="projectCard">
+          <header className="projectCard__top">
+            <h3 className="projectCard__title">WebChat</h3>
+            <a
+              href="https://github.com/eraldLeka/WebChat.git"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="projectCard__iconBtn"
+              aria-label="GitHub"
             >
-            <FaGithub /> View Project
+              <FaGithub />
             </a>
-  </div>
+          </header>
 
-<div className="project-card project-card--calculator">
-    <h3>Calculator</h3>
-    <div className="gallery gallery--contain">
-      <LazyImage
-        src={img4}
-        alt="Calculator App"
-        className="project-img zoomable"
-        onClick={() => setModalImg(img4)}
-      />
+          <div className="projectCard__media">
+            <LazyImage
+              src={webchatImages[0]}
+              alt="WebChat app preview"
+              className="projectCard__img zoomable"
+              onClick={() => setModalImg(webchatImages[0])}
+            />
+          </div>
+
+          <p className="projectCard__desc">
+            Full-stack chat platform with React, FastAPI, and PostgreSQL,
+            emphasizing conversation management, responsive layouts, real-time
+            messaging, and a clean, modern UX.
+          </p>
+
+          <div className="projectCard__tags">
+            <span className="tag">React</span>
+            <span className="tag">JavaScript</span>
+            <span className="tag">PostgreSQL</span>
+            <span className="tag">FastAPI</span>
+          </div>
+
+          <a
+            href="https://github.com/eraldLeka/WebChat.git"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="projectCard__cta"
+          >
+            View Project
+          </a>
+        </article>
+
+        <article className="projectCard">
+          <header className="projectCard__top">
+            <h3 className="projectCard__title">TCP Server-Client</h3>
+            <a
+              href="https://github.com/eraldLeka/TCP-Server-Client.git"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="projectCard__iconBtn"
+              aria-label="GitHub"
+            >
+              <FaGithub />
+            </a>
+          </header>
+
+          <div className="projectCard__media">
+            <LazyImage
+              src={tcpImages[0]}
+              alt="Project screenshot"
+              className="projectCard__img zoomable"
+              onClick={() => setModalImg(tcpImages[0])}
+            />
+          </div>
+
+          <p className="projectCard__desc">
+            C#/.NET desktop app implementing TCP sockets with structured
+            messaging, resilient reconnection, detailed client/server logging,
+            monitoring tools, and robust error handling.
+          </p>
+
+          <div className="projectCard__tags">
+            <span className="tag">.NET</span>
+            <span className="tag">C#</span>
+          </div>
+
+          <a
+            href="https://github.com/eraldLeka/TCP-Server-Client.git"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="projectCard__cta"
+          >
+            View Project
+          </a>
+        </article>
+
+        <article className="projectCard">
+          <header className="projectCard__top">
+            <h3 className="projectCard__title">IT Incident Management</h3>
+            <a
+              href="https://github.com/eraldLeka/incident-management-app.git"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="projectCard__iconBtn"
+              aria-label="GitHub"
+            >
+              <FaGithub />
+            </a>
+          </header>
+          <div className="projectCard__media">
+            <LazyImage
+              src={incident}
+              alt="Incident Management App"
+              className="projectCard__img zoomable"
+              onClick={() => setModalImg(incident)}
+            />
+          </div>
+
+          <p className="projectCard__desc">
+            Incident management system for reporting, tracking, and resolving IT
+            issues with role-based access, real-time updates, workflow
+            dashboards, auditing, and analytics.
+          </p>
+
+          <div className="projectCard__tags">
+            <span className="tag">React</span>
+            <span className="tag">Python</span>
+            <span className="tag">PostgreSQL</span>
+            <span className="tag">JavaScript</span>
+            <span className="tag">FastAPI</span>
+          </div>
+
+          <a
+            href="https://github.com/eraldLeka/incident-management-app.git"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="projectCard__cta"
+          >
+            View Project
+          </a>
+        </article>
+
+        <article className="projectCard">
+          <header className="projectCard__top">
+            <h3 className="projectCard__title">Compress-Decompress</h3>
+            <a
+              href="https://github.com/eraldLeka/Compress-Decompress-Project.git"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="projectCard__iconBtn"
+              aria-label="GitHub"
+            >
+              <FaGithub />
+            </a>
+          </header>
+
+          <div className="projectCard__media">
+            <LazyImage
+              src={compress}
+              alt="Compress-Decompress App"
+              className="projectCard__img zoomable"
+              onClick={() => setModalImg(compress)}
+            />
+          </div>
+
+          <p className="projectCard__desc">
+            Desktop utility for file compression and extraction with streamlined
+            workflows, integrity checks, progress feedback, and status reporting
+            for reliable results.
+          </p>
+
+          <div className="projectCard__tags">
+            <span className="tag">.NET</span>
+            <span className="tag">C#</span>
+          </div>
+
+          <a
+            href="https://github.com/eraldLeka/Compress-Decompress-Project.git"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="projectCard__cta"
+          >
+            View Project
+          </a>
+        </article>
+
+        <article className="projectCard">
+          <header className="projectCard__top">
+            <h3 className="projectCard__title">Weather Albania Map App</h3>
+            <a
+              href="https://github.com/eraldLeka/Weather.git"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="projectCard__iconBtn"
+              aria-label="GitHub"
+            >
+              <FaGithub />
+            </a>
+          </header>
+          <div className="projectCard__media">
+            <LazyImage
+              src={weather}
+              alt="Weather"
+              className="projectCard__img zoomable"
+              onClick={() => setModalImg(weather)}
+            />
+          </div>
+
+          <p className="projectCard__desc">
+            Interactive weather map for Albania with API-driven data, fast
+            rendering, responsive UI, location-based insights, and clear visual
+            daily trends summaries.
+          </p>
+
+          <div className="projectCard__tags">
+            <span className="tag">React</span>
+            <span className="tag">Python</span>
+            <span className="tag">JavaScript</span>
+            <span className="tag">FastAPI</span>
+          </div>
+
+          <a
+            href="https://github.com/eraldLeka/Weather.git"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="projectCard__cta"
+          >
+            View Project
+          </a>
+        </article>
+
+        <article className="projectCard">
+          <header className="projectCard__top">
+            <h3 className="projectCard__title">Calculator</h3>
+            <a
+              href="https://github.com/eraldLeka/Calculator.git"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="projectCard__iconBtn"
+              aria-label="GitHub"
+            >
+              <FaGithub />
+            </a>
+          </header>
+
+          <div className="projectCard__media">
+            <LazyImage
+              src={img4}
+              alt="Calculator App"
+              className="projectCard__img zoomable"
+              onClick={() => setModalImg(img4)}
+            />
+          </div>
+
+          <p className="projectCard__desc">
+            Clean, responsive calculator interface with accurate input handling,
+            keyboard-friendly controls, consistent spacing, clear error states,
+            and smooth interactions, polished visuals.
+          </p>
+
+          <div className="projectCard__tags">
+            <span className="tag">React</span>
+            <span className="tag">JavaScript</span>
+            <span className="tag">Python</span>
+          </div>
+
+          <a
+            href="https://github.com/eraldLeka/Calculator.git"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="projectCard__cta"
+          >
+            View Project
+          </a>
+        </article>
+
+        <article className="projectCard">
+          <header className="projectCard__top">
+            <h3 className="projectCard__title">SVM Model for Classification</h3>
+            <a
+              href="https://github.com/username/project-repo"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="projectCard__iconBtn"
+              aria-label="GitHub"
+            >
+              <FaGithub />
+            </a>
+          </header>
+
+          <div className="projectCard__media">
+            <LazyImage
+              src={images[0]}
+              alt="Project screenshot"
+              className="projectCard__img zoomable"
+              onClick={() => setModalImg(images[0])}
+            />
+          </div>
+
+          <p className="projectCard__desc">
+            Machine learning project implementing SVM classification with
+            feature preprocessing, model tuning, validation splits, balanced
+            metrics, and clear performance evaluation reports.
+          </p>
+
+          <div className="projectCard__tags">
+            <span className="tag">R</span>
+          </div>
+
+          <a
+            href="https://github.com/username/project-repo"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="projectCard__cta"
+          >
+            View Project
+          </a>
+        </article>
+      </Reveal>
+
+      {modalImg && (
+        <div className="image-modal-overlay" onClick={() => setModalImg(null)}>
+          <img src={modalImg} alt="Project preview" className="image-modal-img" />
+        </div>
+      )}
     </div>
-     <div className="tech-stack">
-   
-    <FaReact className="tech-icon react" title="React" />
-    <SiJavascript className="tech-icon js" title="JavaScript" />
-    <FaPython className="tech-icon python" title="Python" />
-
-    </div>
-         <p>Clean, responsive calculator interface with accurate input handling, keyboard-friendly controls, consistent spacing, clear error states, and smooth interactions, polished visuals.</p>
-        <a 
-        href="https://github.com/eraldLeka/Calculator.git" 
-        target="_blank" 
-        rel="noopener noreferrer"
-        className="project-link"
-        >
-        <FaGithub  /> View Project
-        </a>
-  </div>
-
-
-  <div className="project-card">
-    <h3>SVM Model for Classification</h3>
-    <div className="gallery">
-<LazyImage
-  src={images[current]}
-  alt="Project screenshot"
-  className="zoomable"
-  onClick={() => setModalImg(images[current])}
-/>
-    </div>
-     <div className="tech-stack">
-   
-    <SiR className="tech-icon r" title="R"/>
-
-    </div>
-        <p>Machine learning project implementing SVM classification with feature preprocessing, model tuning, validation splits, balanced metrics, and clear performance evaluation reports.</p>
-        <a 
-        href="https://github.com/username/project-repo" 
-        target="_blank" 
-        rel="noopener noreferrer"
-        className="project-link"
-        >
-        <FaGithub  /> View Project
-        </a>
-  </div>
-
-  
-</section>
-            {modalImg && (
-              <div className="image-modal-overlay" onClick={() => setModalImg(null)}>
-                <img src={modalImg} alt="Project preview" className="image-modal-img" />
-              </div>
-            )}
-            </div>
-    );
+  );
 }
+
 export default Projects;
+

@@ -1,75 +1,96 @@
 import React from "react";
 import "../styles/Contact.css";
-import LazyVideo from "../components/LazyVideo.jsx";
-
-
-import { 
-  FaEnvelope,
-  FaWhatsapp,
-  FaGithub,
-  FaInstagram,
-  FaLinkedin
-} from "react-icons/fa"; 
-
+import { FaEnvelope, FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
+import Reveal from "../components/Reveal.jsx";
+import SectionHeading from "../components/SectionHeading.jsx";
 
 function Contact() {
   return (
-    <div className="contact-page">
-      <section className="contact-section">
-        {/* Video në kolonën e majtë */}
-        <div className="contact-video-wrapper">
-          <LazyVideo
-            src="/videos/contactVideo.mp4"
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="none"
-            className="contact-video"
-            rootMargin="600px"
+    <div className="contact page">
+      <SectionHeading number="01" title="Get in Touch?" as="h1" />
+      <Reveal as="section" className="section contact-info">
+        <div className="contact-grid">
+          <a
+            href="mailto:youremail@example.com"
+            className="contact-card"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            Your browser does not support the video tag.
-          </LazyVideo>
+            <FaEnvelope className="contact-icon" />
+            <p>Email</p>
+            <span>lekaerald2@gmail.com</span>
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/erald-leka-793742253"
+            className="contact-card"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaLinkedin className="contact-icon" />
+            <p>LinkedIn</p>
+            <span>Erald Leka</span>
+          </a>
+
+          <a
+            href="https://github.com/eraldLeka"
+            className="contact-card"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaGithub className="contact-icon" />
+            <p>GitHub</p>
+            <span>eraldLeka</span>
+          </a>
+
+          <a
+            href="https://wa.me/355692218305"
+            className="contact-card"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaWhatsapp className="contact-icon" />
+            <p>WhatsApp</p>
+            <span>+355 69 22 18 305</span>
+          </a>
         </div>
-        
-        <div className="contact-content">
-          <h1>Get in Touch?</h1>
+      </Reveal>
+
+      <footer className="footer">
+        <div className="footer__inner">
+          <a
+            href="mailto:youremail@example.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer__link"
+          >
+            lekaerald2@gmail.com
+          </a>
+          <div className="footer__icons">
+            <a
+              href="https://github.com/eraldLeka"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer__icon"
+              aria-label="GitHub"
+            >
+              <FaGithub />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/erald-leka-793742253"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer__icon"
+              aria-label="LinkedIn"
+            >
+              <FaLinkedin />
+            </a>
+          </div>
         </div>
-      </section>
-
-
-<section className="contact-info">
-  <h2 className="contact-title">Contact Me</h2>
-  <div className="contact-grid">
-    <a href="mailto:youremail@example.com" className="contact-card" target="_blank" rel="noopener noreferrer">
-      <FaEnvelope className="contact-icon" color= "#f17272ff" />
-      <p>Email</p>
-      <span>lekaerald2@gmail.com</span>
-    </a>
-
-    <a href="https://www.linkedin.com/in/erald-leka-793742253" className="contact-card" target="_blank" rel="noopener noreferrer">
-      <FaLinkedin className="contact-icon" color= "#1379bdff"/>
-      <p>LinkedIn</p>
-      <span>Erald Leka</span>
-    </a>
-
-    <a href="https://github.com/eraldLeka" className="contact-card" target="_blank" rel="noopener noreferrer">
-      <FaGithub className="contact-icon" />
-      <p>GitHub</p>
-      <span>eraldLeka</span>
-    </a>
-
-    <a href="https://wa.me/355692218305" className="contact-card" target="_blank" rel="noopener noreferrer">
-      <FaWhatsapp className="contact-icon" color= "#33ae48ff"  />
-      <p>WhatsApp</p>
-      <span>+355 69 22 18 305</span>
-    </a>
-  </div>
-</section>
-
-
+      </footer>
     </div>
   );
 }
 
 export default Contact;
+
