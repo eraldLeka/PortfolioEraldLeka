@@ -7,10 +7,10 @@
 .skillTag {
   display: inline-flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 10px;
-  padding: 6px 10px;
-  border-radius: var(--radius-sm);
+  padding: 8px 12px;
+  border-radius: 999px;
   border: 1px solid var(--bg-border);
   background: var(--bg-card);
   font-family: "DM Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
@@ -20,7 +20,7 @@
   letter-spacing: 0.1em;
   color: var(--text-mono);
   user-select: none;
-  white-space: nowrap;
+  min-width: 0;
 }
 
 .skillTag__icon {
@@ -32,6 +32,44 @@
 
 .skillTag__label {
   line-height: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .skillTag {
+    transition: opacity 180ms ease, transform 180ms ease,
+      border-color 180ms ease, background-color 180ms ease, color 180ms ease;
+  }
+
+  .skillTag__icon {
+    transition: color 180ms ease;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .skillTag:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent);
+      background: color-mix(in srgb, var(--bg-card) 80%, var(--accent));
+      color: var(--text-primary);
+    }
+
+    .skillTag:hover .skillTag__icon {
+      color: var(--text-primary);
+    }
+  }
+
+  .skills.reveal:not(.is-visible) .skillTag {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  .skills.reveal.is-visible .skillTag {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: calc(var(--stagger-index, 0) * 55ms);
+  }
 }
 
 @media (max-width: 720px) {

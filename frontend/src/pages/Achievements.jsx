@@ -26,11 +26,22 @@ function Achievements() {
   }, [modalImg]);
 
   const certs = [
-    { img: freecodecamp, name: "FreeCodeCamp - Responsive Web Design", date: "June 2024" },
-    { img: oracle, name: "Oracle: Database for Developers(Foundations)", date: "May 2026"},
-    { img: java, name: "Java - Object Oriented Programming", date: "August 2025" },
+    {
+      img: freecodecamp,
+      name: "FreeCodeCamp - Responsive Web Design",
+      date: "June 2024",
+    },
+    {
+      img: oracle,
+      name: "Oracle: Database for Developers(Foundations)",
+      date: "May 2026",
+    },
+    {
+      img: java,
+      name: "Java - Object Oriented Programming",
+      date: "August 2025",
+    },
     { img: data, name: "Data Science and AI", date: "May 2024" },
-    
   ];
 
   const handleClick = (img) => {
@@ -46,8 +57,8 @@ function Achievements() {
 
       <Reveal as="section" className="section certification">
         <div className="certification-grid">
-          {certs.map((cert, index) => (
-            <article className="cert-card" key={index}>
+          {certs.map((cert) => (
+            <article className="cert-card" key={cert.name}>
               <LazyImage
                 src={cert.img}
                 alt={cert.name}

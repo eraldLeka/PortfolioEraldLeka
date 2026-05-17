@@ -39,8 +39,12 @@ function Technologies() {
 
   return (
     <div className="skillsGrid" aria-label="Skills">
-      {skills.map((skill) => (
-        <span key={skill.label} className="skillTag">
+      {skills.map((skill, index) => (
+        <span
+          key={skill.label}
+          className="skillTag"
+          style={{ "--stagger-index": index }}
+        >
           <skill.Icon className="skillTag__icon" aria-hidden="true" />
           <span className="skillTag__label">{skill.label}</span>
         </span>

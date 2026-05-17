@@ -1,4 +1,8 @@
 /* ===================== HERO ===================== */
+.home.page {
+  padding-top: 0;
+}
+
 .hero {
   min-height: calc(100vh - var(--nav-h));
   display: flex;
@@ -39,24 +43,18 @@
 .hero__right {
   position: relative;
   width: 320px;
-  height: 420px;
+  aspect-ratio: 896 / 1108;
+  height: auto;
   margin-left: auto;
+  max-width: 100%;
 
-  border-radius: var(--radius);
-  background: var(--bg-card);
+  border-radius: 0;
+  background: transparent;
   overflow: hidden;
 }
 
 .hero__right::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    circle at 30% 20%,
-    color-mix(in srgb, var(--accent) 25%, transparent),
-    transparent 60%
-  );
-  z-index: 0;
+  content: none;
 }
 
 
@@ -65,28 +63,21 @@
   position: relative;
   display: grid;
   place-items: center;
-  background: var(--bg-card);
+  background: transparent;
 }
 
 .heroPortraitFrame__img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center 20%;
-  filter: grayscale(1) contrast(1.05) brightness(0.95);
+  object-fit: contain;
+  object-position: center;
+  filter: none;
   position: relative;
   z-index: 1;
 }
 
 .heroPortraitFrame::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: color-mix(in srgb, var(--accent) 18%, transparent);
-  mix-blend-mode: color;
-  pointer-events: none;
-  z-index: 3;
-  opacity: 0.8;
+  content: none;
 }
 
 .hero__bottom {
@@ -191,7 +182,7 @@
   margin-top: 10px;
   color: var(--text-secondary);
   display: -webkit-box;
-  -webkit-line-: 3;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -257,10 +248,14 @@
 @media (max-width: 860px) {
   .hero__grid {
     grid-template-columns: 1fr;
+    gap: 26px;
   }
 
   .hero__right {
-    display: none;
+    display: block;
+    width: clamp(220px, 68vw, 320px);
+    margin-left: 0;
+    justify-self: center;
   }
 
   .projects-grid {
