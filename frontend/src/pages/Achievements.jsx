@@ -7,6 +7,7 @@ import data from "../assets/data.jpg";
 import LazyImage from "../components/LazyImage.jsx";
 import Reveal from "../components/Reveal.jsx";
 import SectionHeading from "../components/SectionHeading.jsx";
+import oracle from "../assets/oracle.png";
 
 function Achievements() {
   const shouldReduceMotion =
@@ -26,12 +27,14 @@ function Achievements() {
 
   const certs = [
     { img: freecodecamp, name: "FreeCodeCamp - Responsive Web Design", date: "June 2024" },
+    { img: oracle, name: "Oracle: Database for Developers(Foundations)", date: "May 2026"},
     { img: java, name: "Java - Object Oriented Programming", date: "August 2025" },
     { img: data, name: "Data Science and AI", date: "May 2024" },
+    
   ];
 
   const handleClick = (img) => {
-    setModalImg(modalImg === img ? null : img); // toggle modal
+    setModalImg(modalImg === img ? null : img); 
   };
 
   const MotionOverlay = motion.div;
