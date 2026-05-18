@@ -17,6 +17,7 @@ import LazyImage from "../components/LazyImage.jsx";
 import Reveal from "../components/Reveal.jsx";
 import SectionHeading from "../components/SectionHeading.jsx";
 import Technologies from "../components/Technologies.jsx";
+import upt from "../assets/upt.png";
 
 function About() {
   return (
@@ -52,6 +53,56 @@ function About() {
         <SectionHeading number="03" title="Education" as="h2" />
 
         <div className="university-wrapper">
+          <LazyImage src={upt} alt="University" className="university" />
+
+          <div className="university-info">
+            <h4>MSc in Computer Engineering</h4>
+            <p>Polytechnic University of Tirana</p>
+          </div>
+
+          <p className="education-date">
+            <FaCalendarAlt className="calendar-icon" />
+            22.10.2025 - Present
+          </p>
+        </div>
+
+        <div className="university-content">
+          <div className="education-text">
+            <p>
+              In my ongoing Master's studies in Computer Engineering, I am
+              strengthening my foundation in modern software systems, cloud
+              computing, and applied AI. The program is helping me deepen both
+              my technical skills and my ability to design, optimize, and manage
+              complex software projects.
+            </p>
+
+            <ul className="skills-inline">
+              <li>
+                <FaCode className="icon" /> .NET Development
+              </li>
+              <li>
+                <FaServer className="icon" /> Cloud Computing
+              </li>
+              <li>
+                <FaUsers className="icon" /> Project Management
+              </li>
+              <li>
+                <FaLightbulb className="icon" /> AI &amp; Optimization
+              </li>
+              <li>
+                <FaGlobe className="icon" /> Sustainable Systems
+              </li>
+              <li>
+                <FaPython className="icon" /> Machine Learning
+              </li>
+              <li>
+                <FaDatabase className="icon" /> Operations Research
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="university-wrapper">
           <LazyImage src={university} alt="University" className="university" />
 
           <div className="university-info">
@@ -71,7 +122,7 @@ function About() {
               During my Bachelor studies in Information Technology, I gained a
               solid theoretical and practical foundation in software
               engineering, web application development, and database management.
-              The University of Elbasan, â€œAleksandÃ«r Xhuvaniâ€, provided me
+              The University of Elbasan, "Aleksandër Xhuvani", provided me
               with the opportunity to develop strong skills in programming,
               systems analysis, and the use of modern technologies such as
               Python, Java, FastAPI, React, and SQL. In addition, I worked on
@@ -113,4 +164,3 @@ function About() {
 }
 
 export default About;
-

@@ -59,6 +59,11 @@
   width: 60px;
   height: 60px;
   object-fit: contain;
+  background: color-mix(in srgb, var(--text-primary) 92%, transparent);
+  border: 1px solid var(--bg-border);
+  border-radius: 14px;
+  padding: 6px;
+  box-sizing: border-box;
 }
 
 .education .university-info h4 {
@@ -99,6 +104,10 @@
   background: var(--bg-card);
   border: 1px solid var(--bg-border);
   border-radius: var(--radius);
+}
+
+.education .university-content + .university-wrapper {
+  margin-top: 18px;
 }
 
 .education-text p {
